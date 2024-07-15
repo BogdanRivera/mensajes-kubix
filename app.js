@@ -252,7 +252,8 @@ function sortTimes(times) {
         const tiempo24Hours = document.getElementById(horaId).value;
         let tiempo = convertTo12HourFormat(tiempo24Hours);
         let dateObtained = getFormattedDate(fecha);
-        const day = getDayFromDateString(dateObtained);
+        let day = getDayFromDateString(fecha);
+
         
             // Condición para ajustar el texto si la hora es "01:00 PM"
         let horaTexto = `a las *${tiempo}*`;
@@ -262,7 +263,7 @@ function sortTimes(times) {
         
         let addText  = `
         🗓 *Fecha y Hora:* <br>
-        Su clase está programada para el día *${dateObtained[0]} ${day} de ${dateObtained[1]}* ${horaTexto}, hora de la Cd. de México. ¡Esperamos que sea un momento lleno de aprendizaje!<br><br>
+        Su clase está programada para el día *${dateObtained[0]} ${day+1} de ${dateObtained[1]}* ${horaTexto}, hora de la Cd. de México. ¡Esperamos que sea un momento lleno de aprendizaje!<br><br>
     
         La clase se llevará a cabo por medio de la *aplicación Zoom*. Le enviaremos el link el día de su clase.<br><br>
     
