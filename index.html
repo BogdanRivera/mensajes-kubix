@@ -10,8 +10,8 @@
     <div class="cabecero container-fluid">
         <img class="imagen-logo" src="./img/logokubix.png" alt="imagen-logo" width="300px">
     </div>
-    <div class="container-fluid opciones-container">
-        <div class="row d-flex justify-content-between">
+    <div class="container text-center opciones-container">
+        <div class="row g-2 justify-content-between">
             <div class="col-4 d-flex justify-content-center">
                 <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
                     Clase muestra
@@ -29,9 +29,17 @@
                 </button>
             </div>
 
+            <div class="col-12 d-flex justify-content-center">
+              <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm4" aria-expanded="false" aria-controls="collapseForm">
+                  Verano
+              </button>
+          </div>
+
+            
+
         </div>
 
-        <!-- Botón 1 -->
+        <!-- Clase muestra -->
         <div class="row mt-3">
             <div class="col-12">
               <div class="collapse" id="collapseForm">
@@ -150,7 +158,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
               </div>
             </div>
           </div>
-        <!-- Botón 2 -->
+        <!-- Inscripción -->
           <div class="row mt-3">
             <div class="col-12">
               <div class="collapse" id="collapseForm2">
@@ -176,7 +184,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
             </div>
           </div>
 
-        <!-- Botón 3 -->
+        <!-- Programación -->
         <div class="row mt-3">
           <div class="col-12">
             <div class="collapse" id="collapseForm3">
@@ -184,7 +192,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                 <div>
                   <div class="mensaje-cm">
                       <h1>Scripts de Programación</h1>
-                      
+                      <br>
                       <p id="mensaje-1-cm-pro"> 
                         Hola🖐️, gracias por comunicarse con nosotros. Con gusto le brindamos la información que necesita. <br><br>
 
@@ -252,6 +260,150 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           </div>
         </div>
 
+        <!-- Verano -->
+        <div class="row mt-3">
+          <div class="col-12">
+            <div class="collapse" id="collapseForm4">
+              <div class="card card-body">
+                <div>
+                  <div class="mensaje-cm">
+                    <h1>Scripts de Verano</h1>
+                    <br>
+                    <p id="mensaje-0-cm-ver">
+                      ¡Buen día! <br><br>
+
+                      Nos ponemos a sus órdenes para nuestro *curso de regularización.* <br>
+                      ¿Cuál es el grado que está finalizando su hijo/a?
+                    </p>
+                    <button  type="button" class="btn btn-success" onclick="copyText('mensaje-0-cm-ver',this)">Copia texto</button>
+                </div>
+
+                  <div class="mensaje-cm">
+                      <p id="mensaje-1-cm-ver">
+                        🟢 *CURSO DE VERANO DE MATEMÁTICAS* 🟢<br><br>
+
+                      🔷 *OBJETIVO:* Fortalecer los conocimientos fundamentales en los estudiantes para asegurar una transición exitosa a su próximo grado escolar.<br><br>
+
+                      📆 *Fechas:* 22 de julio al 9 de agosto. <br>
+                      ⏳ *Duración:* 50 minutos, de lunes a viernes. <br>
+                      🧍🏻‍♀ *Grupos reducidos:* máximo 8 alumnos por grupo. <br>
+                      🔺 *Inscripción:* gratuita. <br>
+                      🛜 *Clases en vivo* a través de Zoom.<br>
+
+                      🕖 *Horarios por grado:*<br><br>
+
+                      *1° y 2° de Primaria:* 10:00 am <br>
+                      *3° y 4° de Primaria:* 10:00 am <br>
+                      *5° y 6° de Primaria:* 11:00 am <br>
+                      *Secundaria:* 11:00 am <br><br>
+
+                      Único Pago: *$2,500* MXN <br><br>
+
+                      📢 *¡CUPO LIMITADO!* 
+                      </p>
+                      <button  type="button" class="btn btn-success" onclick="copyText('mensaje-1-cm-ver',this)">Copia texto</button>
+                  </div>
+
+                  <div class="mensaje-cm">
+                    <p id="mensaje-3-cm-ver"> 
+                      Le invitamos a conocer nuestro sistema. Mire el siguiente video: <br><br>
+
+                      https://youtu.be/5_Mb0PI3ZB0
+                    </p>
+                    <button  type="button" class="btn btn-success" onclick="copyText('mensaje-3-cm-ver',this)">Copia texto</button>
+                </div>
+
+                <div class="mensaje-cm">
+                  <p id="mensaje-4-cm-ver"> 
+                    Nos gustaría poder realizarle una llamada telefónica para que pueda conocer a detalle nuestro curso. <br><br>
+
+                    ¿Le gustaría agendar una llamada telefónica?
+
+                  </p>
+                  <button  type="button" class="btn btn-success" onclick="copyText('mensaje-4-cm-ver',this)">Copia texto</button>
+              </div>
+
+              <div class="mensaje-cm d-flex">
+                <input type="text" name="" id="ingresoDia" placeholder="Ingresa el día: Ej. Mañana">
+                <input type="time" id="tiempo-agenda-verano" class="p-2">
+                <button id="generar-llamada"  type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarLlamada('ingresoDia','tiempo-agenda-verano','mensaje-5-cm-ver')">Genera llamada</button>
+            </div>
+            <p id="mensaje-5-cm-ver"> 
+            </p>
+            <button  type="button" class="btn btn-success" onclick="copyText('mensaje-5-cm-ver',this)">Copia texto</button>
+
+            <div class="mensaje-cm">
+              <p id="mensaje-6-cm-ver"> 
+                Esperamos que hayamos resuelto sus dudas sobre el curso. <br><br>
+
+                Nuestros profesores altamente capacitados crearán un entorno de aprendizaje interactivo y estimulante. Sus hijos recibirán atención personalizada y podrán colaborar con otros estudiantes, fomentando su crecimiento intelectual. <br> <br>
+
+                No dejen pasar esta oportunidad de enriquecer el futuro de sus hijos. Inscríbanse en nuestro curso de matemáticas y permítanos guiarlos hacia el éxito académico.
+
+              </p>
+              <button  type="button" class="btn btn-success" onclick="copyText('mensaje-6-cm-ver',this)">Copia texto</button>
+          </div>
+
+                      <div class="mensaje-cm">
+                        <p id="mensaje-7-cm-ver"> 
+                          ✨ El pago se puede hacer por *depósito o transferencia electrónica* a la siguiente cuenta:
+                        </p>
+                        <button  type="button" class="btn btn-success" onclick="copyText('mensaje-7-cm-ver',this)">Copia texto</button>
+
+                    </div>
+
+                    <div class="mensaje-cm">
+                      <img id="imagen-a-copiar" src="./img/pago.jpg" alt="Imagen pago">
+                  </div>
+
+                  <button type="button" class="btn btn-success" onclick="copyImage()">Copia Imagen</button>
+                  <canvas id="canvas" style="display: none;"></canvas>
+
+                  <div class="mensaje-cm">
+                    <p id="mensaje-8-cm-ver"> 
+                      *¡Gana un curso extra por una semana más!* <br>
+Sólo *$249 MXN* adicionales. <br><br>
+
+*ELIGE EL TEMA:* <br><br>
+
+❎ _*Tablas de multiplicar*_ <br>
+➗ _*Divisiones*_ <br>
+🍕 _*Fracciones*_ <br>
+∑ _*Álgebra*_ <br><br>
+
+📆 *Fechas:* 12 al 16 de agosto.
+
+                    </p>
+                    <button  type="button" class="btn btn-success" onclick="copyText('mensaje-8-cm-ver',this)">Copia texto</button>
+
+                </div>
+
+                <div class="mensaje-cm">
+                  <p id="mensaje-9-cm-ver"> 
+                    Agradecemos que en cuanto realice su pago, nos pueda compartir su comprobante de pago con *clave de rastreo* por este medio, para iniciar con su registro y seguimiento personalizado.
+                  </p>
+                  <button  type="button" class="btn btn-success" onclick="copyText('mensaje-9-cm-ver',this)">Copia texto</button>
+
+              </div>
+
+              
+              <div class="mensaje-cm">
+                <p id="mensaje-10-cm-ver"> 
+                  Para finalizar su registro, ¿podría llenar el siguiente formulario por favor?, en él se encuentra nuestro reglamento. Si tiene alguna duda, podemos resolverla sin ningún problema. <br> <br>
+
+                  https://forms.gle/SpahK44TfuLi7RyPA
+                                  </p>
+                <button  type="button" class="btn btn-success" onclick="copyText('mensaje-10-cm-ver',this)">Copia texto</button>
+
+            </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
     </div>
     <script>
@@ -273,6 +425,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           // Establecer los valores en los inputs
           document.getElementById('fecha-agenda').value = formattedDate;
           document.getElementById('tiempo-agenda').value = formattedTime;
+          document.getElementById('tiempo-agenda-verano').value = formattedTime;
       });
   </script>
     <script src="./app.js"></script>

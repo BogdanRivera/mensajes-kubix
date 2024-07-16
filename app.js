@@ -281,6 +281,54 @@ function sortTimes(times) {
 
     }
 
+    function generarLlamada(inputId,horaId,mensajeId){
+        const diaLlamada = document.getElementById(inputId).value;
+        const tiempo24Hours = document.getElementById(horaId).value;
+        let mensaje = document.getElementById(mensajeId); 
+        let tiempo = convertTo12HourFormat(tiempo24Hours);
+        let addText = `
+        Perfecto, su llamada queda agendada para el día de *${diaLlamada}* a las *${tiempo}*, hora de la Ciudad de México. ¿Con quién tengo el gusto?
+        `
+        mensaje.innerText = addText; 
+    }
+
+    async function copyImage() {
+        try {
+            const imgElement = document.getElementById('imagen-a-copiar');
+            const imgSrc = imgElement.src;
+    
+            // Wait for image to load
+            const img = new Image();
+            img.crossOrigin = 'anonymous'; // If the image is from another domain
+            img.src = imgSrc;
+    
+            await new Promise((resolve, reject) => {
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+    
+            // Draw the image on the canvas
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+    
+            // Convert canvas to blob
+            canvas.toBlob(async (blob) => {
+                const item = new ClipboardItem({ 'image/png': blob });
+                await navigator.clipboard.write([item]);
+                alert('La imagen ha sido copiada al portapapeles.');
+            }, 'image/png');
+        } catch (err) {
+            console.error('Error al copiar la imagen al portapapeles:', err);
+            alert('Hubo un error al copiar la imagen.');
+        }
+    }
+    
+    
+    
+
  
       
 
