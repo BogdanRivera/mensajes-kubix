@@ -159,30 +159,126 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
             </div>
           </div>
         <!-- Inscripción -->
-          <div class="row mt-3">
-            <div class="col-12">
-              <div class="collapse" id="collapseForm2">
-                <div class="card card-body">
-                  <form>
-                    <div class="form-group mb-3">
-                      <label for="exampleInputEmail1">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
-                      <small id="emailHelp" class="form-text text-muted">Prueba.</small>
+        <div class="row mt-3">
+          <div class="col-12">
+            <div class="collapse" id="collapseForm2">
+              <div class="card card-body">
+                <div>
+                  <div class="mensaje-cm">
+                      <h1>Scripts de Inscripción</h1>
+                      
+                      <p id="mensaje-1-inf">
+                        Costos generales (clases + plataforma)
+                      </p>
+
+                      <p id="mensaje-general">
+
+                      </p>
+                      <button type="button" class="btn btn-success" onclick="copyText('mensaje-1-inf',this)">Copia texto</button>
+                  </div>
+
+                  <div class="mensaje-cm">
+                      <p id="mensaje-2-cm">
+                          ✅ En *KUBIX MATEMÁTICAS*, con nuestra *metodología única* hacemos que las matemáticas sean *fáciles y divertidas*. Desarrollamos su *pensamiento lógico matemático*.
+                          <br><br>
+                          ✅ Trabajamos temas como *sistema decimal, operaciones básicas, fracciones, cálculo mental, tablas de multiplicar* y cualquier tema que vea a lo largo de preescolar hasta secundaria.
+                          <br><br>
+                          ✅ Las clases son *2 veces a la semana de 50 minutos*, grupos *reducidos*, *plataforma digital* con ejercicios disponibles 24/7, y *material* para facilitar el aprendizaje. 
+                          
+                      </p>
+                      <button id="btn-copiar-2" type="button" class="btn btn-success" onclick="copyText('mensaje-2-cm',this)">Copia texto</button>
+                  </div>
+
+                  <div class="mensaje-cm">
+                      <p id="mensaje-3-cm">
+                          Queremos invitarle a una experiencia especial: una clase muestra *SIN COSTO y SIN COMPROMISO*. ¡Es una oportunidad perfecta para que usted y su hijo/a descubran de primera mano cómo hacemos que las matemáticas sean emocionantes y significativas!
+                          <br><br>
+                          Por favor, *complete este breve formulario* para que podamos personalizar la clase muestra según las necesidades y habilidades de su hijo/a. 
+                          <br><br>
+                          https://forms.gle/q9WwnJwu4cKN3fvF7
+                      </p>
+                      <button id="btn-copiar-3" type="button" class="btn btn-success" onclick="copyText('mensaje-3-cm',this)">Copia texto</button>
+                  </div>
+
+                  <div class="mensaje-cm">
+                      <div class="row d-flex justify-content-between">
+                          <div class="col-12 d-flex justify-content-center">
+                              <button class="btn btn-primary btn-lg w-100" onclick="addElement('fechas-horarios','horarios-obtenidos')">
+                                  Agregar fecha
+                              </button>
+                          </div>
+                      </div>
+                      <div>
+
+                              <div id="fechas-horarios" class="mt-3">
+                               
+                              </div>
+
+                          <br>
+
+                          <p id="mensaje-4-cm">
+Aquí le presentamos algunas opciones de horarios llenos de aprendizaje: 
+
+                          </p>
+                          
+                          <div id="horarios-obtenidos"></div>
+
+                          <p id="mensaje-4-cm-2">
+_Horario de la Cd. de México_.
+<br>
+🤔 *¿Qué Día y Hora Funcionarían Mejor para Usted?* <br>
+Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría decirnos qué día y hora se adaptan mejor a su agenda?
+                        </p>
+                      </div>
+                      <button id="btn-copiar-4" type="button" class="btn btn-success" onclick="copyAllText('mensaje-4-cm','horarios-obtenidos','mensaje-4-cm-2',this)">Copia texto</button>
+                      <button type="button" class="btn btn-secondary" onclick="cleanElements('horarios-obtenidos')">Limpiar</button>
+                      <br><br>
+                      <p>Eliga la fecha y hora de agenda</p>
+
+                      <div class="d-flex">
+                        <input type="date" id="fecha-agenda" class="p-2">
+                        <input type="time" id="tiempo-agenda" class="p-2">
+                        <button id="btn-copiar-6" type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorario('mensaje-agendar-horario','fecha-agenda','tiempo-agenda')">Genera horario</button>
                     </div>
-                    <div class="form-group mb-3">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-                    </div>
-                    <div class="form-group form-check mb-3">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                  </form>
+                    <br>
+                    <p id="mensaje-agendar-horario"></p>
+                    <br>
+                    <button id="btn-copiar-5" type="button" class="btn btn-success" onclick="copyText('mensaje-agendar-horario',this)">Copia texto</button>
+
+                  </div>
+
+                  <div class="mensaje-cm">
+                    <video id="video-sample" width="320" height="240" controls>
+                        <source src="./videos/videoKubix.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <br>
+                </div>
+                <p class="info-estatica">Copiar el video manualmente</p>
+
+                <div class="mensaje-cm">
+                  <p id="mensaje-prefinal-cm">
+                    Para maximizar el beneficio de las clases, le recomendamos que su hijo/a se conecte a través de una *tableta o computadora* 
+                    en lugar de un celular. Las pantallas más amplias permitirán una visualización más cómoda. 
+                    En caso de que esto no sea viable, asegúrese de utilizar un dispositivo con una pantalla *lo suficientemente grande*. 
+                    Esto asegurará una experiencia de aprendizaje cómoda y efectiva. 
+                    Valoramos profundamente su participación en el proceso educativo de su hijo. 
+                    ¡Le agradecemos mucho por su valioso apoyo! 🚀📱💻
+                  </p>
+                  <button id="btn-copiar-10" type="button" class="btn btn-success" onclick="copyText('mensaje-prefinal-cm',this)">Copia texto</button>
+              </div>
+
+              <div class="mensaje-cm">
+                <p id="mensaje-final-cm">
+                  Cualquier pregunta que tenga no dude en contactarnos. ¡Que tenga un excelente día! 
+                </p>
+                <button id="btn-copiar-11" type="button" class="btn btn-success" onclick="copyText('mensaje-final-cm',this)">Copia texto</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
         <!-- Programación -->
         <div class="row mt-3">
@@ -209,7 +305,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                     <p id="mensaje-2-cm-pro"> 
                       Por favor, complete un breve formulario para agendar una clase muestra SIN COSTO y SIN COMPROMISO. <br><br>
 
-                      Una vez completado este formulario nos comunicaremos con usted para enviarle horarios disponibles para su clase muestra.br <br><br>
+                      Una vez completado este formulario nos comunicaremos con usted para enviarle horarios disponibles para su clase muestra. <br><br>
 
                       FORMULARIO: 👉 https://forms.gle/672NF8xhXrYD9N4o6 <br><br>
 
@@ -439,6 +535,14 @@ _Horario de la Cd. de México_.
               <button  type="button" class="btn btn-success" onclick="copyText('mensaje-11-cm-ver',this)">Copia texto</button>
 
           </div>
+
+          <div class="mensaje-cm">
+            <p id="mensaje-12-cm-ver"> 
+              ¡Le damos la más cordial bienvenida!
+                              </p>
+            <button  type="button" class="btn btn-success" onclick="copyText('mensaje-12-cm-ver',this)">Copia texto</button>
+
+        </div>
 
 
                 </div>
