@@ -328,14 +328,14 @@ function sortTimes(times) {
 
     function generarMensajeHorario(horaId,mensajeId){
         let hora24hours = document.getElementById(horaId).value;
-        let mensajeParrafo = document.getElementById(mensajeId).value
+        let mensajeParrafo = document.getElementById(mensajeId);
 
-        let tiempo = convertTo12HourFormat(tiempo24Hours);
+        let tiempo = convertTo12HourFormat(hora24hours);
 
         let addText = `
-        Las sesiones se realizan por medio de la plataforma “Zoom”. Se le enviará la liga correspondiente el día programado para sus sesiones. <br><br>
+        Las sesiones se realizan por medio de la plataforma “Zoom”. Se le enviará la liga correspondiente el día programado para sus sesiones. 
 
-        🔷 Día: *lunes a viernes* <br>
+        🔷 Día: *lunes a viernes* 
         🔺 Hora: *${tiempo}* hora de la Cd. de México.
         `
         mensajeParrafo.innerText = addText;

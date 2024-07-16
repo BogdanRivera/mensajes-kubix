@@ -433,6 +433,9 @@ _Horario de la Cd. de México_.
 
               <p id="mensaje-11-cm-ver"> 
               </p>
+
+              <button id="generar-tiempo"  type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarMensajeHorario('tiempo-agenda-verano-2','mensaje-11-cm-ver')">Generar mensaje horario</button>
+
               <button  type="button" class="btn btn-success" onclick="copyText('mensaje-11-cm-ver',this)">Copia texto</button>
 
           </div>
@@ -466,6 +469,7 @@ _Horario de la Cd. de México_.
           document.getElementById('fecha-agenda').value = formattedDate;
           document.getElementById('tiempo-agenda').value = formattedTime;
           document.getElementById('tiempo-agenda-verano').value = formattedTime;
+          document.getElementById('tiempo-agenda-verano-2').value = formattedTime; 
       });
   </script>
     <script src="./app.js"></script>
