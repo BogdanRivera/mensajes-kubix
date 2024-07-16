@@ -292,9 +292,9 @@ function sortTimes(times) {
         mensaje.innerText = addText; 
     }
 
-    async function copyImage() {
+    async function copyImage(idImagen) {
         try {
-            const imgElement = document.getElementById('imagen-a-copiar');
+            const imgElement = document.getElementById(idImagen);
             const imgSrc = imgElement.src;
     
             // Wait for image to load
@@ -340,6 +340,99 @@ function sortTimes(times) {
         `
         mensajeParrafo.innerText = addText;
     }
+
+    function generarMensaje() {
+        const promo = document.getElementById('promo').value;
+        const nopromo = document.getElementById('nopromo').value;
+        const ajuste = document.getElementById('ajuste').value;
+        
+        const today = new Date();
+        const diaHoy = today.getDate();
+        const mesActual = today.toLocaleString('default', { month: 'long' });
+        const siguienteMes = new Date(today.getFullYear(), today.getMonth() + 1, 1).toLocaleString('default', { month: 'long' });
+    
+        const ultimoDiaMes = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+        const diaLimite = diaHoy < 15 ? 15 : ultimoDiaMes;
+    
+        const mensaje = `
+    Costos generales (clases + plataforma):
+    
+    Le comparto el detalle de su pago para realizarlo el día de hoy ${diaHoy} de ${mesActual}:
+    
+    Diferencia de ${mesActual}: $${ajuste}
+    Siguiente pago el 1 de ${siguienteMes}: $${promo}
+    
+    A partir de mañana hasta el ${diaLimite} de ${mesActual} su pago sería por: $${nopromo}
+        `;
+    
+        document.getElementById('mensaje-1-inf').innerText = mensaje;
+    }
+
+    function generaDiasAcordados(diasId, horaId, mensajeId) {
+        const diasAcordados = document.getElementById(diasId).value; 
+        const hora24hours = document.getElementById(horaId).value;
+        const mensajeParrafo = document.getElementById(mensajeId);
+    
+        const tiempo = convertTo12HourFormat(hora24hours);
+    
+        const addText = `
+    El grupo acordado con disponibilidad es: *${diasAcordados} a las ${tiempo}* 
+        `;
+        mensajeParrafo.innerText = addText;
+    }
+
+    function getCurrentMonth() {
+        const today = new Date();
+        return today.toLocaleString('default', { month: 'long' }).toUpperCase();
+    }
+
+    function generarMensajeLigas() {
+        const dias = document.getElementById('diasLigas').value;
+        const hora24hours = document.getElementById('horaLigas').value;
+        const profesor = document.getElementById('profesor').value;
+        const id = document.getElementById('id').value;
+        const link = document.getElementById('link').value;
+    
+        const mesActual = getCurrentMonth();
+        const hora = convertTo12HourFormat(hora24hours);
+    
+        const mensaje = `
+    *🔹 CLASES DE ${mesActual}🔹*
+    
+    *DÍAS:* ${dias}
+    *HORA:* ${hora} 
+    *PROFESOR(A):* ${profesor}
+    *ID:* ${id}
+    
+    ${link}
+    
+    🔺🔹🔺🔹🔺🔹🔺🔹🔺🔹
+        `;
+    
+        document.getElementById('mensaje-7-inf').innerText = mensaje.trim();
+    }
+
+    function generarMensajePlataforma(){
+        const estudiante = document.getElementById('estudiante').value;
+        const nivel = document.getElementById('nivel').value;
+        const usuario = document.getElementById('usuario').value;
+        const contrasena = document.getElementById('contrasena').value;
+    
+        const mensaje = `
+    Le enviamos de igual manera su acceso a la plataforma: 
+    🧩 *PLATAFORMA DIGITAL* 🧩
+    Le compartimos los datos para ingresar a su plataforma digital
+    https://matemagica.app/moodle/ 
+    *ESTUDIANTE*: ${estudiante}
+    *NIVEL*: ${nivel}
+    *USUARIO*: ${usuario}
+    *CONTRASEÑA*: ${contrasena}
+    🧩 🧩 🧩 🧩 🧩
+        `;
+    
+        document.getElementById('mensaje-8-inf').innerText = mensaje.trim();
+    }
+    
     
     
     
