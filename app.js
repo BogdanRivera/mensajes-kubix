@@ -318,12 +318,27 @@ function sortTimes(times) {
             canvas.toBlob(async (blob) => {
                 const item = new ClipboardItem({ 'image/png': blob });
                 await navigator.clipboard.write([item]);
-                alert('La imagen ha sido copiada al portapapeles.');
+                console.log('La imagen ha sido copiada al portapapeles.');
             }, 'image/png');
         } catch (err) {
             console.error('Error al copiar la imagen al portapapeles:', err);
-            alert('Hubo un error al copiar la imagen.');
+            console.log('Hubo un error al copiar la imagen.');
         }
+    }
+
+    function generarMensajeHorario(horaId,mensajeId){
+        let hora24hours = document.getElementById(horaId).value;
+        let mensajeParrafo = document.getElementById(mensajeId).value
+
+        let tiempo = convertTo12HourFormat(tiempo24Hours);
+
+        let addText = `
+        Las sesiones se realizan por medio de la plataforma “Zoom”. Se le enviará la liga correspondiente el día programado para sus sesiones. <br><br>
+
+        🔷 Día: *lunes a viernes* <br>
+        🔺 Hora: *${tiempo}* hora de la Cd. de México.
+        `
+        mensajeParrafo.innerText = addText;
     }
     
     

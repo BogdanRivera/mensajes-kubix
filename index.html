@@ -297,9 +297,23 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                       *5° y 6° de Primaria:* 11:00 am <br>
                       *Secundaria:* 11:00 am <br><br>
 
-                      Único Pago: *$2,500* MXN <br><br>
+                      *PRECIO:* $2,500 MXN.<br><br> 
 
-                      📢 *¡CUPO LIMITADO!* 
+                      🔥 *Oferta Especial:*🔥 <br><br>
+                      
+                      _¡Gana un curso extra por una semana más!_<br>
+                      *TOTALMENTE GRATIS*<br><br>
+                      
+                      *ELIGE EL TEMA:*<br><br>
+                      
+                      ❎ *_Tablas de multiplicar_* <br>
+                      ➗ *_Divisiones_* <br>
+                      🍕 *_Fracciones_* <br>
+                      ∑  *_Álgebra_* <br><br>
+                      
+                      📆 *Fecha:* 12 al 16 de agosto. <br><br>
+                      
+                      📢 *¡CUPO LIMITADO!*
                       </p>
                       <button  type="button" class="btn btn-success" onclick="copyText('mensaje-1-cm-ver',this)">Copia texto</button>
                   </div>
@@ -323,12 +337,48 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                   <button  type="button" class="btn btn-success" onclick="copyText('mensaje-4-cm-ver',this)">Copia texto</button>
               </div>
 
+              
+              <div class="mensaje-cm">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-12 d-flex justify-content-center">
+                        <button class="btn btn-primary btn-lg w-100" onclick="addElement('fechas-horarios-ver','horarios-obtenidos-ver')">
+                            Agregar fecha
+                        </button>
+                    </div>
+                </div>
+                <div>
+
+                        <div id="fechas-horarios-ver" class="mt-3">
+                         
+                        </div>
+
+                    <br>
+
+                    <p id="mensaje-5-cm-ver">
+Aquí le presentamos los horarios para agendar una llamada: 
+
+                    </p>
+                    
+                    <div id="horarios-obtenidos-ver"></div>
+
+                    <p id="mensaje-5-cm-2-ver">
+_Horario de la Cd. de México_.
+<br>
+🤔 *¿En qué Día y a que hora Funcionarían Mejor para Usted?* <br>
+                  </p>
+                </div>
+                <button id="btn-copiar-4" type="button" class="btn btn-success" onclick="copyAllText('mensaje-5-cm-ver','horarios-obtenidos-ver','mensaje-5-cm-2-ver',this)">Copia texto</button>
+                <button type="button" class="btn btn-secondary" onclick="cleanElements('horarios-obtenidos-ver')">Limpiar</button>
+                <br><br>
+
+              
+
               <div class="mensaje-cm d-flex">
                 <input type="text" name="" id="ingresoDia" placeholder="Ingresa el día: Ej. Mañana">
                 <input type="time" id="tiempo-agenda-verano" class="p-2">
-                <button id="generar-llamada"  type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarLlamada('ingresoDia','tiempo-agenda-verano','mensaje-5-cm-ver')">Genera llamada</button>
+                <button id="generar-llamada"  type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarLlamada('ingresoDia','tiempo-agenda-verano','mensaje-f-cm-ver')">Genera llamada</button>
             </div>
-            <p id="mensaje-5-cm-ver"> 
+            <p id="mensaje-f-cm-ver"> 
             </p>
             <button  type="button" class="btn btn-success" onclick="copyText('mensaje-5-cm-ver',this)">Copia texto</button>
 
@@ -359,25 +409,6 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                   <button type="button" class="btn btn-success" onclick="copyImage()">Copia Imagen</button>
                   <canvas id="canvas" style="display: none;"></canvas>
 
-                  <div class="mensaje-cm">
-                    <p id="mensaje-8-cm-ver"> 
-                      *¡Gana un curso extra por una semana más!* <br>
-Sólo *$249 MXN* adicionales. <br><br>
-
-*ELIGE EL TEMA:* <br><br>
-
-❎ _*Tablas de multiplicar*_ <br>
-➗ _*Divisiones*_ <br>
-🍕 _*Fracciones*_ <br>
-∑ _*Álgebra*_ <br><br>
-
-📆 *Fechas:* 12 al 16 de agosto.
-
-                    </p>
-                    <button  type="button" class="btn btn-success" onclick="copyText('mensaje-8-cm-ver',this)">Copia texto</button>
-
-                </div>
-
                 <div class="mensaje-cm">
                   <p id="mensaje-9-cm-ver"> 
                     Agradecemos que en cuanto realice su pago, nos pueda compartir su comprobante de pago con *clave de rastreo* por este medio, para iniciar con su registro y seguimiento personalizado.
@@ -396,6 +427,15 @@ Sólo *$249 MXN* adicionales. <br><br>
                 <button  type="button" class="btn btn-success" onclick="copyText('mensaje-10-cm-ver',this)">Copia texto</button>
 
             </div>
+
+            <div class="mensaje-cm">
+              <input type="time" id="tiempo-agenda-verano-2" class="p-2">
+
+              <p id="mensaje-11-cm-ver"> 
+              </p>
+              <button  type="button" class="btn btn-success" onclick="copyText('mensaje-11-cm-ver',this)">Copia texto</button>
+
+          </div>
 
 
                 </div>
