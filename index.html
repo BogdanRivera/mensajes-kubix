@@ -13,7 +13,7 @@
     </div>
 
     <div class="container mt-5">
-        <div class="row g-2 justify-content-between">
+        <div class="row g-3 justify-content-between">
             <div class="col-4 d-flex justify-content-center">
                 <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm1" aria-expanded="false" aria-controls="collapseForm1">
                     Clase muestra
@@ -101,31 +101,37 @@
                             </div>
         
                             <div class="mensaje-cm">
-                              <p class="informativo">Mensaje 4: Para poder utilizar este formato es necesario dar click en el botón 'Agregar fecha' y elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
-                                se deben ingresar los horarios en el formato de salto de línea, es decir: 
+                              <p class="informativo">Mensaje 4: Para poder utilizar este formato es necesario 
+                                elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
+                                se deben ingresar los horarios en el formato de salto de línea, es decir: <br>
                                 10:00 am <br>
                                 13:00 <br>
-                                No importa si es el formato de 12 horas o 24 horas. Posteriormente se da en agregar y para copiar el texto se deberá dar click en copiar texto. 
+                                No importa si es el formato de 12 horas o 24 horas. Posteriormente se da en click en el botón
+                                "Agregar horario" y para copiar el texto se deberá dar click en el botón "Copiar texto". 
                                 Si nos equivocamos en los horarios se deberá dar click en el botón de 'Limpiar'.  
                               </p>
-                                <div class="row d-flex justify-content-between">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <button class="btn btn-primary btn-lg w-100" onclick="addElement('fechas-horarios','horarios-obtenidos')">
-                                            Agregar fecha
-                                        </button>
-                                    </div>
+                              <!-- Aquí se modificó -->
+                              <div class="row d-flex" id="row-cm">
+                                <div class="col-3 d-flex justify-content-center">
+                                  <input type="date" id="date-cm">
                                 </div>
+
+                                <div class="col-3 d-flex justify-content-center">
+                                  <div class="form-floating flex-fill">
+                                    <textarea class="form-control" placeholder="Ingresa los horarios" id="text-area-cm"></textarea>
+                                    <label for="text-area-cm">Ingresa horarios</label>
+                                  </div>
+                                </div>
+
+                                <div class="col-6 d-flex justify-content-center">
+                                  <button type="button" class="btn btn-success" onclick="generaHorariosCM('horarios-obtenidos','date-cm','text-area-cm')">Agregar horario</button>
+                                </div>
+
+                              </div>
                                 <div>
-        
-                                        <div id="fechas-horarios" class="mt-3">
-                                         
-                                        </div>
-        
-                                    <br>
-        
+                                  <br>
                                     <p id="mensaje-4-cm">
 Aquí le presentamos algunas opciones de horarios llenos de aprendizaje: 
-        
                                     </p>
                                     
                                     <div id="horarios-obtenidos"></div>
@@ -137,6 +143,8 @@ _Horario de la Cd. de México_.
 Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría decirnos qué día y hora se adaptan mejor a su agenda?
                                   </p>
                                 </div>
+
+                                <!-- Aquí se terminÓ de modificar -->
                                 <button id="btn-copiar-4" type="button" class="btn btn-success" onclick="copyAllText('mensaje-4-cm','horarios-obtenidos','mensaje-4-cm-2',this)">Copia texto</button>
                                 <button type="button" class="btn btn-secondary" onclick="cleanElements('horarios-obtenidos')">Limpiar</button>
                                 <br><br>
@@ -639,21 +647,36 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         
                         <div class="mensaje-cm">
                           <div class="row d-flex justify-content-between">
-                            <p class="informativo">Mensaje 5: Para esta sección se debe agendar una llamada. Los elementos que se presentan abajo 
-                              se deberán llenar para añadir horarios de llamadas. 
+                            <p class="informativo">Mensaje 5: Para poder utilizar este formato es necesario 
+                              elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
+                              se deben ingresar los horarios en el formato de salto de línea, es decir: <br>
+                              10:00 am <br>
+                              13:00 <br>
+                              No importa si es el formato de 12 horas o 24 horas. Posteriormente se da en click en el botón
+                              "Agregar horario" y para copiar el texto se deberá dar click en el botón "Copiar texto". 
+                              Si nos equivocamos en los horarios se deberá dar click en el botón de 'Limpiar'.  
                             </p>
-                              <div class="col-12 d-flex justify-content-center">
-                                <br>
-                                  <button class="btn btn-primary btn-lg w-100" onclick="addElement('fechas-horarios-ver','horarios-obtenidos-ver')">
-                                      Agregar fecha
-                                  </button>
-                              </div>
+                                                          <!-- Aquí se modificó -->
+                                                          <div class="row d-flex" id="row-ver">
+                                                            <div class="col-3 d-flex justify-content-center">
+                                                              <input type="date" id="date-ver">
+                                                            </div>
+                            
+                                                            <div class="col-3 d-flex justify-content-center">
+                                                              <div class="form-floating flex-fill">
+                                                                <textarea class="form-control" placeholder="Ingresa los horarios" id="text-area-ver"></textarea>
+                                                                <label for="text-area-ver">Ingresa horarios</label>
+                                                              </div>
+                                                            </div>
+                            
+                                                            <div class="col-6 d-flex justify-content-center">
+                                                              <button type="button" class="btn btn-success" onclick="generaHorariosCM('horarios-obtenidos-ver','date-ver','text-area-ver')">Agregar horario</button>
+                                                            </div>
+                            
+                                                          </div>
+
                           </div>
                           <div>
-          
-                                  <div id="fechas-horarios-ver" class="mt-3">
-                                   
-                                  </div>
           
                               <br>
           
@@ -741,9 +764,10 @@ _Horario de la Cd. de México_.
           
                       </div>
           
-                      <div class="mensaje-cm">
+                      <div class="container">
                         <p class="informativo">Mensaje 11: Este mensaje es para generar un mensaje automático del día de sus clases de verano.</p>
                         <label for="tiempo-agenda-verano-2">Ingresa el horario de la clase de verano</label>
+                        <br>
                         <input type="time" id="tiempo-agenda-verano-2" class="p-2">
           
                         <p id="mensaje-11-cm-ver"> 
@@ -751,7 +775,7 @@ _Horario de la Cd. de México_.
           
                         <button id="generar-tiempo"  type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarMensajeHorario('tiempo-agenda-verano-2','mensaje-11-cm-ver')">Generar mensaje horario</button>
           
-                        <button  type="button" class="btn btn-success" onclick="copyText('mensaje-11-cm-ver',this)">Copia texto</button>
+                        <button  type="button" class="btn btn-success p-2 flex-grow-1" onclick="copyText('mensaje-11-cm-ver',this)">Copia texto</button>
           
                     </div>
           
@@ -898,6 +922,62 @@ _Horario de la Cd. de México_.
             <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g8',this)">Copia texto</button>
         </div>
 
+        <div class="mensaje-cm">
+          <p class="general-clase">Estos mensajes son scripts para las clases en general </p>
+          <p class="clase-general">Este mensaje se usará para avisar que se utilizará la plataforma
+          </p> 
+          <p id="mensaje-c1">
+            Un amable recordatorio de la maestra Jazmín para asegurarse de tener lista su plataforma. Agradecemos mucho su cooperación. <br><br>
+
+            ¡Gracias y que tengan un maravilloso día!
+          </p>
+          <button  type="button" class="btn btn-success" onclick="copyText('mensaje-c1',this)">Copia texto</button>
+      </div>
+
+      <div class="mensaje-cm">
+        <p class="clase-general">Este mensaje se usará para avisar que se utilizará la plataforma y el material de fracciones. 
+        </p> 
+        <p id="mensaje-c2">
+          Un amable recordatorio de la maestra Jazmín para asegurarse de tener lista su plataforma y su material de fracciones. Agradecemos mucho su cooperación. <br><br>
+
+          ¡Gracias y que tengan un maravilloso día!
+        </p>
+        <button  type="button" class="btn btn-success" onclick="copyText('mensaje-c2',this)">Copia texto</button>
+    </div>
+
+    <div class="mensaje-cm">
+      <p class="clase-general">Mensaje para enviar la tarea en un solo formato. Se tiene que elegir al profesor y posteriormente dar click 
+        en el botón "Generar tarea".  
+      </p> 
+
+      <label for="profesorGeneral" class="p-2">Selecciona el profesor(a)</label>
+      <select id="profesorGeneral" name="profesorGeneral" class="p-2">
+          <option value="Paty">Paty</option>
+          <option value="Lupita">Lupita</option>
+          <option value="Karla">Karla</option>
+          <option value="Jazmín">Jazmín</option>
+          <option value="Lety">Lety</option>
+          <option value="Monze">Monze</option>
+          <option value="Ceci">Ceci</option>
+          <option value="Bogdan">Bogdan</option>
+          <option value="Gaby">Gaby</option>
+          <option value="Ulises">Ulises</option>
+          <option value="Gaby Arredondo">Gaby Arredondo</option>
+      </select>
+
+      <br>
+
+      <textarea class="form-control areatexto" placeholder="Ingresa las tareas" id="text-area-CG"></textarea>
+      <br>
+
+      <button  type="button" class="btn btn-success" onclick="generaTarea('profesorGeneral','text-area-CG','mensaje-c3')">Genera tareas</button>
+
+
+      <p id="mensaje-c3">
+      </p>
+      <button  type="button" class="btn btn-success" onclick="copyText('mensaje-c3',this)">Copia texto</button>
+  </div>
+
               
   
                     </div>
@@ -936,6 +1016,9 @@ _Horario de la Cd. de México_.
             document.getElementById('tiempo-agenda-verano-2').value = formattedTime; 
             document.getElementById('tiempo-agenda-propuesta').value = formattedTime;
             document.getElementById('horaLigas').value = formattedTime; 
+            document.getElementById('date-cm').value = formattedDate;  
+            document.getElementById('date-ver').value = formattedDate;  
+
         });
     </script>
       <script src="./app.js"></script>

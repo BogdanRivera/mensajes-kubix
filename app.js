@@ -28,95 +28,26 @@ function copyText(elementId, button) {
     }, 1000);
 }
 
-        function addElement(containerId,anotherContainerId) {
-            const saltoLinea = document.createElement('br');
+function generaHorariosCM(horariosObtenidosId,fechaInputId,horasAreaId){ 
+	const textos = document.getElementById(horariosObtenidosId);
+        const inputDate = document.getElementById(fechaInputId); 
+        const textarea = document.getElementById(horasAreaId);
+	
+        const horarios = textarea.value.split('\n').map(h => h.trim()).filter(h => h !== '');
+        const convertedHorarios = horarios.map(convertTo12HourFormat);
+        let uniqueHorarios = [...new Set(convertedHorarios)];
+        // Ordenar los horarios únicos
+        let sortedHorarios = sortTimes(uniqueHorarios);
 
-            counter++;
+        textarea.value = ''; 
+        let dateObtained = getFormattedDate(inputDate.value);
 
-            const container = document.getElementById(containerId);
-            const textos = document.getElementById(anotherContainerId); 
+        const day = getDayFromDateString(inputDate.value);
 
-            const row = document.createElement('div');
-            row.className = 'row d-flex';
-            row.id = `row-${counter}`;
-
-            const colDate = document.createElement('div');
-            colDate.className = 'col-3 d-flex justify-content-center';
-            const inputDate = document.createElement('input');
-            inputDate.type = 'date';
-            inputDate.value = getYesterdayDate(); // Fecha del día anterior
-            inputDate.id = `date-${counter}`;
-            colDate.appendChild(inputDate);
-
-            const colTextarea = document.createElement('div');
-            colTextarea.className = 'col-3 d-flex justify-content-center';
-            const formFloating = document.createElement('div');
-            formFloating.className = 'form-floating flex-fill';
-            const textarea = document.createElement('textarea');
-            textarea.className = 'form-control';
-            textarea.placeholder = 'Ingresa los horarios';
-            textarea.id = `textarea-${counter}`;
-            const label = document.createElement('label');
-            label.htmlFor = textarea.id;
-            label.innerText = 'Horarios';
-            formFloating.appendChild(textarea);
-            formFloating.appendChild(label);
-            colTextarea.appendChild(formFloating);
-
-            const colAddButton = document.createElement('div');
-            colAddButton.className = 'col-3 d-flex justify-content-center';
-            const addButton = document.createElement('button');
-            addButton.type = 'button';
-            addButton.className = 'btn btn-success';
-            addButton.innerText = 'Agregar';
-            addButton.onclick = function() {
-// Dentro de tu código principal
-                const horarios = textarea.value.split('\n').map(h => h.trim()).filter(h => h !== '');
-                const convertedHorarios = horarios.map(convertTo12HourFormat);
-                let uniqueHorarios = [...new Set(convertedHorarios)];
-                // Ordenar los horarios únicos
-                let sortedHorarios = sortTimes(uniqueHorarios);
-
-                textarea.value = ''; 
-                let dateObtained = getFormattedDate(inputDate.value);
-
-                const day = getDayFromDateString(inputDate.value);
-
-               const newText = document.createElement('p'); 
-               newText.innerHTML = `*${dateObtained[0]} ${day+1} de ${dateObtained[1]} de ${dateObtained[2]}: ${sortedHorarios}* <br>`
-               textos.appendChild(newText);
-               
-            };
-            colAddButton.appendChild(addButton);
-
-            const colRemoveButton = document.createElement('div');
-            colRemoveButton.className = 'col-3 d-flex justify-content-center';
-            const removeButton = document.createElement('button');
-            removeButton.type = 'button';
-            removeButton.className = 'btn btn-danger';
-            removeButton.innerText = 'Eliminar';
-            removeButton.onclick = function() { 
-                removeElement(row.id); 
-                container.removeChild(saltoLinea);
-            };
-            colRemoveButton.appendChild(removeButton);
-
-            container.appendChild(saltoLinea); 
-
-            row.appendChild(colDate);
-            row.appendChild(colTextarea);
-            row.appendChild(colAddButton);
-            row.appendChild(colRemoveButton);
-
-            container.appendChild(row);
-        }
-
-        function removeElement(rowId) {
-            const row = document.getElementById(rowId);
-            if (row) {
-                row.remove();
-            }
-        }
+        const newText = document.createElement('p'); 
+        newText.innerHTML = `*${dateObtained[0]} ${day+1} de ${dateObtained[1]} de ${dateObtained[2]}: ${sortedHorarios}* <br>`
+        textos.appendChild(newText);
+}
 
         function getYesterdayDate() {
             const today = new Date();
@@ -255,11 +186,11 @@ function sortTimes(times) {
         let day = getDayFromDateString(fecha);
 
         
-            // Condición para ajustar el texto si la hora es "01:00 PM"
-        let horaTexto = `a las *${tiempo}*`;
-        if (tiempo.startsWith("01")) {
+    // Condición para ajustar el texto si la hora es "1:xx PM"
+    let horaTexto = `a las *${tiempo}*`;
+    if (tiempo.startsWith("1:")) {
         horaTexto = `a la *${tiempo}*`;
-        }
+    }
         
         let addText  = `
         🗓 *Fecha y Hora:* <br>
@@ -286,8 +217,15 @@ function sortTimes(times) {
         const tiempo24Hours = document.getElementById(horaId).value;
         let mensaje = document.getElementById(mensajeId); 
         let tiempo = convertTo12HourFormat(tiempo24Hours);
+
+            // Condición para ajustar el texto si la hora es "1:xx PM"
+        let horaTexto = `a las *${tiempo}*`;
+        if (tiempo.startsWith("1:")) {
+            horaTexto = `a la *${tiempo}*`;
+        }
+
         let addText = `
-        Perfecto, su llamada queda agendada para el día de *${diaLlamada}* a las *${tiempo}*, hora de la Ciudad de México. ¿Con quién tengo el gusto?
+        Perfecto, su llamada queda agendada para el día de *${diaLlamada}* ${horaTexto}, hora de la Ciudad de México. ¿Con quién tengo el gusto?
         `
         mensaje.innerText = addText; 
     }
@@ -433,6 +371,24 @@ function sortTimes(times) {
         document.getElementById('mensaje-8-inf').innerText = mensaje.trim();
     }
     
+function generaTarea(opcionesProfesoresId,tareasAreaId,contenedorId){
+    const profesores = ['Bogdan','Ulises']; 
+    const opcionProfesor = document.getElementById(opcionesProfesoresId).value; 
+    const tareasArea = document.getElementById(tareasAreaId).value; 
+    const contenedor = document.getElementById(contenedorId); 
+    let texto = ""; 
+    let frase = ""; 
+    if(profesores.includes(opcionProfesor)){
+        frase = `El profesor ${opcionProfesor} les envía la tarea del día de hoy:\n\n`; 
+    }else{
+        frase = `La profesora ${opcionProfesor} les envía la tarea del día de hoy:\n\n`;
+    }
+
+    texto += frase; 
+    texto += tareasArea; 
+    texto += "\n\n¡Excelente día!";
+    contenedor.innerText = texto; 
+}
     
     
     

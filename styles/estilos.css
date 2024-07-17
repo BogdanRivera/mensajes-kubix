@@ -34,6 +34,22 @@ body {
 .clase-muestra{
     background-color: aqua;
 }
+
+.general-clase{
+    background-color: purple;
+    color: white;
+}
+
+.clase-general{
+    background-color: blue;
+    color: white;
+}
+
+#text-area-CG{
+    margin-top: 20px;
+}
+
+
 .imagen-logo{
     margin: auto;
     padding: 1.8em;
