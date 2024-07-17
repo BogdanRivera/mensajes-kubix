@@ -25,6 +25,15 @@ body {
 .ok{
     background-color: rgb(13, 219, 13);
 }
+
+.no{
+    background-color: rgb(247, 9, 9);
+    color: white;
+}
+
+.clase-muestra{
+    background-color: aqua;
+}
 .imagen-logo{
     margin: auto;
     padding: 1.8em;

@@ -29,11 +29,18 @@
                     Programación
                 </button>
             </div>
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-6 d-flex justify-content-center">
                 <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm4" aria-expanded="false" aria-controls="collapseForm4">
                     Verano
                 </button>
             </div>
+            <div class="col-6 d-flex justify-content-center mt-3">
+              <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm5" aria-expanded="false" aria-controls="collapseForm5">
+                  Mensajes generales
+              </button>
+          </div>
+
+
         </div>
 
         <div class="accordion mt-3" id="accordionExample">
@@ -450,6 +457,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             <div class="mensaje-cm">
                                 <h1>Scripts de Programación</h1>
                                 <br>
+                                <p class="informativo">Mensaje 1: Este mensaje se mandará cuando alguien pida informes por lo de programación.
+                                </p>
                                 <p id="mensaje-1-cm-pro"> 
                                   Hola🖐️, gracias por comunicarse con nosotros. Con gusto le brindamos la información que necesita. <br><br>
           
@@ -463,6 +472,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             </div>
           
                             <div class="mensaje-cm">
+                              <p class="informativo">Mensaje 2: Adicionalmente se deberá mandar este mensaje después del mensaje 1.
+                              </p>
                               <p id="mensaje-2-cm-pro"> 
                                 Por favor, complete un breve formulario para agendar una clase muestra SIN COSTO y SIN COMPROMISO. <br><br>
           
@@ -471,13 +482,12 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                                 FORMULARIO: 👉 https://forms.gle/672NF8xhXrYD9N4o6 <br><br>
           
                                 Si tiene alguna duda o necesita más información, no dude en contactarnos. ¡Estamos aquí para ayudarle! <br><br>
-          
-                                ¿Desea agendar una clase muestra?
                               </p>
                               <button  type="button" class="btn btn-success" onclick="copyText('mensaje-2-cm-pro',this)">Copia texto</button>
                           </div>
           
                           <div class="mensaje-cm">
+                            <p class="warning">Mensaje 2 (extra): En dado caso que se solicite una clase muestra y la persona no haya agendado una clase se deberá enviar el siguiente mensaje.  
                             <p id="mensaje-3-cm-pro"> 
                               🎓 Claro con gusto. Por favor, complete un breve formulario para agendar una clase muestra SIN COSTO y SIN COMPROMISO. <br><br>
           
@@ -489,6 +499,9 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         </div>
           
                         <div class="mensaje-cm">
+                          <p class="informativo">Mensaje 3: Una vez que haya tomado la clase muestra y se le haya dado seguimiento se procede a enviarle el siguiente mensaje 
+                            junto con la imagen de pago
+                          </p>
                           <p id="mensaje-4-cm-pro"> 
                             Los pasos a seguir son: <br><br>
           
@@ -510,12 +523,16 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                       </div>
           
                         <div class="mensaje-cm">
+                          <p class="informativo">Mensaje 4: Una vez que haya pagado y se haya verificado el comprobante se procede a enviar el siguiente mensaje.
+                          </p>
                           <p id="mensaje-5-cm-pro"> 
                             Para finalizar su registro, le pedimos que llene el siguiente formulario de inscripción: <br><br>
                             
                             FORMULARIO DE INSCRIPCIÓN: 👉 https://forms.gle/8Q3yv8nsXPccAxYm6
                           </p>
                           <button  type="button" class="btn btn-success" onclick="copyText('mensaje-5-cm-pro',this)">Copia texto</button>
+                          <p class="warning">A partir de aquí se debe enviar la información a Logicscool y ellos se encargarán del proceso y nos notificarán. 
+                          </p>
                         </div>
           
                           </div>
@@ -540,6 +557,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             <div class="mensaje-cm">
                               <h1>Scripts de Verano</h1>
                               <br>
+                              <p class="informativo">Mensaje 1: Este mensaje se envía por default cuando alguien pide informes.</p>
                               <p id="mensaje-0-cm-ver">
                                 ¡Buen día! <br><br>
           
@@ -550,6 +568,9 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           </div>
           
                             <div class="mensaje-cm">
+                              <p class="informativo">Mensaje 2: Este mensaje se envía si la contestación anterior fue de primaria o secundaria. En dado caso 
+                                de que la contestación haya sido de preescolar, universidad, etc se envía el informe de clases individuales (ver sección de mensajes generales). 
+                              </p>
                                 <p id="mensaje-1-cm-ver">
                                   🟢 *CURSO DE VERANO DE MATEMÁTICAS* 🟢<br><br>
           
@@ -590,6 +611,9 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             </div>
           
                             <div class="mensaje-cm">
+                              <p class="informativo">Mensaje 3: Si el mensaje anterior se envió también se debe enviar este mensaje
+                                y el mensaje 4. 
+                              </p>
                               <p id="mensaje-3-cm-ver"> 
                                 Le invitamos a conocer nuestro sistema. Mire el siguiente video: <br><br>
           
@@ -599,6 +623,10 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           </div>
           
                           <div class="mensaje-cm">
+
+                            <p class="informativo">Mensaje 4: Se envía con el anterior mensaje. 
+                            </p>
+                            
                             <p id="mensaje-4-cm-ver"> 
                               Nos gustaría poder realizarle una llamada telefónica para que pueda conocer a detalle nuestro curso. <br><br>
           
@@ -611,7 +639,11 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         
                         <div class="mensaje-cm">
                           <div class="row d-flex justify-content-between">
+                            <p class="informativo">Mensaje 5: Para esta sección se debe agendar una llamada. Los elementos que se presentan abajo 
+                              se deberán llenar para añadir horarios de llamadas. 
+                            </p>
                               <div class="col-12 d-flex justify-content-center">
+                                <br>
                                   <button class="btn btn-primary btn-lg w-100" onclick="addElement('fechas-horarios-ver','horarios-obtenidos-ver')">
                                       Agregar fecha
                                   </button>
@@ -644,6 +676,9 @@ _Horario de la Cd. de México_.
           
                         
           
+                          <p class="informativo">Mensaje 6: Una vez que el papá pidió un horario para llamada se deberán llenar los elementos siguientes con la información respectiva para que se pueda generar
+                            un mensaje automático de llamada. 
+                          </p>
                         <div class="mensaje-cm d-flex">
                           <input type="text" name="" id="ingresoDia" placeholder="Ingresa el día: Ej. Mañana">
                           <input type="time" id="tiempo-agenda-verano" class="p-2">
@@ -654,6 +689,8 @@ _Horario de la Cd. de México_.
                       <button  type="button" class="btn btn-success" onclick="copyText('mensaje-f-cm-ver',this)">Copia texto</button>
           
                       <div class="mensaje-cm">
+                        <p class="informativo">Mensaje 7: Si se realizó la llamada se deberá mandar el siguiente mensaje.  
+                        </p>
                         <p id="mensaje-6-cm-ver"> 
                           Esperamos que hayamos resuelto sus dudas sobre el curso. <br><br>
           
@@ -666,6 +703,8 @@ _Horario de la Cd. de México_.
                     </div>
           
                                 <div class="mensaje-cm">
+                                  <p class="informativo">Mensaje 8: Si la persona se requiere inscribir es necesario enviarle este mensaje con la imagen de pago. 
+                                  </p>
                                   <p id="mensaje-7-cm-ver"> 
                                     ✨ El pago se puede hacer por *depósito o transferencia electrónica* a la siguiente cuenta:
                                   </p>
@@ -681,6 +720,7 @@ _Horario de la Cd. de México_.
                             <canvas id="canvas" style="display: none;"></canvas>
           
                           <div class="mensaje-cm">
+                            <p class="informativo">Mensaje 9: Se debe enviar junto con el mensaje anterior</p>
                             <p id="mensaje-9-cm-ver"> 
                               Agradecemos que en cuanto realice su pago, nos pueda compartir su comprobante de pago con *clave de rastreo* por este medio, para iniciar con su registro y seguimiento personalizado.
                             </p>
@@ -691,6 +731,8 @@ _Horario de la Cd. de México_.
                         
                         <div class="mensaje-cm">
                           <p id="mensaje-10-cm-ver"> 
+                            <p class="ok">Estos mensajes se mandarán una vez que se haya verificado el pago correspondiente.</p>
+                            <p class="informativo">Mensaje 10: Registro de inscripción.</p>
                             Para finalizar su registro, ¿podría llenar el siguiente formulario por favor?, en él se encuentra nuestro reglamento. Si tiene alguna duda, podemos resolverla sin ningún problema. <br> <br>
           
                             https://forms.gle/SpahK44TfuLi7RyPA
@@ -700,6 +742,8 @@ _Horario de la Cd. de México_.
                       </div>
           
                       <div class="mensaje-cm">
+                        <p class="informativo">Mensaje 11: Este mensaje es para generar un mensaje automático del día de sus clases de verano.</p>
+                        <label for="tiempo-agenda-verano-2">Ingresa el horario de la clase de verano</label>
                         <input type="time" id="tiempo-agenda-verano-2" class="p-2">
           
                         <p id="mensaje-11-cm-ver"> 
@@ -712,6 +756,7 @@ _Horario de la Cd. de México_.
                     </div>
           
                     <div class="mensaje-cm">
+                      <p class="informativo">Mensaje 12: Mensaje final. </p>
                       <p id="mensaje-12-cm-ver"> 
                         ¡Le damos la más cordial bienvenida!
                                         </p>
@@ -725,6 +770,139 @@ _Horario de la Cd. de México_.
                 </div>
             </div>
 
+            <!-- Mensajes generales -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm5" aria-expanded="false" aria-controls="collapseForm5">
+                      Mensajes generales
+                  </button>
+              </h2>
+              <div id="collapseForm5" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div>
+                      <div class="mensaje-cm">
+                          <h1>Mensajes generales</h1>
+                          <br>
+                          <p class="no">En ocasiones llegan mensajes de broma diciendo: cuanto es 1+1 o algo por el estilo. Ante ellos se le puede mandar este mensaje: </p>
+                          <p id="mensaje-g1"> 
+                            _Lamentablemente, no podemos resolver ejercicios específicos a través de este canal. Sin embargo, si está interesado en recibir clases individuales o inscribirse a una clase muestra para conocer nuestro sistema estaré encantada de ayudarle._
+                            <br><br>
+                            ¿Desea que nos contactemos con usted?
+                          </p>
+                          <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g1',this)">Copia texto</button>
+                      </div>
+
+                      <div class="mensaje-cm">
+                        <p class="no">En caso de que fuera la contestación de un niño de forma grosera: </p>
+                        <p id="mensaje-g2"> 
+                          Este mensaje ha sido marcado como spam y se ha enviado a las autoridades cibernéticas. <br> <br>
+
+                          Lamentamos informar que el mensaje que has enviado ha sido detectado como spam y, además, contiene contenido grosero o inapropiado. Como resultado, hemos tomado medidas y 
+                          hemos enviado este mensaje a las autoridades cibernéticas pertinentes para su revisión. <br> <br>
+
+                          Por favor, ten en cuenta que el envío de mensajes inapropiados o spam puede tener consecuencias legales. Te recomendamos que respetes las normas de conducta en línea y te abstengas 
+                          de enviar contenido que viole las políticas de uso aceptable. <br> <br>
+
+                          Gracias por tu comprensión y cooperación.
+
+                        </p>
+                        <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g2',this)">Copia texto</button>
+                    </div>
+
+                    <div class="mensaje-cm">
+                      <p class="warning">Este mensaje se envía siempre que se requieran clases individuales </p>
+                      <p id="mensaje-gextra1"> 
+                        *CLASES INDIVIDUALES* <br> <br>
+
+💡 *Enfoque Personalizado*: Nuestro enfoque se centra en el trabajo personalizado, permitiendo que cada alumno progrese de manera precisa en los temas que necesitan un impulso adicional. <br> <br>
+
+⏰ *Duración de las Clases*: Cada sesión tiene una duración de 50 minutos, tiempo perfecto para aprovechar al máximo el aprendizaje sin sentirse abrumado. <br> <br>
+
+📚 *Guiados por tu Temario*: Nos guiamos por el temario que nos proporciona. Así, podemos enfocarnos en temas específicos que son clave para el progreso académico de su hijo/a. <br> <br>
+
+📅 *Flexibilidad de Agenda*: Sabemos que la vida puede ser ocupada, por lo que el número de clases puede agendarse según las necesidades de su hijo/a. Nos adaptamos a su ritmo y horario. <br> <br>
+
+💸 *Costo y Reserva*: El costo por esta experiencia educativa es de $380 por clase, un precio que garantiza una atención de calidad. Este importe se cubre por adelantado para reservar las clases deseadas. <br> <br>
+
+*¿Podría compartirnos el temario en el que su hijo/a necesita apoyo?*
+                      </p>
+                      <button  type="button" class="btn btn-success" onclick="copyText('mensaje-gextra1',this)">Copia texto</button>
+                  </div>
+
+
+
+                    <div class="mensaje-cm">
+                      <p class="ok">Estos mensajes son para clase muestra o dudas generales</p>
+                      <p class="clase-muestra">Este mensaje es por si las personas no han contestado su formulario y quisiera que se le agendara
+                        clase muestra
+                      </p> 
+                      <p id="mensaje-g3">
+                        Una vez que responda el formulario, estaremos encantados de programar una clase muestra para que pueda experimentar de primera 
+                        mano nuestra metodología educativa. 
+                      </p>
+                      <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g3',this)">Copia texto</button>
+                  </div>
+
+                  <div class="mensaje-cm">
+                    <p class="clase-muestra">Este mensaje es por si preguntan los precios de la clase muestra. 
+                    </p>
+                    <p id="mensaje-g4"> 
+                      Ofrecemos una amplia variedad de precios, desde $200 hasta $1500, para adaptarnos a sus necesidades y brindarle la mejor experiencia posible.
+                    </p>
+                    <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g4',this)">Copia texto</button>
+                </div>
+
+                <div class="mensaje-cm">
+                  <p class="clase-muestra">Se adiciona con el anterior mensaje 
+                  </p>
+
+                  <p id="mensaje-g5">
+                    La clase muestra es gratuita. Después de su participación en la clase muestra, le proporcionaremos de manera detallada toda la información sobre los costos y beneficios personalizados según sus necesidades. Nos esforzamos por 
+                    brindar un programa educativo de alta calidad, y confiamos en que encontrará un valor significativo en lo que ofrecemos.  
+                  </p>
+                  <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g5',this)">Copia texto</button>
+              </div>
+
+              <div class="mensaje-cm">
+                <p class="clase-muestra"> Este mensaje es por si preguntaran la duración del curso permanente
+                </p>
+
+                <p id="mensaje-g6">
+                  Las clases de matemáticas no tienen una duración específica ya que los acompaña durante todo el ciclo escolar. Debido a que las colegiaturas 
+                  son mensuales, el tiempo mínimo es de un mes, pero puede estar el tiempo que guste. 
+                </p>
+                <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g6',this)">Copia texto</button>
+            </div>
+
+            <div class="mensaje-cm">
+              <p class="clase-muestra"> Este mensaje es por si preguntaran la metodología del curso
+              </p>
+
+              <p id="mensaje-g7">
+                Nosotros nos enfocamos en el desarrollo lógico-matemático, nos preocupamos por que cada alumno comprenda 
+                los conceptos matemáticos y para qué le van a servir en su día a día. 
+                Manejamos todos los temas de matemáticas de preescolar a secundaria, en la clase muestra se evalúan los conocimientos del alumno o alumna para 
+                ubicarlo en el grupo al que mejor se adapte y avanzar en los temas a partir de su conocimiento.
+              </p>
+              <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g7',this)">Copia texto</button>
+          </div>
+
+          <div class="mensaje-cm">
+            <p class="clase-muestra">        Este mensaje es por si nos preguntaran donde nos ubicamos.
+            </p>
+
+            <p id="mensaje-g8">
+              Nosotros somos una escuela de matemáticas 100% en línea, sin embargo nuestra sede principal se encuentra en la ciudad de Oaxaca de Juárez. <br> <br>
+              ¿Gusta que le compartamos información acerca de nuestros servicios? 
+            </p>
+            <button  type="button" class="btn btn-success" onclick="copyText('mensaje-g8',this)">Copia texto</button>
+        </div>
+
+              
+  
+                    </div>
+                  </div>
+              </div>
 
 
 
