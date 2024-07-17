@@ -388,6 +388,7 @@ function generaTarea(opcionesProfesoresId,tareasAreaId,contenedorId){
     texto += tareasArea; 
     texto += "\n\n¡Excelente día!";
     contenedor.innerText = texto; 
+    
 }
     
     
