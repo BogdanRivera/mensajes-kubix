@@ -53,6 +53,8 @@
                     
                             <div class="mensaje-cm">
                                 <h1>Scripts de clase muestra</h1>
+
+                                <p class="informativo">Mensaje 1: Este mensaje se lanza por default.</p>
                                 
                                 <p id="mensaje-1-cm">¡Le saluda la profesora Carolina Gutiérrez! 🌟<br><br>
                                     ¡El genio matemático vive en cada niño! 🚀 En nuestras clases en línea, no solo enseñamos matemáticas, sino que también liberamos esa chispa de inteligencia que hace brillar a sus pequeños.<br><br>
@@ -63,6 +65,10 @@
                             </div>
         
                             <div class="mensaje-cm">
+                              <p class="informativo">Mensaje 2: Este mensaje se manda si la contestación es de un alumno diferente de preparatoria o kinder. Caso contrario se manda
+                                informe de clases individuales (ver sección de mensajes generales). 
+                              </p>
+
                                 <p id="mensaje-2-cm">
                                     ✅ En *KUBIX MATEMÁTICAS*, con nuestra *metodología única* hacemos que las matemáticas sean *fáciles y divertidas*. Desarrollamos su *pensamiento lógico matemático*.
                                     <br><br>
@@ -75,6 +81,8 @@
                             </div>
         
                             <div class="mensaje-cm">
+                              <p class="informativo">Mensaje 3: Este mensaje se manda si se mandó el mensaje anterior. 
+                              </p>
                                 <p id="mensaje-3-cm">
                                     Queremos invitarle a una experiencia especial: una clase muestra *SIN COSTO y SIN COMPROMISO*. ¡Es una oportunidad perfecta para que usted y su hijo/a descubran de primera mano cómo hacemos que las matemáticas sean emocionantes y significativas!
                                     <br><br>
@@ -86,6 +94,13 @@
                             </div>
         
                             <div class="mensaje-cm">
+                              <p class="informativo">Mensaje 4: Para poder utilizar este formato es necesario dar click en el botón 'Agregar fecha' y elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
+                                se deben ingresar los horarios en el formato de salto de línea, es decir: 
+                                10:00 am <br>
+                                13:00 <br>
+                                No importa si es el formato de 12 horas o 24 horas. Posteriormente se da en agregar y para copiar el texto se deberá dar click en copiar texto. 
+                                Si nos equivocamos en los horarios se deberá dar click en el botón de 'Limpiar'.  
+                              </p>
                                 <div class="row d-flex justify-content-between">
                                     <div class="col-12 d-flex justify-content-center">
                                         <button class="btn btn-primary btn-lg w-100" onclick="addElement('fechas-horarios','horarios-obtenidos')">
@@ -118,6 +133,9 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                                 <button id="btn-copiar-4" type="button" class="btn btn-success" onclick="copyAllText('mensaje-4-cm','horarios-obtenidos','mensaje-4-cm-2',this)">Copia texto</button>
                                 <button type="button" class="btn btn-secondary" onclick="cleanElements('horarios-obtenidos')">Limpiar</button>
                                 <br><br>
+                                <p class="informativo">Mensaje 5: Una vez que la madre o el padre de familia haya elegido un horario, se deberá elegir la fecha y la hora en el siguiente bloque y dar click en generar horario. 
+                                </p>
+
                                 <p>Eliga la fecha y hora de agenda</p>
         
                                 <div class="d-flex">
@@ -133,6 +151,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             </div>
         
                             <div class="mensaje-cm">
+                              <p class="informativo">Mensaje 6: Se debe enviar el video manualmente.  
+                              </p>
                               <video id="video-sample" width="320" height="240" controls>
                                   <source src="./videos/videoKubix.mp4" type="video/mp4">
                                   Your browser does not support the video tag.
@@ -142,6 +162,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           <p class="info-estatica">Copiar el video manualmente</p>
         
                           <div class="mensaje-cm">
+                            <p class="informativo">Mensaje 7: Se manda si la persona no se conectará en una computadora.  
+                            </p>
                             <p id="mensaje-prefinal-cm">
                               Para maximizar el beneficio de las clases, le recomendamos que su hijo/a se conecte a través de una *tableta o computadora* 
                               en lugar de un celular. Las pantallas más amplias permitirán una visualización más cómoda. 
@@ -154,6 +176,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         </div>
         
                         <div class="mensaje-cm">
+                          <p class="informativo">Mensaje 8: Mensaje final.  
+                          </p>
                           <p id="mensaje-final-cm">
                             Cualquier pregunta que tenga no dude en contactarnos. ¡Que tenga un excelente día! 
                           </p>
@@ -182,16 +206,20 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         <div>
                             <div class="mensaje-cm">
                                 <h1>Scripts de Inscripción</h1>
+
+                                <p class="informativo">Mensaje 1: En esta sección se deberán ingresar los costos con promoción y sin promoción, así como el 
+                                  ajuste del mes y se da click en "Ingresa costos". 
+                                </p>
                                 
                                 <div class="d-flex flex-column mb-3">
                                   <label for="promo" class="p-2">Ingresa costo con promoción:</label>
-                                  <input id="promo" name="promo" class="p-2" type="number">
+                                  <input id="promo" name="promo" class="p-2" type="number" placeholder="Ej. 980">
                                   <label for="nopromo" class="p-2">Ingresa costo sin promoción:</label>
-                                  <input id="nopromo" name="nopromo" class="p-2" type="number">
+                                  <input id="nopromo" name="nopromo" class="p-2" type="number" placeholder="Ej. 1200">
                                   <label for="ajuste" class="p-2">Ingresa ajuste de este mes:</label>
-                                  <input id="ajuste" name="ajuste" class="p-2" type="number">
+                                  <input id="ajuste" name="ajuste" class="p-2" type="number" placeholder="Ej. 625.5">
                                   <br>
-                                  <button type="button" class="btn btn-secondary" onclick="generarMensaje()">Ingresa precios</button>
+                                  <button type="button" class="btn btn-secondary" onclick="generarMensaje()">Ingresa costos</button>
                               </div>
                                 <p id="mensaje-1-inf">
                                   Costos generales (clases + plataforma)
@@ -200,6 +228,9 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             </div>
           
                           <div class="mensaje-cm">
+                            <p class="informativo">Mensaje 2: Dependiendo de la promoción se copia la imagen 1 o imagen 2 y se envía junto
+                              con el texto anterior.
+                            </p>
                             <p>Promoción de 1200:</p>
                             <img id="imagen-promo1" src="./img/promo1.png" alt="Imagen pago" width="350px">
                             <br>
@@ -221,6 +252,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
           
                       <div class="mensaje-cm">
+                        <p class="warning">Mensaje 2 (extra): Esta imagen se envía únicamente si se solicita. 
+                        </p>
                         <p>Plataforma únicamente:</p>
                         <img id="imagen-plataforma" src="./img/plataforma.png" alt="Plataforma" width="350px">
                         <br>
@@ -232,10 +265,13 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
                     <div class="mensaje-cm">
                       <div class="d-flex flex-column mb-3">
+                        <p class="informativo">Mensaje 3: Este mensaje se enviará de acuerdo a los días y el horario acordado con la madre o padre de familia.
+                          Es la propuesta de grupo del alumno. Para crear el mensaje se deberá llenar los siguientes elementos correspondientes. 
+                        </p>
                         <label for="dias" class="p-2">Ingresa los días acordados</label>
-                        <input id="dias" name="dias" class="p-2" type="text">
+                        <input id="dias" name="dias" class="p-2" type="text" placeholder="Ej. Martes y jueves">
                         <label for="tiempo-agenda-propuesta" class="p-2">Ingresa la hora acordada</label>
-                        <input type="time" id="tiempo-agenda-propuesta" class="p-2" placeholder="Ej. Martes y jueves">
+                        <input type="time" id="tiempo-agenda-propuesta" class="p-2">
                         <br>
                         <button type="button" class="btn btn-secondary" onclick="generaDiasAcordados('dias','tiempo-agenda-propuesta','mensaje-2-inf')">Ingresa elementos</button>
                     </div>
@@ -246,6 +282,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                   </div>
           
                   <div class="mensaje-cm">
+                    <p class="informativo">Mensaje 4: Enviar este mensaje si se completó todo lo demás junto con la imagen siguiente.   
+                    </p>
                   <p id="mensaje-3-inf">
                     El pago será a través de este medio. Es necesario que para que su pago quede registrado nos mande la *clave de rastreo*. 
                   </p>
@@ -260,6 +298,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
               </div>
           
               <div class="mensaje-cm">
+                <p class="informativo">Mensaje 5: Mensaje final.   
+                </p>
                 <p id="mensaje-4-inf">
           Queremos recordarle que nuestro equipo está disponible para atenderle de Lunes a jueves, de 10:00 am a 7:00 pm,Viernes de 10:00 am a 6:00 pm. Si realiza un pago fuera de nuestro horario de atención, no se preocupe, estaremos encantados de procesar su solicitud y proporcionarle los materiales necesarios en el próximo día hábil. ¡Gracias por su comprensión y confianza! 
           ¡Cualquier duda que tenga quedamos a sus órdenes!
@@ -268,6 +308,10 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
               </div>
           
               <div class="mensaje-cm">
+                <p class="ok">Esta sección es únicamente cuando se ha realizado y validado el pago correspondiente.    
+                </p>
+
+                <p class="informativo">Mensaje 6: Enviar para registrar al alumno</p>
                 <p id="mensaje-5-inf">
                   Para finalizar su registro, ¿podría llenar el siguiente formulario por favor?
                   https://forms.gle/z2r8MNkquntszVEe8        
@@ -276,6 +320,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
               </div>
           
               <div class="mensaje-cm">
+                <p class="informativo">Mensaje 7: Se debe enviar este mensaje junto con los archivos correspondientes (se copian manualmente). </p>
                 <p id="mensaje-6-inf">
                   Le enviamos el material de sistema decimal y fracciones, mismo que se deberá imprimir a color. Para poder fortalecer el material le recomendamos imprimirlo en hoja opalina y plastificarlo con contac, en caso contrario, puede pegarlo en cartón para darle dureza. Le recomendamos tener el material listo para su primera sesión. <br><br>
           
@@ -290,6 +335,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
               <div class="container">
                 <div class="d-flex flex-column mb-3">
+                  <p class="informativo">Mensaje 8: Esta sección permite generar una liga de clase ingresando los datos correspondientes. </p>
+
                     <label for="diasLigas" class="p-2">Ingresa los días</label>
                     <input id="diasLigas" name="Ligas" class="p-2" type="text">
           
@@ -330,6 +377,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
                 <div class="container">
                   <div class="d-flex flex-column mb-3">
+                    <p class="informativo">Mensaje 9: Esta sección permite generar una plataforma de clase ingresando los datos correspondientes. </p>
+
                       <label for="estudiante" class="p-2">Nombre del Estudiante</label>
                       <input id="estudiante" name="estudiante" class="p-2" type="text">
           
@@ -354,6 +403,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                   </div>
           
                   <div class="mensaje-cm">
+                    <p class="informativo">Mensaje 10: Mensaje final. </p>
+
                     <p id="mensaje-9-inf">
                       En Kubix Matemáticas, valoramos su confianza y participación en nuestra comunidad de aprendizaje. A medida que se desarrolla este trayecto, queremos expresar nuestro agradecimiento por permitirnos ser parte de su viaje educativo. <br><br>
           
@@ -450,6 +501,13 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           </p>
                           <button  type="button" class="btn btn-success" onclick="copyText('mensaje-4-cm-pro',this)">Copia texto</button>
                         </div>
+
+                        <div class="mensaje-cm">
+                          <img src="./img/pago.jpg" alt="Plataforma" width="350px">
+                          <br>
+                          <button type="button" class="btn btn-success" onclick="copyImage('imagen-a-copiar')">Copia Imagen</button>
+                          <canvas id="canvas" style="display: none;"></canvas>
+                      </div>
           
                         <div class="mensaje-cm">
                           <p id="mensaje-5-cm-pro"> 

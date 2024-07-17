@@ -14,7 +14,17 @@ body {
     transition: background-color 0.3s ease; /* Transición suave del color de fondo */
 }
 
+.informativo{
+    background-color: yellow;
+}
 
+.warning{
+    background-color: rgb(255, 153, 0);
+}
+
+.ok{
+    background-color: rgb(13, 219, 13);
+}
 .imagen-logo{
     margin: auto;
     padding: 1.8em;
