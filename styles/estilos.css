@@ -1,10 +1,19 @@
-.cabecero{
+.cabecero {
     height: auto;
     text-align: center;
-    background: linear-gradient(to top, rgb(172, 172, 172), rgb(131, 133, 148), rgb(255, 255, 255));
-    /*background-color: #0C6291;*/
-    display: flex; 
+    background: linear-gradient(to top, #ffffff, #ffffff 50%, #7e8af1 50%, #919bf8);
+    /* Ajusta los colores según los tonos de tu logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+body {
+    margin: 0; /* Asegura que no haya margen externo */
+    background-color: #f0f0f0; /* Color de fondo del body */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
 
 .imagen-logo{
     margin: auto;
