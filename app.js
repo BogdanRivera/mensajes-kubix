@@ -213,7 +213,7 @@ function sortTimes(times) {
     }
 
     function generarLlamada(inputId,horaId,mensajeId){
-        const diaLlamada = document.getElementById(inputId).value;
+        const diaLlamada = document.getElementById(inputId).value.trim();
         const tiempo24Hours = document.getElementById(horaId).value;
         let mensaje = document.getElementById(mensajeId); 
         let tiempo = convertTo12HourFormat(tiempo24Hours);
