@@ -948,7 +948,7 @@ _Horario de la Cd. de México_.
 
     <div class="mensaje-cm">
       <p class="clase-general">Mensaje para enviar la tarea en un solo formato. Se tiene que elegir al profesor y posteriormente dar click 
-        en el botón "Generar tarea".  
+        en el botón "Genera tareas".  
       </p> 
 
       <label for="profesorGeneral" class="p-2">Selecciona el profesor(a)</label>
@@ -978,6 +978,44 @@ _Horario de la Cd. de México_.
       </p>
       <button  type="button" class="btn btn-success" onclick="copyText('mensaje-c3',this)">Copia texto</button>
   </div>
+
+
+  <div class="mensaje-cm">
+    <p class="clase-general">Recurso para generar promoción de clases grupales por fecha.</p>
+
+    <br>
+    
+    <label for="costoConPromocion">Costo con promoción:</label>
+    <input type="number" id="costoConPromocion" class="form-control" placeholder="Ej. 980">
+    
+    <label for="costoSinPromocion">Costo sin promoción:</label>
+    <input type="number" id="costoSinPromocion" class="form-control" placeholder="Ej. 1200">
+
+    <br>
+
+    <button type="button" class="btn btn-success" onclick="generaPromocion()">Genera promoción</button>
+
+    <p id="mensaje-c4"></p>
+    <button type="button" class="btn btn-success" onclick="copyText('mensaje-c4',this)">Copia texto</button>
+</div>
+
+<div class="mensaje-cm">
+  <p class="clase-general">Mensaje de resumen de clases individuales</p>
+
+  <br>
+
+  <p id="mensaje-c5">
+    *CLASES INDIVIDUALES* <br><br>
+
+💡 Enfoque Personalizado <br>
+⏰ 50 minutos cada sesión. <br>
+📚 Trabajamos de acuerdo al ritmo del alumno. <br>
+📅 Flexibilidad de Agenda: nos adaptamos a su horario. <br><br>
+
+*💸 Costo y Reserva:* El costo por esta experiencia educativa es de *$380 por clase*, un precio que garantiza una atención de calidad. Este importe se cubre por adelantado para reservar las clases deseadas.
+  </p>
+  <button type="button" class="btn btn-success" onclick="copyText('mensaje-c5',this)">Copia texto</button>
+</div>
 
               
   

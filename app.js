@@ -390,6 +390,46 @@ function generaTarea(opcionesProfesoresId,tareasAreaId,contenedorId){
     contenedor.innerText = texto; 
     
 }
+
+function generaPromocion() {
+    const costoConPromocion = document.getElementById('costoConPromocion').value;
+    const costoSinPromocion = document.getElementById('costoSinPromocion').value;
+    const fechaActual = new Date();
+    const diaActual = fechaActual.getDate();
+    const mesActual = fechaActual.toLocaleString('default', { month: 'long' });
+    const anioActual = fechaActual.getFullYear();
+    const ultimoDiaMes = new Date(anioActual, fechaActual.getMonth() + 1, 0).getDate();
+    let dia1, diaFinal, diaPromo, mesPromo;
+    
+    if (diaActual < 15) {
+        dia1 = 1;
+        diaFinal = 15;
+        diaPromo = 16;
+        mesPromo = mesActual;
+    } else {
+        dia1 = 15;
+        diaFinal = ultimoDiaMes;
+        diaPromo = 1;
+        mesPromo = fechaActual.getMonth() === 11 ? new Date(anioActual + 1, 0).toLocaleString('default', { month: 'long' }) : new Date(anioActual, fechaActual.getMonth() + 1).toLocaleString('default', { month: 'long' });
+    }
+    
+    const mensajePromocion = `
+    *CLASES GRUPALES DE MATEMÁTICAS EN LÍNEA*
+    
+    🔺 Clases grupales 2 veces por semana.
+    🔺 Grupos pequeños, máximo 8 estudiantes  
+    🔺 Plataforma digital incluida
+    🔺 Material para imprimir incluido
+    
+    *PROMOCIÓN DEL ${dia1} AL ${diaFinal} DE ${mesActual.toUpperCase()}*
+    
+    *✨ TODO INCLUIDO por sólo $${costoConPromocion} al mes ✨*
+    
+    A partir del ${diaPromo} de ${mesPromo} la mensualidad sería de $${costoSinPromocion}
+    `;
+
+    document.getElementById('mensaje-c4').innerText = mensajePromocion;
+}
     
     
     
