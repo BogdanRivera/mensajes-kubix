@@ -452,7 +452,7 @@ function generaLigaCM() {
 *HORA:* ${hora}, hora de la ciudad de México.
 *FECHA:* ${dia} de ${mes} de ${anio}
 *PROFESORA:* ${profesor}
-ID: ${formattedId}
+*ID:* ${formattedId}
 
 ${liga}
 
