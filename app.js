@@ -328,11 +328,13 @@ function sortTimes(times) {
         const dias = document.getElementById('diasLigas').value;
         const hora24hours = document.getElementById('horaLigas').value;
         const profesor = document.getElementById('profesor').value;
-        const id = document.getElementById('id').value;
         const link = document.getElementById('link').value;
     
         const mesActual = getCurrentMonth();
         const hora = convertTo12HourFormat(hora24hours);
+
+        const id = link.split('/').pop().replace('j/', '').slice(-11);
+        const formattedId = `${id.slice(0, 3)} ${id.slice(3, 7)} ${id.slice(7)}`;
     
         const mensaje = `
     *🔹 CLASES DE ${mesActual}🔹*
@@ -340,7 +342,7 @@ function sortTimes(times) {
     *DÍAS:* ${dias}
     *HORA:* ${hora} 
     *PROFESOR(A):* ${profesor}
-    *ID:* ${id}
+    *ID:* ${formattedId}
     
     ${link}
     
@@ -429,6 +431,35 @@ function generaPromocion() {
     `;
 
     document.getElementById('mensaje-c4').innerText = mensajePromocion;
+}
+
+function generaLigaCM() {
+    const fecha = document.getElementById('fecha-agendacm').value;
+    const hora = convertTo12HourFormat(document.getElementById('tiempo-agendacm').value);
+    const profesor = document.getElementById('profesorCM').value;
+    const liga = document.getElementById('clasecmliga').value;
+    const fechaObj = new Date(fecha);
+
+    const dia = fechaObj.getDate();
+    const mes = fechaObj.toLocaleString('default', { month: 'long' });
+    const anio = fechaObj.getFullYear();
+    const id = liga.split('/').pop().replace('j/', '').slice(-11);
+    const formattedId = `${id.slice(0, 3)} ${id.slice(3, 7)} ${id.slice(7)}`;
+
+    const mensaje = `
+*KUBIX MATEMÁTICAS*
+
+*HORA:* ${hora}, hora de la ciudad de México.
+*FECHA:* ${dia} de ${mes} de ${anio}
+*PROFESORA:* ${profesor}
+ID: ${formattedId}
+
+${liga}
+
+🔺🔹🔺🔹🔺🔹🔺🔹🔺🔹
+    `;
+
+    document.getElementById('ligacm').innerText = mensaje;
 }
     
     

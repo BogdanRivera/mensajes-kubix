@@ -198,6 +198,35 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           </p>
                           <button id="btn-copiar-11" type="button" class="btn btn-success" onclick="copyText('mensaje-final-cm',this)">Copia texto</button>
                             </div>
+
+                            <p class="warning">Este último recurso funciona para realizar las ligas de las clases muestra</p>
+
+
+                            <div class="container mensaje-cm text-center">
+                              <p>Eliga la fecha y hora de agenda</p>
+                              <input type="date" id="fecha-agendacm" class="p-2">
+                              <input type="time" id="tiempo-agendacm" class="p-2">
+                          </div>
+
+                          <br>
+
+                            <div class="container text-center">
+                              <label for="profesorCM" class="p-2">Selecciona el profesor(a) de la clase muestra</label>
+                              <br>
+                              <select id="profesorCM" name="profesorCM" class="p-2">
+                                  <option value="Lupita">Lupita</option>
+                                  <option value="Karla">Karla</option>
+                              </select>
+                              <br>
+                              <label for="clasecmliga" class="p-2">Ingresa el link de la sesión</label>
+                              <input type="text" name="clasecmliga" id="clasecmliga" placeholder="Ej. https://us02web.zoom.us/j/89897407450">
+                              <br><br>
+                              <button type="button" class="btn btn-success" onclick="generaLigaCM()">Genera liga CM</button>
+                              <br><br>
+                              <p id="ligacm"></p>
+                              <button type="button" class="btn btn-success" onclick="copyText('ligacm',this)">Copia texto</button>
+                          </div>
+
                           </div>
                     </div>
                 </div>
@@ -373,9 +402,6 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         <option value="Ulises">Ulises</option>
                         <option value="Gaby Arredondo">Gaby Arredondo</option>
                     </select>
-          
-                    <label for="id" class="p-2">Ingresa el ID</label>
-                    <input id="id" name="id" class="p-2" type="text">
           
                     <label for="link" class="p-2">Ingresa el link</label>
                     <input id="link" name="link" class="p-2" type="text">
@@ -1051,6 +1077,8 @@ _Horario de la Cd. de México_.
             // Establecer los valores en los inputs
             document.getElementById('fecha-agenda').value = formattedDate;
             document.getElementById('tiempo-agenda').value = formattedTime;
+            document.getElementById('fecha-agendacm').value = formattedDate;
+            document.getElementById('tiempo-agendacm').value = formattedTime;
             document.getElementById('tiempo-agenda-verano').value = formattedTime;
             document.getElementById('tiempo-agenda-verano-2').value = formattedTime; 
             document.getElementById('tiempo-agenda-propuesta').value = formattedTime;
