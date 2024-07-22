@@ -61,7 +61,23 @@
                             <div class="mensaje-cm">
                                 <h1>Scripts de clase muestra</h1>
 
-                                <p class="informativo">Mensaje 1: Este mensaje se lanza por default.</p>
+                                                    <!-- Indice clase muestra -->
+                              <div class="indice">
+                                  <ul>
+                                      <li><a href="#msj1-cm">Mensaje 1: Default</a></li>
+                                      <li><a href="#msj2-cm">Mensaje 2: Alumnos de primaria o secundaria</a></li>
+                                      <li><a href="#msj3-cm">Mensaje 3: Invitación a clase muestra</a></li>
+                                      <li><a href="#msj4-cm">Mensaje 4: Elección de horarios</a></li>
+                                      <li><a href="#msj5-cm">Mensaje 5: Agendar clase muestra</a></li>
+                                      <li><a href="#msj6-cm">Mensaje 6: Enviar video manualmente</a></li>
+                                      <li><a href="#msj7-cm">Mensaje 7: Conexión en tablet o celular</a></li>
+                                      <li><a href="#msjfinal-cm">Mensaje final</a></li>
+                                      <li><a href="#msjligas-cm">Generar ligas de clase muestra</a></li>
+                                  </ul>
+                              </div>
+
+
+                                <p class="informativo" id="msj1-cm">Mensaje 1: Este mensaje se lanza por default.</p>
                                 
                                 <p id="mensaje-1-cm">¡Le saluda la profesora Carolina Gutiérrez! 🌟<br><br>
                                     ¡El genio matemático vive en cada niño! 🚀 En nuestras clases en línea, no solo enseñamos matemáticas, sino que también liberamos esa chispa de inteligencia que hace brillar a sus pequeños.<br><br>
@@ -71,7 +87,7 @@
                                 <button id="btn-copiar-1" type="button" class="btn btn-success" onclick="copyText('mensaje-1-cm',this)">Copia texto</button>
                             </div>
         
-                            <div class="mensaje-cm">
+                            <div class="mensaje-cm" id="msj2-cm">
                               <p class="informativo">Mensaje 2: Este mensaje se manda si la contestación es de un alumno diferente de preparatoria o kinder. Caso contrario se manda
                                 informe de clases individuales (ver sección de mensajes generales). 
                               </p>
@@ -88,7 +104,7 @@
                             </div>
         
                             <div class="mensaje-cm">
-                              <p class="informativo">Mensaje 3: Este mensaje se manda si se mandó el mensaje anterior. 
+                              <p class="informativo" id="msj3-cm">Mensaje 3: Este mensaje se envía para invitarlos a clase muestra. 
                               </p>
                                 <p id="mensaje-3-cm">
                                     Queremos invitarle a una experiencia especial: una clase muestra *SIN COSTO y SIN COMPROMISO*. ¡Es una oportunidad perfecta para que usted y su hijo/a descubran de primera mano cómo hacemos que las matemáticas sean emocionantes y significativas!
@@ -101,7 +117,7 @@
                             </div>
         
                             <div class="mensaje-cm">
-                              <p class="informativo">Mensaje 4: Para poder utilizar este formato es necesario 
+                              <p class="informativo" id="msj4-cm">Mensaje 4: Para poder utilizar este formato es necesario 
                                 elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
                                 se deben ingresar los horarios en el formato de salto de línea, es decir: <br>
                                 10:00 am <br>
@@ -148,7 +164,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                                 <button id="btn-copiar-4" type="button" class="btn btn-success" onclick="copyAllText('mensaje-4-cm','horarios-obtenidos','mensaje-4-cm-2',this)">Copia texto</button>
                                 <button type="button" class="btn btn-secondary" onclick="cleanElements('horarios-obtenidos')">Limpiar</button>
                                 <br><br>
-                                <p class="informativo">Mensaje 5: Una vez que la madre o el padre de familia haya elegido un horario, se deberá elegir la fecha y la hora en el siguiente bloque y dar click en generar horario. 
+                                <p class="informativo" id="msj5-cm">Mensaje 5: Una vez que la madre o el padre de familia haya elegido un horario, se deberá elegir la fecha y la hora en el siguiente bloque y dar click en generar horario. 
                                 </p>
 
                                 <p>Eliga la fecha y hora de agenda</p>
@@ -166,7 +182,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             </div>
         
                             <div class="mensaje-cm">
-                              <p class="informativo">Mensaje 6: Se debe enviar el video manualmente.  
+                              <p class="informativo" id="msj6-cm">Mensaje 6: Se debe enviar el video manualmente.  
                               </p>
                               <video id="video-sample" width="320" height="240" controls>
                                   <source src="./videos/videoKubix.mp4" type="video/mp4">
@@ -177,7 +193,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           <p class="info-estatica">Copiar el video manualmente</p>
         
                           <div class="mensaje-cm">
-                            <p class="informativo">Mensaje 7: Se manda si la persona no se conectará en una computadora.  
+                            <p class="informativo" id="msj7-cm">Mensaje 7: Se manda si la persona no se conectará en una computadora.  
                             </p>
                             <p id="mensaje-prefinal-cm">
                               Para maximizar el beneficio de las clases, le recomendamos que su hijo/a se conecte a través de una *tableta o computadora* 
@@ -191,7 +207,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         </div>
         
                         <div class="mensaje-cm">
-                          <p class="informativo">Mensaje 8: Mensaje final.  
+                          <p class="informativo" id="msjfinal-cm">Mensaje 8: Mensaje final.  
                           </p>
                           <p id="mensaje-final-cm">
                             Cualquier pregunta que tenga no dude en contactarnos. ¡Que tenga un excelente día! 
@@ -199,7 +215,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           <button id="btn-copiar-11" type="button" class="btn btn-success" onclick="copyText('mensaje-final-cm',this)">Copia texto</button>
                             </div>
 
-                            <p class="warning">Este último recurso funciona para realizar las ligas de las clases muestra</p>
+                            <p class="warning" id="msjligas-cm">Este último recurso funciona para realizar las ligas de las clases muestra</p>
 
 
                             <div class="container mensaje-cm text-center">
@@ -251,7 +267,26 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             <div class="mensaje-cm">
                                 <h1>Scripts de Inscripción</h1>
 
-                                <p class="informativo">Mensaje 1: En esta sección se deberán ingresar los costos con promoción y sin promoción, así como el 
+                    <!-- Indice inscripción -->
+                    <div class="indice">
+                      <ul>
+                          <li><a href="#mensaje-1-inscripcion">Mensaje 1: Costos y ajustes de precio</a></li>
+                          <li><a href="#mensaje-2-inscripcion">Mensaje 2: Imagenes promoción</a></li>
+                          <li><a href="#mensaje-2extra-inscripcion">Mensaje 2 (extra): Imagen plataforma</a></li>
+                          <li><a href="#mensaje-3-inscripcion">Mensaje 3: Días y horario acordados</a></li>
+                          <li><a href="#mensaje-4-inscripcion">Mensaje 4: Imagen de pago</a></li>
+                          <li><a href="#mensaje-5-inscripcion">Mensaje 5: Final</a></li>
+                          <li><a href="#mensaje-inscripcion-pago">Sección de pago realizado</a></li>
+                          <li><a href="#mensaje-6-inscripcion">Mensaje 6: Enlace de inscripción</a></li>
+                          <li><a href="#mensaje-7-inscripcion">Mensaje 7: Envío de material</a></li>
+                          <li><a href="#mensaje-8-inscripcion">Generar liga de clase</a></li>
+                          <li><a href="#mensaje-9-inscripcion">Acceso a plataforma</a></li>
+                          <li><a href="#mensaje-10-inscripcion">Mensaje final</a></li>
+                      </ul>
+                  </div>
+
+
+                                <p class="informativo" id="mensaje-1-inscripcion">Mensaje 1: En esta sección se deberán ingresar los costos con promoción y sin promoción, así como el 
                                   ajuste del mes y se da click en "Ingresa costos". 
                                 </p>
                                 
@@ -272,7 +307,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                             </div>
           
                           <div class="mensaje-cm">
-                            <p class="informativo">Mensaje 2: Dependiendo de la promoción se copia la imagen 1 o imagen 2 y se envía junto
+                            <p class="informativo" id="mensaje-2-inscripcion">Mensaje 2: Dependiendo de la promoción se copia la imagen 1 o imagen 2 y se envía junto
                               con el texto anterior.
                             </p>
                             <p>Promoción de 1200:</p>
@@ -297,7 +332,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
           
                       <div class="mensaje-cm">
-                        <p class="warning">Mensaje 2 (extra): Esta imagen se envía únicamente si se solicita. 
+                        <p class="warning" id="mensaje-2extra-inscripcion">Mensaje 2 (extra): Esta imagen se envía únicamente si se solicita. 
                         </p>
                         <p>Plataforma únicamente:</p>
                         <img id="imagen-plataforma" src="./img/plataforma.jpeg" alt="Plataforma" width="350px">
@@ -310,7 +345,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
                     <div class="mensaje-cm">
                       <div class="d-flex flex-column mb-3">
-                        <p class="informativo">Mensaje 3: Este mensaje se enviará de acuerdo a los días y el horario acordado con la madre o padre de familia.
+                        <p class="informativo" id="mensaje-3-inscripcion">Mensaje 3: Este mensaje se enviará de acuerdo a los días y el horario acordado con la madre o padre de familia.
                           Es la propuesta de grupo del alumno. Para crear el mensaje se deberá llenar los siguientes elementos correspondientes. 
                         </p>
                         <label for="dias" class="p-2">Ingresa los días acordados</label>
@@ -327,7 +362,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                   </div>
           
                   <div class="mensaje-cm">
-                    <p class="informativo">Mensaje 4: Enviar este mensaje si se completó todo lo demás junto con la imagen siguiente.   
+                    <p class="informativo" id="mensaje-4-inscripcion">Mensaje 4: Enviar este mensaje si se completó todo lo demás junto con la imagen siguiente.   
                     </p>
                   <p id="mensaje-3-inf">
                     El pago será a través de este medio. Es necesario que para que su pago quede registrado nos mande la *clave de rastreo*. 
@@ -343,7 +378,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
               </div>
           
               <div class="mensaje-cm">
-                <p class="informativo">Mensaje 5: Mensaje final.   
+                <p class="informativo" id="mensaje-5-inscripcion">Mensaje 5: Mensaje final.   
                 </p>
                 <p id="mensaje-4-inf">
           Queremos recordarle que nuestro equipo está disponible para atenderle de Lunes a jueves, de 10:00 am a 7:00 pm,Viernes de 10:00 am a 6:00 pm. Si realiza un pago fuera de nuestro horario de atención, no se preocupe, estaremos encantados de procesar su solicitud y proporcionarle los materiales necesarios en el próximo día hábil. ¡Gracias por su comprensión y confianza! 
@@ -353,10 +388,10 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
               </div>
           
               <div class="mensaje-cm">
-                <p class="ok">Esta sección es únicamente cuando se ha realizado y validado el pago correspondiente.    
+                <p class="ok" id="mensaje-inscripcion-pago">Esta sección es únicamente cuando se ha realizado y validado el pago correspondiente.    
                 </p>
 
-                <p class="informativo">Mensaje 6: Enviar para registrar al alumno</p>
+                <p class="informativo" id="mensaje-6-inscripcion">Mensaje 6: Enviar para registrar al alumno</p>
                 <p id="mensaje-5-inf">
                   Para finalizar su registro, ¿podría llenar el siguiente formulario por favor?
                   https://forms.gle/z2r8MNkquntszVEe8        
@@ -365,7 +400,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
               </div>
           
               <div class="mensaje-cm">
-                <p class="informativo">Mensaje 7: Se debe enviar este mensaje junto con los archivos correspondientes (se copian manualmente). </p>
+                <p class="informativo" id="mensaje-7-inscripcion">Mensaje 7: Se debe enviar este mensaje junto con los archivos correspondientes (se copian manualmente). </p>
                 <p id="mensaje-6-inf">
                   Le enviamos el material de sistema decimal y fracciones, mismo que se deberá imprimir a color. Para poder fortalecer el material le recomendamos imprimirlo en hoja opalina y plastificarlo con contac, en caso contrario, puede pegarlo en cartón para darle dureza. Le recomendamos tener el material listo para su primera sesión. <br><br>
           
@@ -380,7 +415,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
               <div class="container">
                 <div class="d-flex flex-column mb-3">
-                  <p class="informativo">Mensaje 8: Esta sección permite generar una liga de clase ingresando los datos correspondientes. </p>
+                  <p class="informativo" id="mensaje-8-inscripcion">Mensaje 8: Esta sección permite generar una liga de clase ingresando los datos correspondientes. </p>
 
                     <label for="diasLigas" class="p-2">Ingresa los días</label>
                     <input id="diasLigas" name="Ligas" class="p-2" type="text">
@@ -419,7 +454,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
                 <div class="container">
                   <div class="d-flex flex-column mb-3">
-                    <p class="informativo">Mensaje 9: Esta sección permite generar una plataforma de clase ingresando los datos correspondientes. </p>
+                    <p class="informativo" id="mensaje-9-inscripcion">Mensaje 9: Esta sección permite generar una plataforma de clase ingresando los datos correspondientes. </p>
 
                       <label for="estudiante" class="p-2">Nombre del Estudiante</label>
                       <input id="estudiante" name="estudiante" class="p-2" type="text">
@@ -445,7 +480,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                   </div>
           
                   <div class="mensaje-cm">
-                    <p class="informativo">Mensaje 10: Mensaje final. </p>
+                    <p class="informativo" id="mensaje-10-inscripcion">Mensaje 10: Mensaje final. </p>
 
                     <p id="mensaje-9-inf">
                       En Kubix Matemáticas, valoramos su confianza y participación en nuestra comunidad de aprendizaje. A medida que se desarrolla este trayecto, queremos expresar nuestro agradecimiento por permitirnos ser parte de su viaje educativo. <br><br>
@@ -491,8 +526,20 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         <div>
                             <div class="mensaje-cm">
                                 <h1>Scripts de Programación</h1>
+
+                  <!-- Indice programación -->
+                    <div class="indice">
+                      <ul>
+                          <li><a href="#mensaje-1-programacion">Mensaje 1: Inicial</a></li>
+                          <li><a href="#mensaje-2-programacion">Mensaje 2: Agendar clase muestra programación</a></li>
+                          <li><a href="#mensaje-2extra-programacion">Mensaje 2 (extra): Agendar nuevamente clase muestra programacion</a></li>
+                          <li><a href="#mensaje-3-programacion">Mensaje 3: Información de pago</a></li>
+                          <li><a href="#mensaje-4-programacion">Mensaje 4: Formulario de inscripción</a></li>
+                      </ul>
+                  </div>
+
                                 <br>
-                                <p class="informativo">Mensaje 1: Este mensaje se mandará cuando alguien pida informes por lo de programación.
+                                <p class="informativo" id="mensaje-1-programacion">Mensaje 1: Este mensaje se mandará cuando alguien pida informes por lo de programación.
                                 </p>
                                 <p id="mensaje-1-cm-pro"> 
                                   Hola🖐️, gracias por comunicarse con nosotros. Con gusto le brindamos la información que necesita. <br><br>
@@ -506,7 +553,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                                 <button  type="button" class="btn btn-success" onclick="copyText('mensaje-1-cm-pro',this)">Copia texto</button>
                             </div>
           
-                            <div class="mensaje-cm">
+                            <div class="mensaje-cm" id="mensaje-2-programacion">
                               <p class="informativo">Mensaje 2: Adicionalmente se deberá mandar este mensaje después del mensaje 1.
                               </p>
                               <p id="mensaje-2-cm-pro"> 
@@ -522,7 +569,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           </div>
           
                           <div class="mensaje-cm">
-                            <p class="warning">Mensaje 2 (extra): En dado caso que se solicite una clase muestra y la persona no haya agendado una clase se deberá enviar el siguiente mensaje.  
+                            <p class="warning" id="mensaje-2extra-programacion">Mensaje 2 (extra): En dado caso que se solicite una clase muestra y la persona no haya agendado una clase se deberá enviar el siguiente mensaje.  
                             <p id="mensaje-3-cm-pro"> 
                               🎓 Claro con gusto. Por favor, complete un breve formulario para agendar una clase muestra SIN COSTO y SIN COMPROMISO. <br><br>
           
@@ -534,7 +581,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         </div>
           
                         <div class="mensaje-cm">
-                          <p class="informativo">Mensaje 3: Una vez que haya tomado la clase muestra y se le haya dado seguimiento se procede a enviarle el siguiente mensaje 
+                          <p class="informativo" id="mensaje-3-programacion">Mensaje 3: Una vez que haya tomado la clase muestra y se le haya dado seguimiento se procede a enviarle el siguiente mensaje 
                             junto con la imagen de pago
                           </p>
                           <p id="mensaje-4-cm-pro"> 
@@ -558,7 +605,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                       </div>
           
                         <div class="mensaje-cm">
-                          <p class="informativo">Mensaje 4: Una vez que haya pagado y se haya verificado el comprobante se procede a enviar el siguiente mensaje.
+                          <p class="informativo" id="mensaje-4-programacion">Mensaje 4: Una vez que haya pagado y se haya verificado el comprobante se procede a enviar el siguiente mensaje.
                           </p>
                           <p id="mensaje-5-cm-pro"> 
                             Para finalizar su registro, le pedimos que llene el siguiente formulario de inscripción: <br><br>
@@ -591,8 +638,26 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         <div>
                             <div class="mensaje-cm">
                               <h1>Scripts de Verano</h1>
+                              <!-- Indice Verano -->
+                              <div class="indice">
+                                <ul>
+                                    <li><a href="#mensaje-1-verano">Mensaje 1: Inicial</a></li>
+                                    <li><a href="#mensaje-2-verano">Mensaje 2: Datos del curso de verano</a></li>
+                                    <li><a href="#mensaje-3-verano">Mensaje 3: Invitación a conocer nuestro sistema</a></li>
+                                    <li><a href="#mensaje-4-verano">Mensaje 4: Invitación a realizar llamada telefónica</a></li>
+                                    <li><a href="#mensaje-5-verano">Mensaje 5: Agendar llamada telefónica</a></li>
+                                    <li><a href="#mensaje-6-verano">Mensaje 6: Confirmación llamada telefónica</a></li>
+                                    <li><a href="#mensaje-7-verano">Mensaje 7: Resolución de dudas</a></li>
+                                    <li><a href="#mensaje-8-verano">Mensaje 8: Información de pago</a></li>
+                                    <li><a href="#seccion-pago-verano">Seccion de pago realizado</a></li>
+                                    <li><a href="#mensaje-9-verano">Mensaje 9: Enviar comprobante de pago</a></li>
+                                    <li><a href="#mensaje-10-verano">Mensaje 10: Registro de inscripción</a></li>
+                                    <li><a href="#mensaje-11-verano">Mensaje 11: Generar horarios verano </a></li>
+                                    <li><a href="#mensaje-12-verano">Mensaje final</a></li>
+                                </ul>
+                            </div>
                               <br>
-                              <p class="informativo">Mensaje 1: Este mensaje se envía por default cuando alguien pide informes.</p>
+                              <p class="informativo" id="mensaje-1-verano">Mensaje 1: Este mensaje se envía por default cuando alguien pide informes.</p>
                               <p id="mensaje-0-cm-ver">
                                 ¡Buen día! <br><br>
           
@@ -603,7 +668,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           </div>
           
                             <div class="mensaje-cm">
-                              <p class="informativo">Mensaje 2: Este mensaje se envía si la contestación anterior fue de primaria o secundaria. En dado caso 
+                              <p class="informativo" id="mensaje-2-verano">Mensaje 2: Este mensaje se envía si la contestación anterior fue de primaria o secundaria. En dado caso 
                                 de que la contestación haya sido de preescolar, universidad, etc se envía el informe de clases individuales (ver sección de mensajes generales). 
                               </p>
                                 <p id="mensaje-1-cm-ver">
@@ -645,8 +710,8 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                                 <button  type="button" class="btn btn-success" onclick="copyText('mensaje-1-cm-ver',this)">Copia texto</button>
                             </div>
           
-                            <div class="mensaje-cm">
-                              <p class="informativo">Mensaje 3: Si el mensaje anterior se envió también se debe enviar este mensaje
+                            <div class="mensaje-cm" >
+                              <p class="informativo" id="mensaje-3-verano">Mensaje 3: Si el mensaje anterior se envió también se debe enviar este mensaje
                                 y el mensaje 4. 
                               </p>
                               <p id="mensaje-3-cm-ver"> 
@@ -659,7 +724,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
           
                           <div class="mensaje-cm">
 
-                            <p class="informativo">Mensaje 4: Se envía con el anterior mensaje. 
+                            <p class="informativo" id="mensaje-4-verano">Mensaje 4: Se envía con el anterior mensaje. 
                             </p>
                             
                             <p id="mensaje-4-cm-ver"> 
@@ -674,7 +739,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                         
                         <div class="mensaje-cm">
                           <div class="row d-flex justify-content-between">
-                            <p class="informativo">Mensaje 5: Para poder utilizar este formato es necesario 
+                            <p class="informativo" id="mensaje-5-verano">Mensaje 5: Para poder utilizar este formato es necesario 
                               elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
                               se deben ingresar los horarios en el formato de salto de línea, es decir: <br>
                               10:00 am <br>
@@ -726,7 +791,7 @@ _Horario de la Cd. de México_.
           
                         
           
-                          <p class="informativo">Mensaje 6: Una vez que el papá pidió un horario para llamada se deberán llenar los elementos siguientes con la información respectiva para que se pueda generar
+                          <p class="informativo" id="mensaje-6-verano">Mensaje 6: Una vez que el papá pidió un horario para llamada se deberán llenar los elementos siguientes con la información respectiva para que se pueda generar
                             un mensaje automático de llamada. 
                           </p>
                         <div class="mensaje-cm d-flex">
@@ -739,7 +804,7 @@ _Horario de la Cd. de México_.
                       <button  type="button" class="btn btn-success" onclick="copyText('mensaje-f-cm-ver',this)">Copia texto</button>
           
                       <div class="mensaje-cm">
-                        <p class="informativo">Mensaje 7: Si se realizó la llamada se deberá mandar el siguiente mensaje.  
+                        <p class="informativo" id="mensaje-7-verano">Mensaje 7: Si se realizó la llamada se deberá mandar el siguiente mensaje.  
                         </p>
                         <p id="mensaje-6-cm-ver"> 
                           Esperamos que hayamos resuelto sus dudas sobre el curso. <br><br>
@@ -753,7 +818,7 @@ _Horario de la Cd. de México_.
                     </div>
           
                                 <div class="mensaje-cm">
-                                  <p class="informativo">Mensaje 8: Si la persona se requiere inscribir es necesario enviarle este mensaje con la imagen de pago. 
+                                  <p class="informativo" id="mensaje-8-verano">Mensaje 8: Si la persona se requiere inscribir es necesario enviarle este mensaje con la imagen de pago. 
                                   </p>
                                   <p id="mensaje-7-cm-ver"> 
                                     ✨ El pago se puede hacer por *depósito o transferencia electrónica* a la siguiente cuenta:
@@ -770,7 +835,7 @@ _Horario de la Cd. de México_.
                             <canvas id="canvas" style="display: none;"></canvas>
           
                           <div class="mensaje-cm">
-                            <p class="informativo">Mensaje 9: Se debe enviar junto con el mensaje anterior</p>
+                            <p class="informativo" id="mensaje-9-verano">Mensaje 9: Se debe enviar junto con el mensaje anterior</p>
                             <p id="mensaje-9-cm-ver"> 
                               Agradecemos que en cuanto realice su pago, nos pueda compartir su comprobante de pago con *clave de rastreo* por este medio, para iniciar con su registro y seguimiento personalizado.
                             </p>
@@ -780,8 +845,8 @@ _Horario de la Cd. de México_.
           
                         
                         <div class="mensaje-cm">
-                          <p class="ok">Estos mensajes se mandarán una vez que se haya verificado el pago correspondiente.</p>
-                          <p class="informativo">Mensaje 10: Registro de inscripción.</p>
+                          <p class="ok" id="seccion-pago-verano">Estos mensajes se mandarán una vez que se haya verificado el pago correspondiente.</p>
+                          <p class="informativo" id="mensaje-10-verano">Mensaje 10: Registro de inscripción.</p>
                           <p id="mensaje-10-cm-ver"> 
                             Para finalizar su registro, ¿podría llenar el siguiente formulario por favor?, en él se encuentra nuestro reglamento. Si tiene alguna duda, podemos resolverla sin ningún problema. <br> <br>
           
@@ -792,7 +857,7 @@ _Horario de la Cd. de México_.
                       </div>
           
                       <div class="container">
-                        <p class="informativo">Mensaje 11: Este mensaje es para generar un mensaje automático del día de sus clases de verano.</p>
+                        <p class="informativo" id="mensaje-11-verano">Mensaje 11: Este mensaje es para generar un mensaje automático del día de sus clases de verano.</p>
                         <label for="tiempo-agenda-verano-2">Ingresa el horario de la clase de verano</label>
                         <br>
                         <input type="time" id="tiempo-agenda-verano-2" class="p-2">
@@ -807,7 +872,7 @@ _Horario de la Cd. de México_.
                     </div>
           
                     <div class="mensaje-cm">
-                      <p class="informativo">Mensaje 12: Mensaje final. </p>
+                      <p class="informativo" id="mensaje-12-verano">Mensaje 12: Mensaje final. </p>
                       <p id="mensaje-12-cm-ver"> 
                         ¡Le damos la más cordial bienvenida!
                                         </p>
@@ -833,8 +898,31 @@ _Horario de la Cd. de México_.
                     <div>
                       <div class="mensaje-cm">
                           <h1>Mensajes generales</h1>
+
+                              <!-- Indice mensajes generales -->
+                              <div class="indice">
+                                <ul>
+                                    <li><a href="#mensaje-1-general">Mensaje de broma</a></li>
+                                    <li><a href="#mensaje-2-general">Mensaje inadecuado</a></li>
+                                    <li><a href="#mensaje-3-general">Mensaje clases individuales</a></li>
+                                    <li><a href="#seccion-cm-general">Seccion de clase muestra y dudas generales</a></li>
+                                    <li><a href="#mensaje-4-general">Mensaje de confirmación clase muestra</a></li>
+                                    <li><a href="#mensaje-5-general">Mensaje de precios clase muestra</a></li>
+                                    <li><a href="#mensaje-6-general">Mensaje adicional a precios</a></li>
+                                    <li><a href="#mensaje-7-general">Mensaje de duración del curso permanente</a></li>
+                                    <li><a href="#mensaje-8-general">Mensaje de metodología del curso</a></li>
+                                    <li><a href="#mensaje-9-general">Mensaje de ubicación de Kubix</a></li>
+                                    <li><a href="#seccion-clases-general">Seccion de clases generales</a></li>
+                                    <li><a href="#mensaje-10-general">Mensaje utilización de plataforma</a></li>
+                                    <li><a href="#mensaje-11-general">Mensaje utilización de plataforma y material de fracciones </a></li>
+                                    <li><a href="#mensaje-12-general">Generador de mensaje para tareas</a></li>
+                                    <li><a href="#mensaje-13-general">Mensaje de promoción resumido</a></li>
+                                    <li><a href="#mensaje-14-general">Resumen clases individuales</a></li>
+
+                                </ul>
+                            </div>
                           <br>
-                          <p class="no">En ocasiones llegan mensajes de broma diciendo: cuanto es 1+1 o algo por el estilo. Ante ellos se le puede mandar este mensaje: </p>
+                          <p class="no" id="mensaje-1-general">En ocasiones llegan mensajes de broma diciendo: cuanto es 1+1 o algo por el estilo. Ante ellos se le puede mandar este mensaje: </p>
                           <p id="mensaje-g1"> 
                             _Lamentablemente, no podemos resolver ejercicios específicos a través de este canal. Sin embargo, si está interesado en recibir clases individuales o inscribirse a una clase muestra para conocer nuestro sistema estaré encantada de ayudarle._
                             <br><br>
@@ -844,7 +932,7 @@ _Horario de la Cd. de México_.
                       </div>
 
                       <div class="mensaje-cm">
-                        <p class="no">En caso de que fuera la contestación de un niño de forma grosera: </p>
+                        <p class="no" id="mensaje-2-general">En caso de que fuera la contestación de un niño de forma grosera: </p>
                         <p id="mensaje-g2"> 
                           Este mensaje ha sido marcado como spam y se ha enviado a las autoridades cibernéticas. <br> <br>
 
@@ -861,7 +949,7 @@ _Horario de la Cd. de México_.
                     </div>
 
                     <div class="mensaje-cm">
-                      <p class="warning">Este mensaje se envía siempre que se requieran clases individuales </p>
+                      <p class="warning" id="mensaje-3-general">Este mensaje se envía siempre que se requieran clases individuales </p>
                       <p id="mensaje-gextra1"> 
                         *CLASES INDIVIDUALES* <br> <br>
 
@@ -883,8 +971,8 @@ _Horario de la Cd. de México_.
 
 
                     <div class="mensaje-cm">
-                      <p class="ok">Estos mensajes son para clase muestra o dudas generales</p>
-                      <p class="clase-muestra">Este mensaje es por si las personas no han contestado su formulario y quisiera que se le agendara
+                      <p class="ok" id="seccion-cm-general">Estos mensajes son para clase muestra o dudas generales</p>
+                      <p class="clase-muestra" id="mensaje-4-general">Este mensaje es por si las personas no han contestado su formulario y quisiera que se le agendara
                         clase muestra
                       </p> 
                       <p id="mensaje-g3">
@@ -895,7 +983,7 @@ _Horario de la Cd. de México_.
                   </div>
 
                   <div class="mensaje-cm">
-                    <p class="clase-muestra">Este mensaje es por si preguntan los precios de la clase muestra. 
+                    <p class="clase-muestra" id="mensaje-5-general">Este mensaje es por si preguntan los precios de la clase muestra. 
                     </p>
                     <p id="mensaje-g4"> 
                       Ofrecemos una amplia variedad de precios, desde $200 hasta $1500, para adaptarnos a sus necesidades y brindarle la mejor experiencia posible.
@@ -904,7 +992,7 @@ _Horario de la Cd. de México_.
                 </div>
 
                 <div class="mensaje-cm">
-                  <p class="clase-muestra">Se adiciona con el anterior mensaje 
+                  <p class="clase-muestra" id="mensaje-6-general">Se adiciona con el anterior mensaje 
                   </p>
 
                   <p id="mensaje-g5">
@@ -915,7 +1003,7 @@ _Horario de la Cd. de México_.
               </div>
 
               <div class="mensaje-cm">
-                <p class="clase-muestra"> Este mensaje es por si preguntaran la duración del curso permanente
+                <p class="clase-muestra" id="mensaje-7-general"> Este mensaje es por si preguntaran la duración del curso permanente
                 </p>
 
                 <p id="mensaje-g6">
@@ -926,7 +1014,7 @@ _Horario de la Cd. de México_.
             </div>
 
             <div class="mensaje-cm">
-              <p class="clase-muestra"> Este mensaje es por si preguntaran la metodología del curso
+              <p class="clase-muestra" id="mensaje-8-general"> Este mensaje es por si preguntaran la metodología del curso
               </p>
 
               <p id="mensaje-g7">
@@ -939,7 +1027,7 @@ _Horario de la Cd. de México_.
           </div>
 
           <div class="mensaje-cm">
-            <p class="clase-muestra">        Este mensaje es por si nos preguntaran donde nos ubicamos.
+            <p class="clase-muestra" id="mensaje-9-general">        Este mensaje es por si nos preguntaran donde nos ubicamos.
             </p>
 
             <p id="mensaje-g8">
@@ -950,8 +1038,8 @@ _Horario de la Cd. de México_.
         </div>
 
         <div class="mensaje-cm">
-          <p class="general-clase">Estos mensajes son scripts para las clases en general </p>
-          <p class="clase-general">Este mensaje se usará para avisar que se utilizará la plataforma
+          <p class="general-clase" id="seccion-clases-general">Estos mensajes son scripts para las clases en general </p>
+          <p class="clase-general" id="mensaje-10-general">Este mensaje se usará para avisar que se utilizará la plataforma
           </p> 
           <p id="mensaje-c1">
             Un amable recordatorio de la maestra Jazmín para asegurarse de tener lista su plataforma. Agradecemos mucho su cooperación. <br><br>
@@ -962,7 +1050,7 @@ _Horario de la Cd. de México_.
       </div>
 
       <div class="mensaje-cm">
-        <p class="clase-general">Este mensaje se usará para avisar que se utilizará la plataforma y el material de fracciones. 
+        <p class="clase-general" id="mensaje-11-general">Este mensaje se usará para avisar que se utilizará la plataforma y el material de fracciones. 
         </p> 
         <p id="mensaje-c2">
           Un amable recordatorio de la maestra Jazmín para asegurarse de tener lista su plataforma y su material de fracciones. Agradecemos mucho su cooperación. <br><br>
@@ -973,7 +1061,7 @@ _Horario de la Cd. de México_.
     </div>
 
     <div class="mensaje-cm">
-      <p class="clase-general">Mensaje para enviar la tarea en un solo formato. Se tiene que elegir al profesor y posteriormente dar click 
+      <p class="clase-general" id="mensaje-12-general">Mensaje para enviar la tarea en un solo formato. Se tiene que elegir al profesor y posteriormente dar click 
         en el botón "Genera tareas".  
       </p> 
 
@@ -1007,7 +1095,7 @@ _Horario de la Cd. de México_.
 
 
   <div class="mensaje-cm">
-    <p class="clase-general">Recurso para generar promoción de clases grupales por fecha.</p>
+    <p class="clase-general" id="mensaje-13-general">Recurso para generar promoción de clases grupales por fecha.</p>
 
     <br>
     
@@ -1026,7 +1114,7 @@ _Horario de la Cd. de México_.
 </div>
 
 <div class="mensaje-cm">
-  <p class="clase-general">Mensaje de resumen de clases individuales</p>
+  <p class="clase-general" id="mensaje-14-general">Mensaje de resumen de clases individuales</p>
 
   <br>
 

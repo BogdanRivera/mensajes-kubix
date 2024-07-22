@@ -31,6 +31,43 @@ body {
     color: white;
 }
 
+.indice {
+    text-align: justify;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+/* Estilo para la lista del índice */
+.indice ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Estilo para los elementos de la lista */
+.indice ul li {
+    margin-bottom: 10px;
+}
+
+
+/* Estilo para los enlaces del índice */
+.indice ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+
+/* Cambiar color al pasar el mouse sobre los enlaces */
+.indice ul li a:hover {
+    text-decoration: wavy;
+    color: #1100ff;
+}
+
+
 .clase-muestra{
     background-color: aqua;
 }

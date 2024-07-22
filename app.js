@@ -329,6 +329,7 @@ function sortTimes(times) {
         const hora24hours = document.getElementById('horaLigas').value;
         const profesor = document.getElementById('profesor').value;
         const link = document.getElementById('link').value;
+        
     
         const mesActual = getCurrentMonth();
         const hora = convertTo12HourFormat(hora24hours);
@@ -438,11 +439,14 @@ function generaLigaCM() {
     const hora = convertTo12HourFormat(document.getElementById('tiempo-agendacm').value);
     const profesor = document.getElementById('profesorCM').value;
     const liga = document.getElementById('clasecmliga').value;
-    const fechaObj = new Date(fecha);
 
-    const dia = fechaObj.getDate();
-    const mes = fechaObj.toLocaleString('default', { month: 'long' });
-    const anio = fechaObj.getFullYear();
+    // Descomponer la fecha en año, mes y día
+    const [anio, mes, dia] = fecha.split('-').map(Number);
+
+    // Crear el objeto Date con los componentes de la fecha
+    const fechaObj = new Date(anio, mes - 1, dia);
+
+    const mesNombre = fechaObj.toLocaleString('default', { month: 'long' });
     const id = liga.split('/').pop().replace('j/', '').slice(-11);
     const formattedId = `${id.slice(0, 3)} ${id.slice(3, 7)} ${id.slice(7)}`;
 
@@ -450,9 +454,9 @@ function generaLigaCM() {
 *KUBIX MATEMÁTICAS*
 
 *HORA:* ${hora}, hora de la ciudad de México.
-*FECHA:* ${dia} de ${mes} de ${anio}
+*FECHA:* ${dia} de ${mesNombre} de ${anio}
 *PROFESORA:* ${profesor}
-ID: ${formattedId}
+*ID:* ${formattedId}
 
 ${liga}
 
