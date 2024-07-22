@@ -53,6 +53,7 @@ body {
 }
 
 
+
 /* Estilo para los enlaces del índice */
 .indice ul li a {
     text-decoration: none;
@@ -61,12 +62,17 @@ body {
 }
 
 
+
 /* Cambiar color al pasar el mouse sobre los enlaces */
 .indice ul li a:hover {
-    text-decoration: wavy;
-    color: #1100ff;
+    text-decoration: underline;
+    color: #0056b3;
 }
 
+.indice ul li a:hover {
+    text-decoration: wavy;
+    color: #0056b3;
+}
 
 .clase-muestra{
     background-color: aqua;
