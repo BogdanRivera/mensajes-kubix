@@ -235,24 +235,25 @@ function sortTimes(times) {
             const imgElement = document.getElementById(idImagen);
             const imgSrc = imgElement.src;
     
-            // Wait for image to load
+            // Crear una nueva imagen para cargar la fuente
             const img = new Image();
-            img.crossOrigin = 'anonymous'; // If the image is from another domain
+            img.crossOrigin = 'anonymous'; // Si la imagen es de otro dominio
             img.src = imgSrc;
     
+            // Esperar a que la imagen se cargue completamente
             await new Promise((resolve, reject) => {
                 img.onload = resolve;
                 img.onerror = reject;
             });
     
-            // Draw the image on the canvas
-            const canvas = document.getElementById('canvas');
+            // Dibujar la imagen en el canvas
+            const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
             canvas.width = img.width;
             canvas.height = img.height;
             ctx.drawImage(img, 0, 0);
     
-            // Convert canvas to blob
+            // Convertir el canvas a un blob y copiarlo al portapapeles
             canvas.toBlob(async (blob) => {
                 const item = new ClipboardItem({ 'image/png': blob });
                 await navigator.clipboard.write([item]);
@@ -263,6 +264,7 @@ function sortTimes(times) {
             console.log('Hubo un error al copiar la imagen.');
         }
     }
+    
 
     function generarMensajeHorario(horaId,mensajeId){
         let hora24hours = document.getElementById(horaId).value;
