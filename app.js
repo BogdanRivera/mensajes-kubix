@@ -215,6 +215,7 @@ function sortTimes(times) {
         `;
     
         parrafo.innerHTML = addText;
+        //Se agregó esta linea de código
     }
 
     function capitalizeEachWord(str) {
