@@ -28,25 +28,29 @@ function copyText(elementId, button) {
     }, 1000);
 }
 
-function generaHorariosCM(horariosObtenidosId,fechaInputId,horasAreaId){ 
-	const textos = document.getElementById(horariosObtenidosId);
-        const inputDate = document.getElementById(fechaInputId); 
-        const textarea = document.getElementById(horasAreaId);
-	
-        const horarios = textarea.value.split('\n').map(h => h.trim()).filter(h => h !== '');
-        const convertedHorarios = horarios.map(convertTo12HourFormat);
-        let uniqueHorarios = [...new Set(convertedHorarios)];
-        // Ordenar los horarios únicos
-        let sortedHorarios = sortTimes(uniqueHorarios);
+function generaHorariosCM(horariosObtenidosId, fechaInputId, horasAreaId) {
+    const textos = document.getElementById(horariosObtenidosId);
+    const inputDate = document.getElementById(fechaInputId); 
+    const textarea = document.getElementById(horasAreaId);
 
-        textarea.value = ''; 
-        let dateObtained = getFormattedDate(inputDate.value);
+    const horarios = textarea.value.split('\n').map(h => h.trim()).filter(h => h !== '');
+    const convertedHorarios = horarios.map(convertTo12HourFormat);
+    let uniqueHorarios = [...new Set(convertedHorarios)];
+    let sortedHorarios = sortTimes(uniqueHorarios);
 
-        const day = getDayFromDateString(inputDate.value);
+    textarea.value = ''; 
 
-        const newText = document.createElement('p'); 
-        newText.innerHTML = `*${dateObtained[0]} ${day+1} de ${dateObtained[1]} de ${dateObtained[2]}: ${sortedHorarios}* <br>`
-        textos.appendChild(newText);
+    const dateValue = inputDate.value;
+    const date = new Date(dateValue + 'T00:00:00');
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    let formattedDate = date.toLocaleDateString('es-ES', options);
+
+    // Capitaliza cada palabra en la fecha formateada
+    formattedDate = formattedDate.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+    const newText = document.createElement('p'); 
+    newText.innerHTML = `*${formattedDate}: ${sortedHorarios.join(', ')}* <br>`;
+    textos.appendChild(newText);
 }
 
         function getYesterdayDate() {
@@ -177,24 +181,26 @@ function sortTimes(times) {
         container.innerHTML = ''; // Limpia todo el contenido del elemento
     }
 
-    function generarHorario(mensajeId,fechaId,horaId){
+    function generarHorario(mensajeId, fechaId, horaId) {
         let parrafo = document.getElementById(mensajeId); 
         const fecha = document.getElementById(fechaId).value;
         const tiempo24Hours = document.getElementById(horaId).value;
         let tiempo = convertTo12HourFormat(tiempo24Hours);
-        let dateObtained = getFormattedDate(fecha);
-        let day = getDayFromDateString(fecha);
-
         
-    // Condición para ajustar el texto si la hora es "1:xx PM"
-    let horaTexto = `a las *${tiempo}*`;
-    if (tiempo.startsWith("1:")) {
-        horaTexto = `a la *${tiempo}*`;
-    }
+        const date = new Date(fecha + 'T00:00:00');
+        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        let formattedDate = date.toLocaleDateString('es-ES', options);
+        formattedDate = capitalizeEachWord(formattedDate);
+
+        // Condición para ajustar el texto si la hora es "1:xx PM"
+        let horaTexto = `a las *${tiempo}*`;
+        if (tiempo.startsWith("1:")) {
+            horaTexto = `a la *${tiempo}*`;
+        }
         
         let addText  = `
         🗓 *Fecha y Hora:* <br>
-        Su clase está programada para el día *${dateObtained[0]} ${day+1} de ${dateObtained[1]}* ${horaTexto}, hora de la Cd. de México. ¡Esperamos que sea un momento lleno de aprendizaje!<br><br>
+        Su clase está programada para el día *${formattedDate}* ${horaTexto}, hora de la Cd. de México. ¡Esperamos que sea un momento lleno de aprendizaje!<br><br>
     
         La clase se llevará a cabo por medio de la *aplicación Zoom*. Le enviaremos el link el día de su clase.<br><br>
     
@@ -209,8 +215,12 @@ function sortTimes(times) {
         `;
     
         parrafo.innerHTML = addText;
-
     }
+
+    function capitalizeEachWord(str) {
+        return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+
 
     function generarLlamada(inputId,horaId,mensajeId){
         const diaLlamada = document.getElementById(inputId).value.trim();
