@@ -374,7 +374,6 @@ function sortTimes(times) {
         const contrasena = document.getElementById('contrasena').value;
     
         const mensaje = `
-    Le enviamos de igual manera su acceso a la plataforma: 
     🧩 *PLATAFORMA DIGITAL* 🧩
     Le compartimos los datos para ingresar a su plataforma digital
     https://matemagica.app/moodle/ 
@@ -478,6 +477,40 @@ ${liga}
     `;
 
     document.getElementById('ligacm').innerText = mensaje;
+}
+
+/***** Modificado 27 septiembre 2024 */
+
+function generarHorariopf(mensajeId, fechaId, horaId) {
+    let parrafo = document.getElementById(mensajeId); 
+    const fecha = document.getElementById(fechaId).value;
+    const tiempo24Hours = document.getElementById(horaId).value;
+    let tiempo = convertTo12HourFormat(tiempo24Hours);
+    
+    const date = new Date(fecha + 'T00:00:00');
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    let formattedDate = date.toLocaleDateString('es-ES', options);
+    formattedDate = capitalizeEachWord(formattedDate);
+
+    // Condición para ajustar el texto si la hora es "1:xx PM"
+    let horaTexto = `a las *${tiempo}*`;
+    if (tiempo.startsWith("1:")) {
+        horaTexto = `a la *${tiempo}*`;
+    }
+    
+    let addText  = `
+    *🐾 🔊 PLATAFORMA 🐾*<br />
+    La utilización de la plataforma se presenta como un recurso complementario fundamental para enriquecer y consolidar las actividades académicas, lo que le da el valor significativo 
+    a esta herramienta para promover un aprendizaje continuo y efectivo. <br />
+    Por consiguiente, se le agradece de antemano su colaboración para facilitar esta dinámica en casa. <br /> 
+    Se proporcionará su respectivo nombre de usuario y contraseña para acceder a la plataforma. <br />
+    Con el propósito de darle las bases e instruirle sobre el ingreso y la navegación en su plataforma, estamos programando una clase especial para 
+    el día *${formattedDate}* ${horaTexto}, hora centro. <br/><br/>
+    
+    🐾 Quedamos en espera de su confirmación.🐾
+    `;
+
+    parrafo.innerHTML = addText;
 }
     
     

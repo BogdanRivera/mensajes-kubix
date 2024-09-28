@@ -293,6 +293,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                           <li><a href="#mensaje-6-inscripcion">Mensaje 6: Enlace de inscripción</a></li>
                           <li><a href="#mensaje-7-inscripcion">Mensaje 7: Envío de material</a></li>
                           <li><a href="#mensaje-8-inscripcion">Generar liga de clase</a></li>
+                          <li><a href="#mensaje-9-clasePlataforma">Generar clase plataforma</a></li>
                           <li><a href="#mensaje-9-inscripcion">Acceso a plataforma</a></li>
                           <li><a href="#mensaje-10-inscripcion">Mensaje final</a></li>
                       </ul>
@@ -461,10 +462,30 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
                     </p>
                     <button type="button" class="btn btn-success" onclick="copyText('mensaje-7-inf',this)">Copia texto</button>
                 </div>
+
+                <!-- Modificación -->
+
+                <div class="container">
+                  <div class="d-flex flex-column mb-3">
+                    <p class="informativo" id="mensaje-9-clasePlataforma">Mensaje 9-0: Mensaje para agendar una clase de plataforma . </p>
+
+                    <p>Eliga la fecha y hora de agenda para la clase de plataforma</p>
+                    <div class="d-flex">
+                      <input type="date" id="fecha-agenda-pf" class="p-2">
+                      <input type="time" id="tiempo-agenda-pf" class="p-2">
+                      <button id="btn-copiar-pf" type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorariopf('mensaje-agendar-horario-pf','fecha-agenda-pf','tiempo-agenda-pf')">Genera horario</button>
+                  </div>
+                  <br>
+                  <div class="mensaje-cm">
+                    <p id="mensaje-agendar-horario-pf"></p>
+                    <br>
+                    <button id="btn-copiar-pf" type="button" class="btn btn-success" onclick="copyText('mensaje-agendar-horario-pf',this)">Copia texto</button>
+                  </div>
+                </div>
           
                 <div class="container">
                   <div class="d-flex flex-column mb-3">
-                    <p class="informativo" id="mensaje-9-inscripcion">Mensaje 9: Esta sección permite generar una plataforma de clase ingresando los datos correspondientes. </p>
+                    <p class="informativo" id="mensaje-9-inscripcion">Mensaje 9-1: Esta sección permite generar una plataforma de clase ingresando los datos correspondientes. </p>
 
                       <label for="estudiante" class="p-2">Nombre del Estudiante</label>
                       <input id="estudiante" name="estudiante" class="p-2" type="text">
@@ -927,6 +948,7 @@ _Horario de la Cd. de México_.
                                     <li><a href="#mensaje-1-general">Mensaje de broma</a></li>
                                     <li><a href="#mensaje-2-general">Mensaje inadecuado</a></li>
                                     <li><a href="#mensaje-3-general">Mensaje clases individuales</a></li>
+                                    <li><a href="#mensaje-3-general-img">Imagen de clases indivudales resumido</a></li>
                                     <li><a href="#seccion-cm-general">Seccion de clase muestra y dudas generales</a></li>
                                     <li><a href="#mensaje-4-general">Mensaje de confirmación clase muestra</a></li>
                                     <li><a href="#mensaje-5-general">Mensaje de precios clase muestra</a></li>
@@ -989,6 +1011,15 @@ _Horario de la Cd. de México_.
 *¿Podría compartirnos el temario en el que su hijo/a necesita apoyo?*
                       </p>
                       <button  type="button" class="btn btn-success" onclick="copyText('mensaje-gextra1',this)">Copia texto</button>
+                  </div>
+
+                  <div class="mensaje-cm">
+                    <p class="warning" id="mensaje-3-general-img">Se puede enviar la imagen en vez del texto anterior</p>
+                    <p>Imagen clases individuales:</p>
+                    <img id="imagen-individuales" src="./img/individuales.jpeg" alt="Imagen clases individuales" width="350px">
+                    <br>
+                    <button type="button" class="btn btn-success" onclick="copyImage('imagen-individuales')">Copia Imagen</button>
+                    <canvas id="canvas" style="display: none;"></canvas>
                   </div>
 
 
@@ -1195,7 +1226,9 @@ _Horario de la Cd. de México_.
             document.getElementById('tiempo-agenda-propuesta').value = formattedTime;
             document.getElementById('horaLigas').value = formattedTime; 
             document.getElementById('date-cm').value = formattedDate;  
-            document.getElementById('date-ver').value = formattedDate;  
+            document.getElementById('date-ver').value = formattedDate; 
+            document.getElementById('fecha-agenda-pf').value = formattedDate;
+            document.getElementById('tiempo-agenda-pf').value = formattedTime; 
 
         });
     </script>
