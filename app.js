@@ -1,9 +1,6 @@
 let counter = 0;
 
-//Esta función es para la selección múltiple de las fechas de ajuste
-const datePicker = flatpickr("#datePicker", {
-    mode: "multiple", // Set mode to "multiple" for selecting multiple dates
-  });
+
 
 function copyText(elementId, button) {
 
@@ -301,7 +298,7 @@ function sortTimes(times) {
     function generarMensaje() {
         const promo = parseFloat(document.getElementById('promo').value); // Convertir a flotante
         // const nopromo = document.getElementById('nopromo').value;
-        const selectedDates = datePicker.selectedDates.length;
+        const selectedDates = document.getElementById('datePicker').value
 
         
         const today = new Date();
