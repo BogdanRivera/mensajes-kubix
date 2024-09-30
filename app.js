@@ -1,5 +1,10 @@
 let counter = 0;
 
+//Esta función es para la selección múltiple de las fechas de ajuste
+const datePicker = flatpickr("#datePicker", {
+    mode: "multiple", // Set mode to "multiple" for selecting multiple dates
+  });
+
 function copyText(elementId, button) {
 
     var textElement = document.getElementById(elementId);
@@ -294,9 +299,10 @@ function sortTimes(times) {
     }
 
     function generarMensaje() {
-        const promo = document.getElementById('promo').value;
-        const nopromo = document.getElementById('nopromo').value;
-        const ajuste = document.getElementById('ajuste').value;
+        const promo = parseFloat(document.getElementById('promo').value); // Convertir a flotante
+        // const nopromo = document.getElementById('nopromo').value;
+        const selectedDates = datePicker.selectedDates.length;
+
         
         const today = new Date();
         const diaHoy = today.getDate();
@@ -304,17 +310,25 @@ function sortTimes(times) {
         const siguienteMes = new Date(today.getFullYear(), today.getMonth() + 1, 1).toLocaleString('default', { month: 'long' });
     
         const ultimoDiaMes = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-        const diaLimite = diaHoy < 15 ? 15 : ultimoDiaMes;
+
+        let mensajeFechaLimite = '';
+    
+        // Determinar el día límite y el mensaje basado en la condición del día actual
+        if (diaHoy <= 15) {
+            mensajeFechaLimite = `A partir del día 16 de ${mesActual} su pago sería por: $3850.00`;
+        } else {
+            mensajeFechaLimite = `A partir del día 1 de ${siguienteMes} su pago sería por: $3850.00`;
+        }
     
         const mensaje = `
     Costos generales (clases + plataforma):
     
     Le comparto el detalle de su pago para realizarlo el día de hoy ${diaHoy} de ${mesActual}:
     
-    Diferencia de ${mesActual}: $${ajuste}
-    Siguiente pago el 1 de ${siguienteMes}: $${promo}
+    Diferencia de ${mesActual}: $${((promo/8)*selectedDates).toFixed(2)}
+    Siguiente pago el 1 de ${siguienteMes}: $${promo.toFixed(2)}
     
-    A partir de mañana hasta el ${diaLimite} de ${mesActual} su pago sería por: $${nopromo}
+    ${mensajeFechaLimite}
         `;
     
         document.getElementById('mensaje-1-inf').innerText = mensaje;
