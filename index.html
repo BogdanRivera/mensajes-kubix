@@ -1217,7 +1217,6 @@ _Promoción válida del 15 al 18 de noviembre de 2024_.
                         
                                                         <p id="mensaje-4-wa">
                                                         </p>
-                                                        <button type="button" class="btn btn-success" onclick="generarMensajeWA4()"> Generar mensaje de costos</button>
                                                         <button id="btn-copiar-4-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-4-wa',this)">Copia texto</button>
                                                     </div>
 
@@ -1302,7 +1301,6 @@ Aquí le presentamos algunas opciones de horarios llenos de aprendizaje:
 _Horario de la Cd. de México_.
                                   <br>
 🤔 *¿Qué Día y Hora Funcionarían Mejor para Usted?* <br>
-Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría decirnos qué día y hora se adaptan mejor a su agenda?
                                                             </p>
                                                           </div>
                           
@@ -1343,6 +1341,7 @@ Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría 
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            generarMensajeWA4(); //Cuando se inicia el documento se inicia esta función 
             // Obtener la fecha y hora actual
             const now = new Date();
   

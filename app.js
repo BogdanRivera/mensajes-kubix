@@ -51,7 +51,7 @@ function generaHorariosCM(horariosObtenidosId, fechaInputId, horasAreaId) {
     formattedDate = formattedDate.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     const newText = document.createElement('p'); 
-    newText.innerHTML = `*${formattedDate}: ${sortedHorarios.join(', ')}* <br>`;
+    newText.innerHTML = `*${formattedDate}*: ${sortedHorarios.join(', ')} <br>`;
     textos.appendChild(newText);
 }
 
@@ -376,11 +376,11 @@ function sortTimes(times) {
     let rangoPromocion;
 
     if (dia <= 15) {
-      rangoPromocion = `Del 1 al 15 de ${mes},`;
-    } else {
-      const ultimoDia = new Date(anio, fecha.getMonth() + 1, 0).getDate();
-      rangoPromocion = `Del 16 al ${ultimoDia} de ${mes},`;
-    }
+        rangoPromocion = `<span style="font-weight: bold; color: black;">Del *1 al 15 de ${mes}*,</span>`;
+      } else {
+        const ultimoDia = new Date(anio, fecha.getMonth() + 1, 0).getDate();
+        rangoPromocion = `<span style="font-weight: bold; color: black;">Del *16 al ${ultimoDia} de ${mes}*,</span>`;
+      }    
 
     const mensaje = `
       💰 Costos regulares de nuestras clases: <br>
