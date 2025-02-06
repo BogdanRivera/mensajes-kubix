@@ -10,22 +10,22 @@
     </head>
 <body>
     <div class="cabecero container-fluid">
-        <img class="imagen-logo" src="./img/logoKubixNavidad.png" alt="imagen-logo" width="300px">
+        <img class="imagen-logo" src="./img/logokubix.png" alt="imagen-logo" width="300px">
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-6">
         <div class="row g-3 justify-content-between">
-            <div class="col-4 d-flex justify-content-center">
-                <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm1" aria-expanded="false" aria-controls="collapseForm1">
-                    Clase muestra
-                </button>
-            </div>
-            <div class="col-4 d-flex justify-content-center">
+          <div class="col-6 d-flex justify-content-center mt-3">
+            <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm6" aria-expanded="false" aria-controls="collapseForm6">
+                Informes
+            </button>
+        </div>
+            <div class="col-6 d-flex justify-content-center">
                 <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm2" aria-expanded="false" aria-controls="collapseForm2">
                     Inscripción
                 </button>
             </div>
-            <div class="col-4 d-flex justify-content-center">
+            <div class="col-6 d-flex justify-content-center">
                 <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm3" aria-expanded="false" aria-controls="collapseForm3">
                     Programación
                 </button>
@@ -35,7 +35,7 @@
                     Verano
                 </button>
             </div>
-            <div class="col-6 d-flex justify-content-center mt-3">
+            <div class="col-12 d-flex justify-content-center mt-3">
               <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm5" aria-expanded="false" aria-controls="collapseForm5">
                   Mensajes generales
               </button>
@@ -45,223 +45,6 @@
         </div>
 
         <div class="accordion mt-3" id="accordionExample">
-
-
-            <!-- Clase muestra -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm1" aria-expanded="false" aria-controls="collapseForm1">
-                        Clase muestra
-                    </button>
-                </h2>
-                <div id="collapseForm1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-
-                        <div>
-                    
-                            <div class="mensaje-cm">
-                                <h1>Scripts de clase muestra</h1>
-
-                                                    <!-- Indice clase muestra -->
-                              <div class="indice">
-                                  <ul>
-                                      <li><a href="#msj1-cm">Mensaje 1: Default</a></li>
-                                      <li><a href="#msj2-cm">Mensaje 2: Alumnos de primaria o secundaria</a></li>
-                                      <li><a href="#msj3-cm">Mensaje 3: Invitación a clase muestra</a></li>
-                                      <li><a href="#msj4-cm">Mensaje 4: Elección de horarios</a></li>
-                                      <li><a href="#msj5-cm">Mensaje 5: Agendar clase muestra</a></li>
-                                      <li><a href="#msj6-cm">Mensaje 6: Enviar video manualmente</a></li>
-                                      <li><a href="#msj7-cm">Mensaje 7: Conexión en tablet o celular</a></li>
-                                      <li><a href="#msjfinal-cm">Mensaje final</a></li>
-                                      <li><a href="#mensaje-extrah-cm">Recordatorio de horario de atención</a></li>
-                                      <li><a href="#msjligas-cm">Generar ligas de clase muestra</a></li>
-                                  </ul>
-                              </div>
-
-
-                                <p class="informativo" id="msj1-cm">Mensaje 1: Este mensaje se lanza por default.</p>
-                                
-                                <p id="mensaje-1-cm">¡Le saluda la profesora Carolina Gutiérrez! 🌟<br><br>
-                                    ¡El genio matemático vive en cada niño! 🚀 En nuestras clases en línea, no solo enseñamos matemáticas, sino que también liberamos esa chispa de inteligencia que hace brillar a sus pequeños.<br><br>
-                                    
-                                    Es un placer recibir su interés en nuestras clases de matemáticas en línea. Aquí estoy para ayudarle en todo lo que necesite. Antes de continuar, cuénteme, *¿en qué grado está actualmente su hijo/a?*
-                                </p>
-                                <button id="btn-copiar-1" type="button" class="btn btn-success" onclick="copyText('mensaje-1-cm',this)">Copia texto</button>
-                            </div>
-        
-                            <div class="mensaje-cm" id="msj2-cm">
-                              <p class="informativo">Mensaje 2: Este mensaje se manda si la contestación es de un alumno diferente de preparatoria o kinder. Caso contrario se manda
-                                informe de clases individuales (ver sección de mensajes generales). 
-                              </p>
-
-                                <p id="mensaje-2-cm">
-                                    ✅ En *KUBIX MATEMÁTICAS*, con nuestra *metodología única* hacemos que las matemáticas sean *fáciles y divertidas*. Desarrollamos su *pensamiento lógico matemático*.
-                                    <br><br>
-                                    ✅ Trabajamos temas como *sistema decimal, operaciones básicas, fracciones, cálculo mental, tablas de multiplicar* y cualquier tema que vea a lo largo de preescolar hasta secundaria.
-                                    <br><br>
-                                    ✅ Las clases son *2 veces a la semana de 50 minutos*, grupos *reducidos*, *plataforma digital* con ejercicios disponibles 24/7, y *material* para facilitar el aprendizaje. 
-                                    
-                                </p>
-                                <button id="btn-copiar-2" type="button" class="btn btn-success" onclick="copyText('mensaje-2-cm',this)">Copia texto</button>
-                            </div>
-        
-                            <div class="mensaje-cm">
-                              <p class="informativo" id="msj3-cm">Mensaje 3: Este mensaje se envía para invitarlos a clase muestra. 
-                              </p>
-                                <p id="mensaje-3-cm">
-                                    Queremos invitarle a una experiencia especial: una clase muestra *SIN COSTO y SIN COMPROMISO*. ¡Es una oportunidad perfecta para que usted y su hijo/a descubran de primera mano cómo hacemos que las matemáticas sean emocionantes y significativas!
-                                    <br><br>
-                                    Por favor, *complete este breve formulario* para que podamos personalizar la clase muestra según las necesidades y habilidades de su hijo/a. 
-                                    <br><br>
-                                    https://forms.gle/q9WwnJwu4cKN3fvF7
-                                </p>
-                                <button id="btn-copiar-3" type="button" class="btn btn-success" onclick="copyText('mensaje-3-cm',this)">Copia texto</button>
-                            </div>
-        
-                            <div class="mensaje-cm">
-                              <p class="informativo" id="msj4-cm">Mensaje 4: Para poder utilizar este formato es necesario 
-                                elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
-                                se deben ingresar los horarios en el formato de salto de línea, es decir: <br>
-                                10:00 am <br>
-                                13:00 <br>
-                                No importa si es el formato de 12 horas o 24 horas. Posteriormente se da en click en el botón
-                                "Agregar horario" y para copiar el texto se deberá dar click en el botón "Copiar texto". 
-                                Si nos equivocamos en los horarios se deberá dar click en el botón de 'Limpiar'.  
-                              </p>
-                              <!-- Aquí se modificó 2 -->
-                              <div class="row d-flex" id="row-cm">
-                                <div class="col-3 d-flex justify-content-center">
-                                  <input type="date" id="date-cm">
-                                </div>
-
-                                <div class="col-3 d-flex justify-content-center">
-                                  <div class="form-floating flex-fill">
-                                    <textarea class="form-control" placeholder="Ingresa los horarios" id="text-area-cm"></textarea>
-                                    <label for="text-area-cm">Ingresa horarios</label>
-                                  </div>
-                                </div>
-
-                                <div class="col-6 d-flex justify-content-center">
-                                  <button type="button" class="btn btn-success" onclick="generaHorariosCM('horarios-obtenidos','date-cm','text-area-cm')">Agregar horario</button>
-                                </div>
-
-                              </div>
-                                <div>
-                                  <br>
-                                    <p id="mensaje-4-cm">
-Aquí le presentamos algunas opciones de horarios llenos de aprendizaje: 
-                                    </p>
-                                    
-                                    <div id="horarios-obtenidos"></div>
-        
-                                    <p id="mensaje-4-cm-2">
-_Horario de la Cd. de México_.
-        <br>
-🤔 *¿Qué Día y Hora Funcionarían Mejor para Usted?* <br>
-Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría decirnos qué día y hora se adaptan mejor a su agenda?
-                                  </p>
-                                </div>
-
-                                <!-- Aquí se terminÓ de modificar -->
-                                <button id="btn-copiar-4" type="button" class="btn btn-success" onclick="copyAllText('mensaje-4-cm','horarios-obtenidos','mensaje-4-cm-2',this)">Copia texto</button>
-                                <button type="button" class="btn btn-secondary" onclick="cleanElements('horarios-obtenidos')">Limpiar</button>
-                                <br><br>
-                                <p class="informativo" id="msj5-cm">Mensaje 5: Una vez que la madre o el padre de familia haya elegido un horario, se deberá elegir la fecha y la hora en el siguiente bloque y dar click en generar horario. 
-                                </p>
-
-                                <p>Eliga la fecha y hora de agenda</p>
-        
-                                <div class="d-flex">
-                                  <input type="date" id="fecha-agenda" class="p-2">
-                                  <input type="time" id="tiempo-agenda" class="p-2">
-                                  <button id="btn-copiar-6" type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorario('mensaje-agendar-horario','fecha-agenda','tiempo-agenda')">Genera horario</button>
-                              </div>
-                              <br>
-                              <p id="mensaje-agendar-horario"></p>
-                              <br>
-                              <button id="btn-copiar-5" type="button" class="btn btn-success" onclick="copyText('mensaje-agendar-horario',this)">Copia texto</button>
-        
-                            </div>
-        
-                            <div class="mensaje-cm">
-                              <p class="informativo" id="msj6-cm">Mensaje 6: Se debe enviar el video manualmente.  
-                              </p>
-                              <video id="video-sample" width="320" height="240" controls>
-                                  <source src="./videos/videoKubix.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                              </video>
-                              <br>
-                          </div>
-                          <p class="info-estatica">Copiar el video manualmente</p>
-        
-                          <div class="mensaje-cm">
-                            <p class="informativo" id="msj7-cm">Mensaje 7: Se manda si la persona no se conectará en una computadora.  
-                            </p>
-                            <p id="mensaje-prefinal-cm">
-                              Para maximizar el beneficio de las clases, le recomendamos que su hijo/a se conecte a través de una *tableta o computadora* 
-                              en lugar de un celular. Las pantallas más amplias permitirán una visualización más cómoda. 
-                              En caso de que esto no sea viable, asegúrese de utilizar un dispositivo con una pantalla *lo suficientemente grande*. 
-                              Esto asegurará una experiencia de aprendizaje cómoda y efectiva. 
-                              Valoramos profundamente su participación en el proceso educativo de su hijo. 
-                              ¡Le agradecemos mucho por su valioso apoyo! 🚀📱💻
-                            </p>
-                            <button id="btn-copiar-10" type="button" class="btn btn-success" onclick="copyText('mensaje-prefinal-cm',this)">Copia texto</button>
-                        </div>
-        
-                        <div class="mensaje-cm">
-                          <p class="informativo" id="msjfinal-cm">Mensaje 8: Mensaje final.  
-                          </p>
-                          <p id="mensaje-final-cm">
-                            Cualquier pregunta que tenga no dude en contactarnos. ¡Que tenga un excelente día! 
-                          </p>
-                          <button id="btn-copiar-11" type="button" class="btn btn-success" onclick="copyText('mensaje-final-cm',this)">Copia texto</button>
-                            </div>
-
-                            <div class="mensaje-cm">
-                              <p class="warning" id="mensaje-extrah-cm">Mensaje extra: Este mensaje se manda para 
-                                recordar el horario de atención.   
-                              </p>
-                              <p id="mensaje-h-inf">
-                        Queremos recordarle que nuestro equipo está disponible para atenderle de Lunes a jueves, de 10:00 am a 7:00 pm,Viernes de 10:00 am a 6:00 pm. Si realiza un pago fuera de nuestro horario de atención, no se preocupe, estaremos encantados de procesar su solicitud y proporcionarle los materiales necesarios en el próximo día hábil. ¡Gracias por su comprensión y confianza! 
-                        ¡Cualquier duda que tenga quedamos a sus órdenes!
-                              </p>
-                              <button type="button" class="btn btn-success" onclick="copyText('mensaje-h-inf',this)">Copia texto</button>
-                            </div>
-
-                            <p class="warning" id="msjligas-cm">Este último recurso funciona para realizar las ligas de las clases muestra</p>
-
-
-                            <div class="container mensaje-cm text-center">
-                              <p>Eliga la fecha y hora de agenda</p>
-                              <input type="date" id="fecha-agendacm" class="p-2">
-                              <input type="time" id="tiempo-agendacm" class="p-2">
-                          </div>
-
-                          <br>
-
-                            <div class="container text-center">
-                              <label for="profesorCM" class="p-2">Selecciona el profesor(a) de la clase muestra</label>
-                              <br>
-                              <select id="profesorCM" name="profesorCM" class="p-2">
-                                  <option value="Lupita">Lupita</option>
-                                  <option value="Karla">Karla</option>
-                              </select>
-                              <br>
-                              <label for="clasecmliga" class="p-2">Ingresa el link de la sesión</label>
-                              <input type="text" name="clasecmliga" id="clasecmliga" placeholder="Ej. https://us02web.zoom.us/j/89897407450">
-                              <br><br>
-                              <button type="button" class="btn btn-success" onclick="generaLigaCM()">Genera liga CM</button>
-                              <br><br>
-                              <p id="ligacm"></p>
-                              <button type="button" class="btn btn-success" onclick="copyText('ligacm',this)">Copia texto</button>
-                          </div>
-
-                          </div>
-                    </div>
-                </div>
-            </div>
-
-
 
 
 
@@ -1300,6 +1083,262 @@ _Promoción válida del 15 al 18 de noviembre de 2024_.
 
 
         </div>
+
+                    <!-- Informes generales -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm6" aria-expanded="false" aria-controls="collapseForm6">
+                              Informes 
+                          </button>
+                      </h2>
+                      <div id="collapseForm6" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+      
+                              <div>
+                          
+                                  <div class="mensaje-cm">
+                                      <h1>Informes</h1>
+                                                          <!-- Indice clase muestra whatsapp -->
+                                                          <div class="container mt-6">
+                                                            <div class="row g-3 justify-content-between">
+                                                              <div class="col-3 d-flex justify-content-center mt-3">
+                                                                <button class="btn btn-primary btn-lg w-100 boton-whatsapp" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormWA" aria-expanded="false" aria-controls="collapseFormWA">
+                                                                    Informes Whatsapp
+                                                                </button>
+                                                          <!-- Indice clase muestra whatsapp -->
+
+                                                            </div>
+                                                            <div class="col-3 d-flex justify-content-center mt-3">
+                                                              <button class="btn btn-primary btn-lg w-100 boton-facebook" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm7" aria-expanded="false" aria-controls="collapseForm7">
+                                                                  Informes Facebook
+                                                              </button>
+                                                            </div>
+
+                                                            <div class="col-3 d-flex justify-content-center mt-3">
+                                                              <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm7" aria-expanded="false" aria-controls="collapseForm7">
+                                                                  Nuevos ingresos 
+                                                              </button>
+                                                            </div>
+                                                            <div class="col-3 d-flex justify-content-center mt-3">
+                                                              <button class="btn btn-primary btn-lg w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm7" aria-expanded="false" aria-controls="collapseForm7">
+                                                                  Mensajes generales 
+                                                              </button>
+                                                            </div>
+
+                                                            </div>
+                                                          </div>
+
+                                              <div id="collapseFormWA" class="accordion-collapse collapse" aria-labelledby="headingFour">
+                                                    <div class="accordion-body">
+                                                      <div class="mensaje-cm">
+                                                        <h1>Scripts de clase muestra</h1>
+                        
+                                                                            <!-- Indice clase muestra -->
+                                                      <div class="indice">
+                                                          <ul>
+                                                              <li><a href="#msj1-wa">Mensaje 1: Bienvenida</a></li>
+                                                              <li><a href="#msj2-wa">Mensaje 2: Mensaje siguiente al mensaje de bienvenida</a></li>
+                                                              <li><a href="#msj3-wa">Mensaje 3: Pregunta sobre las clases</a></li>
+                                                              <li><a href="#msj4-wa">Mensaje 4: Costo de las clases</a></li>
+                                                              <li><a href="#msj5-wa">Mensaje 5: Agendar clase muestra</a></li>
+                                                              <li><a href="#msj6-wa">Mensaje 6: Contestación del mensaje anterior</a></li>
+                                                              <li><a href="#msj7-wa">Mensaje 7: Generación de horarios de clase muestra</a></li>
+                                                              <li><a href="#msj8-wa">Mensaje 8: Agenda un horario de clase muestra </a></li>
+
+                                                          </ul>
+                                                      </div>
+                        
+                        
+                                                        <p class="informativo" id="msj1-wa">Mensaje 1: Este mensaje se lanza por default.</p>
+                                                        
+                                                        <p id="mensaje-1-wa">👋 ¡Hola! Soy Carolina Gutiérrez. 😊 <br>
+
+                                                          📊 ¿Sabía que _el 90% de los niños mejora su confianza_ cuando aprenden matemáticas de forma divertida? En _KUBIX Matemáticas,_ logramos que los números se conviertan en sus mejores amigos. 🧮🫂
+                                                          <br>
+                                                          <br>
+                                                          ✅ Clases en vivo 100% en línea. <br>
+                                                          ✅ Horarios flexibles. <br>
+                                                          ✅ Ejercicios de práctica 24/7. <br>
+                                                          ✅ Una metodología que funciona. <br>
+                                                          <br>
+                                                          💬 *¿Qué grado cursa su hijo/a?* <br>
+                                                          1️⃣Preescolar <br>
+                                                          2️⃣Primaria <br>
+                                                          3️⃣Secundaria <br>
+                                                          4️⃣Medio superior <br>
+                                                          5️⃣Superior <br>
+                                                        </p>
+                                                        <button id="btn-copiar-1-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-1-wa',this)">Copia texto</button>
+                                                    </div>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj2-wa">
+                                                      <p class="informativo">Mensaje 2: Este mensaje se envia posteriormente al anterior mensaje. 
+                                                      </p>
+                        
+                                                        <p id="mensaje-2-wa">
+                                                          ✅ En _KUBIX Matemáticas_ transformamos las matemáticas en una experiencia *fácil, divertida y significativa.* ✨ Con nuestra *metodología única,* potenciamos el *pensamiento lógico-matemático* de cada estudiante.
+                                                          <br><br>
+                                                          📚 *Temas que trabajamos:* <br>
+                                                          ✔ Sistema decimal y operaciones básicas. <br>
+                                                          ✔ Fracciones y decimales <br>
+                                                          ✔ Cálculo mental y tablas de multiplicar. <br>
+                                                          ✔ Álgebra, geometría, proporcionalidad y muchos temas más… 
+                                                          <br><br> 
+                                                          🔍 *Nos enfocamos en los temas específicos que su hijo/a necesita dominar,* ya sea para reforzar áreas en las que tiene dificultad o para potenciar su aprendizaje.
+                                                          <br><br>
+                                                           🎯 *¿Qué ofrecemos?* <br>
+                                                          🔹 Clases *2 veces por semana,* (50 minutos). <br>
+                                                          🔹 *Grupos reducidos* (max. 8 estudiantes). <br>
+                                                          🔹 *Plataforma digital* con ejercicios disponibles 24/7. <br>
+                                                          🔹 *Material de apoyo incluido,* diseñado para facilitar el aprendizaje. 
+                                                          <br><br>
+                                                          🌐 Todo esto en *clases en vivo, 100% en línea,* desde la comodidad de tu hogar.
+                                                          <br><br>
+                                                        </p>
+                                                        <button id="btn-copiar-2-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-2-wa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj3-wa">
+                                                      <p class="informativo">Mensaje 3: Mensaje de pregunta para concer los costos y promociones de las clases. 
+                                                      </p>
+                        
+                                                        <p id="mensaje-3-wa">
+                                                          💬 *¿Le gustaría conocer los costos y promociones de las clases?* <br>
+                                                          1️⃣Sí <br>
+                                                          2️⃣No <br>
+                                                        </p>
+                                                        <button id="btn-copiar-3-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-3-wa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj4-wa">
+                                                      <p class="informativo">Mensaje 4: Información de los costos. Para utilizarlo se debe dar click primeramente en 'Generar mensajes de costos' y posteriormente en 'Copia texto'.
+                                                      </p>
+                        
+                                                        <p id="mensaje-4-wa">
+                                                        </p>
+                                                        <button type="button" class="btn btn-success" onclick="generarMensajeWA4()"> Generar mensaje de costos</button>
+                                                        <button id="btn-copiar-4-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-4-wa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    
+                                                    <div class="mensaje-cm" id="msj5-wa">
+                                                      <p class="informativo">Mensaje 5: Mensaje para agendar una clase muestra.
+                                                      </p>
+                        
+                                                        <p id="mensaje-5-wa">
+                                                          Queremos invitarle a una experiencia especial: una clase muestra *SIN COSTO y SIN COMPROMISO.* ¡Es una oportunidad perfecta para que usted y su hijo/a conozcan nuestro sistema.
+                                                          <br><br>
+                                                          Por favor elija la opción que desee realizar:
+                                                          <br><br>
+                                                            1️⃣ Agendar una clase muestra gratis. <br>
+                                                            2️⃣ Hablar con un asesor. <br>
+                                                            3️⃣ Finalizar la conversación. <br>
+                                                        </p>
+                                                        <button id="btn-copiar-5-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-5-wa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj6-wa">
+                                                      <p class="informativo">Mensaje 6: Distintos mensajes dependiendo de la elección anterior.
+                                                      </p>
+                                                        <p style="text-align: center;">[1. Si eligen "Agendar una clase muestra gratis":]</p>
+                                                        <p id="mensaje-6-wa1">
+                                                          Por favor, *complete este breve formulario* para que podamos personalizar la clase muestra según las necesidades y habilidades de su hijo/a.
+                                                          <br><br>
+                                                          *DE CLICK AQUÍ* ⬇ <br>
+                                                          https://forms.gle/q9WwnJwu4cKN3fvF7
+                                                        </p>
+                                                        <button id="btn-copiar-6-wa1" type="button" class="btn btn-success" onclick="copyText('mensaje-6-wa1',this)">Copia texto</button>
+                                                        <br><br>
+                                                        <p style="text-align: center;">[2. Si eligen "Hablar con un asesor":]</p>
+                                                        <p id="mensaje-6-wa2">
+                                                          Buen día, dígame, ¿en qué puedo ayudarle?
+                                                        </p>
+                                                        <button id="btn-copiar-6-wa2" type="button" class="btn btn-success" onclick="copyText('mensaje-6-wa2',this)">Copia texto</button>
+                                                        <br><br>
+                                                        <p style="text-align: center;"> [3. Si eligen "Finalizar la conversación":] </p>
+                                                        <p id="mensaje-6-wa3">
+                                                          Gracias por su tiempo. Si tiene alguna otra pregunta en el futuro, no dude en contactarnos. ¡Esperamos poder ayudarle pronto! 😊
+                                                        </p>
+                                                        <button id="btn-copiar-6-wa3" type="button" class="btn btn-success" onclick="copyText('mensaje-6-wa3',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj7-wa">
+                                                        <p class="informativo" id="msj4-cm">Mensaje 7: Para poder utilizar este formato es necesario 
+                                                          elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
+                                                          se deben ingresar los horarios en el formato de salto de línea, es decir: <br>
+                                                          10:00 am <br>
+                                                          13:00 <br>
+                                                          No importa si es el formato de 12 horas o 24 horas. Posteriormente se da en click en el botón
+                                                          "Agregar horario" y para copiar el texto se deberá dar click en el botón "Copiar texto". 
+                                                          Si nos equivocamos en los horarios se deberá dar click en el botón de 'Limpiar'.  
+                                                        </p>
+                                                        <div class="row d-flex" id="row-cm">
+                                                          <div class="col-3 d-flex justify-content-center">
+                                                            <input type="date" id="date-wa">
+                                                          </div>
+                          
+                                                          <div class="col-3 d-flex justify-content-center">
+                                                            <div class="form-floating flex-fill">
+                                                              <textarea class="form-control" placeholder="Ingresa los horarios" id="text-area-wa"></textarea>
+                                                              <label for="text-area-wa">Ingresa horarios</label>
+                                                            </div>
+                                                          </div>
+                          
+                                                          <div class="col-6 d-flex justify-content-center">
+                                                            <button type="button" class="btn btn-success" onclick="generaHorariosCM('horarios-obtenidos-wa','date-wa','text-area-wa')">Agregar horario</button>
+                                                          </div>
+                          
+                                                        </div>
+                                                          <div>
+                                                            <br>
+                                                              <p id="mensaje-7-wa">
+Aquí le presentamos algunas opciones de horarios llenos de aprendizaje: 
+                                                              </p>
+                                                              
+                                                              <div id="horarios-obtenidos-wa"></div>
+                                  
+                                                              <p id="mensaje-7-wa-2">
+_Horario de la Cd. de México_.
+                                  <br>
+🤔 *¿Qué Día y Hora Funcionarían Mejor para Usted?* <br>
+Queremos asegurarnos de encontrar el momento perfecto para su hijo/a. ¿Podría decirnos qué día y hora se adaptan mejor a su agenda?
+                                                            </p>
+                                                          </div>
+                          
+                                                          <!-- Aquí se terminÓ de modificar -->
+                                                          <button id="btn-copiar-7-wa" type="button" class="btn btn-success" onclick="copyAllText('mensaje-7-wa','horarios-obtenidos-wa','mensaje-7-wa-2',this)">Copia texto</button>
+                                                          <button type="button" class="btn btn-secondary" onclick="cleanElements('horarios-obtenidos-wa')">Limpiar</button>
+                                                          <br><br>
+                                                          <p class="informativo" id="msj8-wa">Mensaje 8: Una vez que la madre o el padre de familia haya elegido un horario, se deberá elegir la fecha y la hora en el siguiente bloque y dar click en generar horario. 
+                                                          </p>
+                          
+                                                          <p>Eliga la fecha y hora de agenda</p>
+                                  
+                                                          <div class="d-flex">
+                                                            <input type="date" id="fecha-agenda-wa" class="p-2">
+                                                            <input type="time" id="tiempo-agenda-wa" class="p-2">
+                                                            <button id="btn-copiar-8-wa" type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorarioWA('mensaje-agendar-horario-wa','fecha-agenda-wa','tiempo-agenda-wa')">Genera horario</button>
+                                                        </div>
+                                                        <br>
+                                                        <p id="mensaje-agendar-horario-wa"></p>
+                                                        <br>
+                                                        <button id="btn-copiar-8-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-agendar-horario-wa',this)">Copia texto</button>
+                                  
+                                                    </div>
+
+                                              </div>
+                                          </div>
+
+      
+      
+                                  </div>              
+      
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+
     </div>
 
     <script>
@@ -1323,6 +1362,8 @@ _Promoción válida del 15 al 18 de noviembre de 2024_.
             document.getElementById('tiempo-agenda').value = formattedTime;
             document.getElementById('fecha-agendacm').value = formattedDate;
             document.getElementById('tiempo-agendacm').value = formattedTime;
+            document.getElementById('fecha-agenda-wa').value = formattedDate;
+            document.getElementById('tiempo-agenda-wa').value = formattedTime;
             document.getElementById('tiempo-agenda-verano').value = formattedTime;
             document.getElementById('tiempo-agenda-verano-2').value = formattedTime; 
             document.getElementById('tiempo-agenda-propuesta').value = formattedTime;
@@ -1331,6 +1372,8 @@ _Promoción válida del 15 al 18 de noviembre de 2024_.
             document.getElementById('date-ver').value = formattedDate; 
             document.getElementById('fecha-agenda-pf').value = formattedDate;
             document.getElementById('tiempo-agenda-pf').value = formattedTime; 
+            document.getElementById('date-wa').value = formattedDate;  
+
 
         });
     </script>

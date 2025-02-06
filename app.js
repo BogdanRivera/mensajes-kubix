@@ -221,6 +221,43 @@ function sortTimes(times) {
         //Se volvió a agregar una nueva línea
     }
 
+    function generarHorarioWA(mensajeId, fechaId, horaId) {
+        let parrafo = document.getElementById(mensajeId); 
+        const fecha = document.getElementById(fechaId).value;
+        const tiempo24Hours = document.getElementById(horaId).value;
+        let tiempo = convertTo12HourFormat(tiempo24Hours);
+        
+        const date = new Date(fecha + 'T00:00:00');
+        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        let formattedDate = date.toLocaleDateString('es-ES', options);
+        formattedDate = capitalizeEachWord(formattedDate);
+
+        // Condición para ajustar el texto si la hora es "1:xx PM"
+        let horaTexto = `a las *${tiempo}*`;
+        if (tiempo.startsWith("1:")) {
+            horaTexto = `a la *${tiempo}*`;
+        }
+        
+        let addText  = `
+        🗓 *Fecha y Hora:* <br>
+        Su clase está programada para el día *${formattedDate}* ${horaTexto} (hora de la Cd. de México) a través de Zoom. Le enviaremos el enlace el día de la clase.<br><br>
+    
+        👨‍🏫 _Importante:_ <br>
+        *Un adulto debe acompañar al alumno*, ya que al final de la clase hablaremos con usted.<br><br>
+
+    
+        ⏰ _Confirmación:_<br>
+        Por favor, confirme *antes de las 12:00 pm del día de la clase.* Si no recibimos su confirmación, la clase se cancelará. La tolerancia es de *20 minutos,* así que agradecemos mucho su puntualidad.
+        <br><br>
+        Le enviamos un video informativo.
+
+        `;
+    
+        parrafo.innerHTML = addText;
+        //Se agregó esta linea de código
+        //Se volvió a agregar una nueva línea
+    }
+
     function capitalizeEachWord(str) {
         return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     }
@@ -329,6 +366,36 @@ function sortTimes(times) {
         `;
     
         document.getElementById('mensaje-1-inf').innerText = mensaje;
+    }
+
+    function generarMensajeWA4(){
+        const fecha = new Date();
+    const dia = fecha.getDate();
+    const mes = fecha.toLocaleString('es-MX', { month: 'long' });
+    const anio = fecha.getFullYear();
+    let rangoPromocion;
+
+    if (dia <= 15) {
+      rangoPromocion = `Del 1 al 15 de ${mes},`;
+    } else {
+      const ultimoDia = new Date(anio, fecha.getMonth() + 1, 0).getDate();
+      rangoPromocion = `Del 16 al ${ultimoDia} de ${mes},`;
+    }
+
+    const mensaje = `
+      💰 Costos regulares de nuestras clases: <br>
+      • Mensualidad: *$1,500* <br>
+      • Inscripción: *$800* <br>
+      • Plataforma: *$1,500* <br>
+      • Material imprimible: *$50* <br><br>
+      
+      📢 *¡PROMOCIÓN ESPECIAL!* 📢 <br><br>
+      
+      ${rangoPromocion} aprovecha nuestras clases por solo *$1,200 al mes* y *ahorra más de $3,000* obteniendo un *descuento del 100%* en inscripción, plataforma y material. 🚀
+    `;
+
+    document.getElementById('mensaje-4-wa').innerHTML = mensaje;
+
     }
 
     function generaDiasAcordados(diasId, horaId, mensajeId) {
