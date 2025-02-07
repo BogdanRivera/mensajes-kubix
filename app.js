@@ -51,7 +51,7 @@ function generaHorariosCM(horariosObtenidosId, fechaInputId, horasAreaId) {
     formattedDate = formattedDate.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     const newText = document.createElement('p'); 
-    newText.innerHTML = `*${formattedDate}*: ${sortedHorarios.join(', ')} <br>`;
+    newText.innerHTML = `*<span style="font-weight: bold;">${formattedDate}</span>*: ${sortedHorarios.join(', ')} <br>`;
     textos.appendChild(newText);
 }
 
@@ -258,6 +258,43 @@ function sortTimes(times) {
         //Se volvió a agregar una nueva línea
     }
 
+    function generarHorarioFB(mensajeId, fechaId, horaId) {
+        let parrafo = document.getElementById(mensajeId); 
+        const fecha = document.getElementById(fechaId).value;
+        const tiempo24Hours = document.getElementById(horaId).value;
+        let tiempo = convertTo12HourFormat(tiempo24Hours);
+        
+        const date = new Date(fecha + 'T00:00:00');
+        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        let formattedDate = date.toLocaleDateString('es-ES', options);
+        formattedDate = capitalizeEachWord(formattedDate);
+
+        // Condición para ajustar el texto si la hora es "1:xx PM"
+        let horaTexto = `a las *<span style="font-weight: bold;">${tiempo}* </span>`;
+        if (tiempo.startsWith("1:")) {
+            horaTexto = `a la *<span style="font-weight: bold;">${tiempo}* </span>`;
+        }
+        
+        let addText  = `
+        🗓 𝐹𝑒𝑐ℎ𝑎 𝑦 𝐻𝑜𝑟𝑎 : <br>
+        Su clase está programada para el día *<span style="font-weight: bold;">${formattedDate}</span>* ${horaTexto} (hora de la Cd. de México) a través de 𝐙𝐨𝐨𝐦. Le enviaremos el enlace el día de la clase.<br><br>
+    
+        👨‍🏫 𝐼𝑚𝑝𝑜𝑟𝑡𝑎𝑛𝑡𝑒: <br>
+        𝐔𝐧 𝐚𝐝𝐮𝐥𝐭𝐨 𝐝𝐞𝐛𝐞 𝐚𝐜𝐨𝐦𝐩𝐚𝐧̃𝐚𝐫 𝐚𝐥 𝐚𝐥𝐮𝐦𝐧𝐨, ya que al final de la clase hablaremos con usted.<br><br>
+
+    
+        ⏰ 𝐶𝑜𝑛𝑓𝑖𝑟𝑚𝑎𝑐𝑖𝑜́𝑛:<br>
+        Por favor, confirme 𝐚𝐧𝐭𝐞𝐬 𝐝𝐞 𝐥𝐚𝐬 𝟏𝟐:𝟎𝟎 𝐩𝐦 𝐝𝐞𝐥 𝐝𝐢́𝐚 𝐝𝐞 𝐥𝐚 𝐜𝐥𝐚𝐬𝐞. Si no recibimos su confirmación, la clase se cancelará. La tolerancia es de 𝟐𝟎 𝐦𝐢𝐧𝐮𝐭𝐨𝐬, así que agradecemos mucho su puntualidad.
+        <br><br>
+        Le enviamos un video informativo.
+
+        `;
+    
+        parrafo.innerHTML = addText;
+        //Se agregó esta linea de código
+        //Se volvió a agregar una nueva línea
+    }
+
     function capitalizeEachWord(str) {
         return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     }
@@ -376,10 +413,10 @@ function sortTimes(times) {
     let rangoPromocion;
 
     if (dia <= 15) {
-        rangoPromocion = `<span style="font-weight: bold; color: black;">Del *1 al 15 de ${mes}*,</span>`;
+        rangoPromocion = `<span style="font-weight: bold;">Del *1 al 15 de ${mes}*,</span>`;
       } else {
         const ultimoDia = new Date(anio, fecha.getMonth() + 1, 0).getDate();
-        rangoPromocion = `<span style="font-weight: bold; color: black;">Del *16 al ${ultimoDia} de ${mes}*,</span>`;
+        rangoPromocion = `<span style="font-weight: bold;">Del *16 al ${ultimoDia} de ${mes}*,</span>`;
       }    
 
     const mensaje = `
@@ -397,6 +434,36 @@ function sortTimes(times) {
     document.getElementById('mensaje-4-wa').innerHTML = mensaje;
 
     }
+
+    function generarMensajeFB4() {
+        const fecha = new Date();
+        const dia = fecha.getDate();
+        const mes = fecha.toLocaleString('es-MX', { month: 'long' });
+        const anio = fecha.getFullYear();
+        let rangoPromocion;
+      
+        if (dia <= 15) {
+          rangoPromocion = `Del <span style="font-weight: bold;"> *1 al 15 de ${mes}*,</span>`;
+        } else {
+          const ultimoDia = new Date(anio, fecha.getMonth() + 1, 0).getDate();
+          rangoPromocion = `Del <span style="font-weight: bold;"> *16 al ${ultimoDia} de ${mes}*,</span>`;
+        }
+      
+        const mensaje = `
+          💰 Costos regulares de nuestras clases: <br>
+          • Mensualidad: $1,500 <br>
+          • Inscripción: $800 <br>
+          • Plataforma: $1,500 <br>
+          • Material imprimible: $50</span> <br><br>
+          
+          📢 <span style="font-weight: bold;">📢 ¡𝐏𝐑𝐎𝐌𝐎𝐂𝐈𝐎́𝐍 𝐄𝐒𝐏𝐄𝐂𝐈𝐀𝐋! </span> 📢 <br><br>
+          
+          ${rangoPromocion} aprovecha nuestras clases por solo $𝟏,𝟐𝟎𝟎 𝐚𝐥 𝐦𝐞𝐬 y <span style="font-weight: bold;">𝐚𝐡𝐨𝐫𝐫𝐚 𝐦𝐚́𝐬 𝐝𝐞 $𝟑,𝟎𝟎𝟎</span> obteniendo un <span style="font-weight: bold;">𝐝𝐞𝐬𝐜𝐮𝐞𝐧𝐭𝐨 𝐝𝐞𝐥 𝟏𝟎𝟎%</span> en inscripción, plataforma y material. 🚀
+        `;
+      
+        document.getElementById('mensaje-4-fb').innerHTML = mensaje;
+      }
+      
 
     function generaDiasAcordados(diasId, horaId, mensajeId) {
         const diasAcordados = document.getElementById(diasId).value; 
