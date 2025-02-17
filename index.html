@@ -900,6 +900,12 @@ _Promoción válida del 15 al 18 de noviembre de 2024_.
                                                               <li><a href="#msj6-wa">Mensaje 6: Contestación del mensaje anterior</a></li>
                                                               <li><a href="#msj7-wa">Mensaje 7: Generación de horarios de clase muestra</a></li>
                                                               <li><a href="#msj8-wa">Mensaje 8: Agenda un horario de clase muestra </a></li>
+                                                              <li><a href="#msj9-wa">Mensaje 9: Mensaje de recordatorio de clase para el día actual</a></li>
+                                                              <li><a href="#msj10-wa">Mensaje 10: Liga de CM</a></li>
+                                                              <li><a href="#msj11-wa">Mensaje 11: Confirmación de asistencia</a></li>
+                                                              <li><a href="#msj12-wa">Mensaje 12: Confirmación de asistencia</a></li>
+
+
                                                           </ul>
                                                       </div>
                                                         <p class="informativo" id="msj1-wa">Mensaje 1: Este mensaje se lanza por default.</p>
@@ -1003,7 +1009,7 @@ _Promoción válida del 15 al 18 de noviembre de 2024_.
                                                         <button id="btn-copiar-6-wa3" type="button" class="btn btn-success" onclick="copyText('mensaje-6-wa3',this)">Copia texto</button>
                                                     </div>
                                                     <div class="mensaje-cm" id="msj7-wa">
-                                                        <p class="informativo" id="msj4-cm">Mensaje 7: Para poder utilizar este formato es necesario 
+                                                        <p class="informativo">Mensaje 7: Para poder utilizar este formato es necesario 
                                                           elegir la fecha de los horarios disponibles. Posteriormente en el bloque horarios
                                                           se deben ingresar los horarios en el formato de salto de línea, es decir: <br>
                                                           10:00 am <br>
@@ -1048,13 +1054,169 @@ _Horario de la Cd. de México_.
                                                           <div class="d-flex">
                                                             <input type="date" id="fecha-agenda-wa" class="p-2">
                                                             <input type="time" id="tiempo-agenda-wa" class="p-2">
-                                                            <button id="btn-copiar-8-wa" type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorarioWA('mensaje-agendar-horario-wa','fecha-agenda-wa','tiempo-agenda-wa')">Genera horario</button>
+                                                            <button type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorarioWA('mensaje-agendar-horario-wa','fecha-agenda-wa','tiempo-agenda-wa')">Genera horario</button>
                                                         </div>
                                                         <br>
                                                         <p id="mensaje-agendar-horario-wa"></p>
                                                         <br>
                                                         <button id="btn-copiar-8-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-agendar-horario-wa',this)">Copia texto</button>
                                                     </div>
+                                                    <div class="mensaje-cm" id="msj9-wa">
+                                                      <p class="warning">Sección de envío de ligas</p>
+                                                      <p class="informativo" >Mensaje 9: Mensaje para enviar recordatorio de clase muestra.
+                                                      </p>
+                                                      <p>Eliga hora de agenda de clase</p>
+                                                      <div class="d-flex">
+                                                        <input type="time" id="tiempo-agenda-wa2" class="p-2">
+                                                        <button id="btn-copiar-9-wa" type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorarioCMWA2('mensaje-agendar-horario-wa2','tiempo-agenda-wa2')">Genera mensaje CM</button>
+                                                    </div>
+
+                                                    <br>
+                                                    <p id="mensaje-agendar-horario-wa2"></p>
+                                                    <button id="btn-copiar-9-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-agendar-horario-wa2',this)">Copia texto</button>
+
+
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj10-wa">
+                                                      <p class="informativo" >Mensaje 10: Envío de liga de clase muestra.
+                                                      </p>
+                                                      <p>Eliga hora de agenda de clase</p>
+                                                      <div class="d-flex">
+                                                        <input type="time" id="tiempo-agenda-wa-cm-kl" class="p-2">
+                                                        <input type="date" id="fecha-agenda-wa-cm-kl" class="p-2">
+                                                        <input type="number" id="id-reunion" placeholder="Ingresa el ID de la reunión" class="p-2">
+                                                        <select id="profesorwa" name="profesorwa" class="p-2">
+                                                          <option value="Lupita">Lupita</option>
+                                                          <option value="Karla">Karla</option>
+                                                      </select>
+                                                        <button type="button" class="btn btn-success p-2 flex-grow-1" onclick="generarHorarioCM_WA('horariocmwa','fecha-agenda-wa-cm-kl','tiempo-agenda-wa-cm-kl','id-reunion','profesorwa')">Genera link CM</button>
+                                                    </div>
+
+                                                    <br>
+                                                    <p id="horariocmwa"></p>
+                                                    <button id="btn-copiar-10-wa" type="button" class="btn btn-success" onclick="copyText('horariocmwa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj11-wa">
+                                                      <p class="informativo" >Mensaje 11: Pregunta de confirmación de CM.
+                                                      </p>
+                                                    <p id="pregunta-confirma-wa">¿Podría confirmar su asistencia por favor?</p>
+                                                    <button id="btn-copiar-11-wa" type="button" class="btn btn-success" onclick="copyText('pregunta-confirma-wa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj12-wa">
+                                                      <p class="informativo" >Mensaje 12: Confirmación de CM.
+                                                      </p>
+                                                    <p id="confirma-wa">¡Perfecto! Su asistencia queda confirmada.</p>
+                                                    <button id="btn-copiar-12-wa" type="button" class="btn btn-success" onclick="copyText('confirma-wa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj13-wa">
+                                                      <p class="informativo" >Mensaje 13: Información de la clase.
+                                                      </p>
+                                                    <p id="info-wa-cm">
+                                                      👨‍👩‍👧 *Asistencia:* Un adulto debe acompañar al alumno ya que platicaremos con usted al final de la clase. <br>
+                                                      🌐 *Conexión:* Se recomienda tener buena conexión a internet. <br>
+                                                      📲 *Zoom:* Descargar la aplicación de Zoom (si es posible). <br>
+                                                      🎥 *Equipo:* Usar un dispositivo con cámara y micrófono. <br>
+                                                      ⏳ *Cancelaciones:* Si no pueden asistir, cancelar con 30 minutos de anticipación. <br>
+                                                      🕑 *Puntualidad:* Ingresar 2 minutos antes para brindarle apoyo técnico en caso de ser necesario, ya que la tolerancia es de 20 minutos. <br>
+
+                                                    </p>
+                                                    <button id="btn-copiar-13-wa" type="button" class="btn btn-success" onclick="copyText('info-wa-cm',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj14-wa">
+                                                      <p class="warning">Descargar Zoom</p>
+                                                      <p class="informativo" >Mensaje 1 descargar Zoom.
+                                                      </p>
+                                                    <p id="zoom-wa-1">
+                                                      En caso de acceder vía celular o tablet es necesario descargar la aplicación de Zoom en *AppStore o PlayStore*.
+                                                    </p>
+                                                    <button id="btn-copiar-14-wa" type="button" class="btn btn-success" onclick="copyText('zoom-wa-1',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm">
+                                                      <img id="zoom-imagen-wa1" src="./img/zoom-imagen-wa1.png" alt="Imagen zoom 1" width="350px">
+                                                      <br>
+                                                      <button type="button" class="btn btn-success" onclick="copyImage('zoom-imagen-wa1')">Copia Imagen</button>
+                                                      <canvas id="canvas" style="display: none;"></canvas>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj15-wa">
+                                                      <p class="informativo" >Mensaje 2 descargar Zoom.
+                                                      </p>
+                                                    <p id="zoom-wa-2">
+                                                      Seleccione *“Entrar a una reunión”* 
+                                                    </p>
+                                                    <button id="btn-copiar-15-wa" type="button" class="btn btn-success" onclick="copyText('zoom-wa-2',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm">
+                                                      <img id="zoom-imagen-wa2" src="./img/zoom-imagen-wa2.png" alt="Imagen zoom 2" width="350px">
+                                                      <br>
+                                                      <button type="button" class="btn btn-success" onclick="copyImage('zoom-imagen-wa2')">Copia Imagen</button>
+                                                      <canvas id="canvas" style="display: none;"></canvas>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj16-wa">
+                                                      <p class="informativo" >Mensaje 3 descargar Zoom.
+                                                      </p>
+                                                    <p id="zoom-wa-3">
+                                                      Colocar el ID de su reunión, el cual es 00000000 y el nombre del alumno. Seleccione *“Unirse a una reunión”*
+                                                    </p>
+                                                    <button id="btn-copiar-16-wa" type="button" class="btn btn-success" onclick="copyText('zoom-wa-3',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm">
+                                                      <img id="zoom-imagen-wa3" src="./img/zoom-imagen-wa3.png" alt="Imagen zoom 3" width="350px">
+                                                      <br>
+                                                      <button type="button" class="btn btn-success" onclick="copyImage('zoom-imagen-wa3')">Copia Imagen</button>
+                                                      <canvas id="canvas" style="display: none;"></canvas>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj17-wa">
+                                                      <p class="informativo" >Mensaje 17: Cancelación de clase.
+                                                      </p>
+                                                    <p id="cancela-wa-17">
+                                                      Buen día. Lamentamos informarle que su clase se ha cancelado. Esperamos que nos *contacte nuevamente* para agendar una nueva cita en caso de que siga interesado. Muchas gracias.                                                    </p>
+                                                    <button id="btn-copiar-17-wa" type="button" class="btn btn-success" onclick="copyText('cancela-wa-17',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj18-wa">
+                                                      <p class="informativo" >Mensaje 18: Cancelación de clase por omisión de confirmación.
+                                                      </p>
+                                                    <p id="cancela-wa-18">
+                                                      Buen día. Lamentamos informarle que, debido a que no recibimos confirmación de su parte, su clase se ha cancelado. Esperamos que nos contacte nuevamente para agendar una nueva cita. Muchas gracias. 
+                                                      </p>
+                                                                                                         
+                                                      <button id="btn-copiar-18-wa" type="button" class="btn btn-success" onclick="copyText('cancela-wa-18',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <p class="warning">Después de la clase muestra</p>
+
+                                                    <div class="mensaje-cm" id="msj19-wa">
+                                                      <p class="informativo" >Mensaje 1 después de clase muestra. 
+                                                      </p>
+                                                    <p id="postCM-wa-1">
+                                                      ¿Qué le pareció la clase muestra? </p>
+                                                      <button id="btn-copiar-19-wa" type="button" class="btn btn-success" onclick="copyText('postCM-wa-1',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj20-wa">
+                                                      <p class="informativo" >Mensaje 2 después de clase muestra. 
+                                                      </p>
+                                                    <p id="postCM-wa-2">
+                                                      ¡Nos alegra que le haya gustado! </p>
+                                                      <button id="btn-copiar-20-wa" type="button" class="btn btn-success" onclick="copyText('postCM-wa-2',this)">Copia texto</button>
+                                                    </div>
+
+
+                                                    
+
+
+                                                    
                                               </div>
 
                                                                                             <!-- Aquí inicia el collapse de la clase muestra de facebook -->

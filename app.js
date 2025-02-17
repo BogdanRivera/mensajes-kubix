@@ -295,9 +295,81 @@ function sortTimes(times) {
         //Se volvió a agregar una nueva línea
     }
 
+    function generarHorarioCMWA2(mensajeId, inputId) {
+        // Obtener la hora ingresada en el input
+        let horaIngresada = document.getElementById(inputId).value;
+    
+        // Verificar si se ingresó una hora válida
+        if (!horaIngresada) {
+            alert("Por favor, ingrese una hora válida.");
+            return;
+        }
+    
+        // Obtener el elemento donde se mostrará el mensaje
+        let mensajeElemento = document.getElementById(mensajeId);
+    
+        // Obtener la fecha de hoy en formato "día/mes/año"
+        let fechaHoy = new Date();
+        let opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        let fechaFormateada = fechaHoy.toLocaleDateString('es-MX', opcionesFecha);
+    
+        // Generar el mensaje con la hora ingresada
+        let mensaje = `¡Buen día! 
+        <br>
+        Le envío el link de zoom de su clase muestra agendada para el día de *hoy a las ${horaIngresada}* hora de la Cd. de México.`;
+    
+        // Asignar el mensaje al elemento correspondiente
+        mensajeElemento.innerHTML = mensaje;
+    }
+    
+
     function capitalizeEachWord(str) {
         return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     }
+
+    function generarHorarioCM_WA(mensajeId, fechaId, horaId, idReunionId, profesorId) {
+        // Obtener los valores de los inputs
+        let horaIngresada = document.getElementById(horaId).value;
+        let fechaIngresada = document.getElementById(fechaId).value;
+        let idReunion = document.getElementById(idReunionId).value;
+        let profesor = document.getElementById(profesorId).value;
+    
+        // Validar que todos los campos estén llenos
+        if (!horaIngresada || !fechaIngresada || !idReunion || idReunion.length < 11) {
+            alert("Por favor, ingrese una hora, una fecha y un ID de reunión válido (11 dígitos).");
+            return;
+        }
+    
+        // Convertir la hora a formato de 12 horas con AM/PM
+        let [hora, minutos] = horaIngresada.split(":");
+        hora = parseInt(hora);
+        let ampm = hora >= 12 ? "PM" : "AM";
+        hora = hora % 12 || 12; // Convierte 0 a 12 para el formato de 12 horas
+        let horaFormateada = `${hora}:${minutos} ${ampm}`;
+    
+        // Obtener día, mes y año de la fecha ingresada
+        let fecha = new Date(fechaIngresada);
+        let dia = fecha.getDate();
+        let mes = fecha.toLocaleString('es-MX', { month: 'long' }); // Nombre del mes en español
+        let año = fecha.getFullYear();
+    
+        // Formatear el ID de la reunión en bloques de 3, 4 y 4 dígitos
+        let idReunionFormateado = `${idReunion.substring(0, 3)} ${idReunion.substring(3, 7)} ${idReunion.substring(7, 11)}`;
+    
+        // Generar el mensaje formateado
+        let mensaje = `*KUBIX MATEMÁTICAS*<br><br>` +
+                      `*HORA:* ${horaFormateada}, hora de la ciudad de México.<br>` +
+                      `*FECHA:* ${dia} de ${mes} del ${año}<br>` +
+                      `*PROFESORA:* ${profesor}<br>` +
+                      `*ID:* ${idReunionFormateado}<br>` +
+                      `https://us02web.zoom.us/j/${idReunion}<br><br>` +
+                      `🔺🔹🔺🔹🔺🔹🔺🔹🔺🔹`;
+    
+        // Mostrar el mensaje en el elemento correspondiente
+        document.getElementById(mensajeId).innerHTML = mensaje;
+    }
+    
+    
 
 
     function generarLlamada(inputId,horaId,mensajeId){
