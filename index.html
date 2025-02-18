@@ -75,27 +75,15 @@
                                 <p class="informativo" id="mensaje-1-inscripcion">Mensaje 1: En esta sección se deberán ingresar los costos con promoción y sin promoción, así como el 
                                   ajuste del mes y se da click en "Ingresa costos". 
                                 </p>
-                                <div class="d-flex flex-column mb-3">
-                                  <label for="promo" class="p-2">Ingresa costo con promoción:</label>
-                                  <input id="promo" name="promo" class="p-2" type="number" placeholder="Ej. 980" step="any">
-                                  <!-- <label for="nopromo" class="p-2">Ingresa costo sin promoción:</label>
-                                  <input id="nopromo" name="nopromo" class="p-2" type="number" placeholder="Ej. 1200"> Cambio aquí -->
-                                  <label for="datePicker" class="p-2">Ingrese el número de días restantes de las clases de este mes</label>
-                                  <input type="number" id="datePicker" placeholder="Ej. 2">
-                                  <br>
-                                  <button type="button" class="btn btn-secondary" onclick="generarMensaje()">Ingresa costos</button>
-                              </div>
-                                <p id="mensaje-1-inf">
-                                  Costos generales (clases + plataforma)
-                                </p>
-                                <button type="button" class="btn btn-success" onclick="copyText('mensaje-1-inf',this)">Copia texto</button>
+
+      
                             </div>
                           <div class="mensaje-cm">
                             <p class="informativo" id="mensaje-2-inscripcion">Mensaje 2: Dependiendo de la promoción se copia la imagen 1 o imagen 2 y se envía junto
                               con el texto anterior.
                             </p>
                             <p>Promoción de 1200:</p>
-                            <img id="imagen-promo1" src="./img/promo1.jpeg" alt="Imagen pago" width="350px">
+                            <img id="imagen-promo1" src="./img/promo1.jpg" alt="Imagen promo" width="350px">
                             <br>
                             <button type="button" class="btn btn-success" onclick="copyImage('imagen-promo1')">Copia Imagen</button>
                             <canvas id="canvas" style="display: none;"></canvas>
@@ -104,7 +92,7 @@
                         <p class="warning" id="mensaje-2extra-inscripcion">Mensaje 2 (extra): Esta imagen se envía únicamente si se solicita. 
                         </p>
                         <p>Plataforma únicamente:</p>
-                        <img id="imagen-plataforma" src="./img/plataforma.jpeg" alt="Plataforma" width="350px">
+                        <img id="imagen-plataforma" src="./img/plataforma.jpg" alt="Plataforma" width="350px">
                         <br>
                         <button type="button" class="btn btn-success" onclick="copyImage('imagen-plataforma')">Copia Imagen</button>
                         <canvas id="canvas" style="display: none;"></canvas>
@@ -1177,7 +1165,7 @@ _Horario de la Cd. de México_.
                                                     </div>
 
                                                     <div class="mensaje-cm" id="msj17-wa">
-                                                      <p class="informativo" >Mensaje 17: Cancelación de clase.
+                                                      <p class="informativo" >Mensaje 17: EN CASO DE NO CONECTARSE PASADO EL TIEMPO DE TOLERANCIA
                                                       </p>
                                                     <p id="cancela-wa-17">
                                                       Buen día. Lamentamos informarle que su clase se ha cancelado. Esperamos que nos *contacte nuevamente* para agendar una nueva cita en caso de que siga interesado. Muchas gracias.                                                    </p>
@@ -1185,7 +1173,7 @@ _Horario de la Cd. de México_.
                                                     </div>
 
                                                     <div class="mensaje-cm" id="msj18-wa">
-                                                      <p class="informativo" >Mensaje 18: Cancelación de clase por omisión de confirmación.
+                                                      <p class="informativo" >Mensaje 18: CANCELAR CUANDO NO SE OBTUVO RESPUESTA
                                                       </p>
                                                     <p id="cancela-wa-18">
                                                       Buen día. Lamentamos informarle que, debido a que no recibimos confirmación de su parte, su clase se ha cancelado. Esperamos que nos contacte nuevamente para agendar una nueva cita. Muchas gracias. 
@@ -1211,6 +1199,182 @@ _Horario de la Cd. de México_.
                                                       ¡Nos alegra que le haya gustado! </p>
                                                       <button id="btn-copiar-20-wa" type="button" class="btn btn-success" onclick="copyText('postCM-wa-2',this)">Copia texto</button>
                                                     </div>
+
+                                                    <div class="mensaje-cm" id="msj21-wa">
+                                                      <p class="informativo">Mensaje 3: Imagen promoción. 
+                                                      </p>
+                                                      <img id="img-promo1" src="./img/promo1.jpg" alt="Imagen pago" width="350px">
+                                                      <br>
+                                                      <button type="button" class="btn btn-success" onclick="copyImage('img-promo1')">Copia Imagen</button>
+                                                      <canvas id="canvas" style="display: none;"></canvas>
+                                                    </div>
+
+                                                    <div class="mensaje-cm" id="msj21-wa">
+                                                      <p class="informativo" >Mensaje 3-1: Envío de detalles de la clase muestra.
+                                                      </p>
+                                                      <div class="d-flex">
+                                                        <input id="nombre-alumno" type="text" placeholder="Ingresa el nombre del alumno">
+                                                        <select id="profesorwa-cm" name="profesorwa-cm" class="p-2">
+                                                          <option value="Lupita">Lupita</option>
+                                                          <option value="Karla">Karla</option>
+                                                      </select>
+                                                        <button style="margin: 0.1em 0px 0px 10px;" type="button" class="btn btn-success p-2 flex-grow-1" onclick='generaMensajeCMWA("mensajecm-wa","nombre-alumno","profesorwa-cm")'>Genera mensaje CM</button>
+                                                    </div>
+
+                                                    <br>
+                                                    <p id="mensajecm-wa"></p>
+                                                    <button id="btn-copiar-21-wa" type="button" class="btn btn-success" onclick="copyText('mensajecm-wa',this)">Copia texto</button>
+                                                    </div>
+
+                                                    <div class="mensaje-cm">
+                                                      <p class="informativo" id="msj22-wa">Mensaje 4: Imagen plataforma 
+                                                      </p>
+                                                      <img id="img-plataforma" src="./img/plataforma.jpg" alt="Plataforma" width="350px">
+                                                      <br>
+                                                      <button type="button" class="btn btn-success" onclick="copyImage('img-plataforma')">Copia Imagen</button>
+                                                      <canvas id="canvas" style="display: none;"></canvas>
+                                                  </div>
+
+                                                  <div class="mensaje-cm" id="msj23-wa">
+                                                    <p class="informativo" >Mensaje 4-1: Detalles de la plataforma
+                                                    </p>
+                                                  <p id="plataforma-wa-1">
+                                                    *ACCESO SOLO A PLATAFORMA DIGITAL* <br>
+                                                    Si no desea inscribirse a las clases, puede adquirir únicamente la licencia de la plataforma, disponible en dos modalidades: <br>
+                                                    ✅ *Anualidad:* $1,500 <br>
+                                                    ✅ *Mensualidad:* $200 <br>
+                                                    Incluye videos explicativos de cada lección y temas como _conteo, operaciones básicas, 
+                                                    sistema decimal, cálculo mental, fracciones, tablas de multiplicar, álgebra, geometría, proporcionalidad, y muchos temas más_, 
+                                                    adaptados al grado escolar del alumno. </p>
+                                                    <button id="btn-copiar-22-wa" type="button" class="btn btn-success" onclick="copyText('plataforma-wa-1',this)">Copia texto</button>
+                                                  </div>
+
+                                                  <div class="mensaje-cm" id="msj24-wa">
+                                                    <p class="informativo" >Mensaje 5: Realización del pago
+                                                    </p>
+                                                  <p id="mensaje-pagocm-wa">
+                                                    ✨ Puede realizar su pago mediante _depósito o transferencia electrónica_ a la cuenta indicada. Una vez efectuado el pago, 
+                                                    le pedimos enviar su comprobante con la *clave de rastreo* por este medio, para iniciar su registro.  
+                                                  </p>
+                                                    <button id="btn-copiar-24-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-pagocm-wa',this)">Copia texto</button>
+                                                  </div>
+
+                                                  <div class="mensaje-cm" id="msj25-wa">
+                                                    <p class="informativo">Mensaje 6: Registro de horarios disponibles.  
+                                                    </p>
+                                                    <div class="row d-flex" id="row-cm">
+                                                      <div class="col-3 d-flex justify-content-center">
+                                                        <select name="horariosDisponibles" id="availableHorarios" onchange="mostrarCampoOtro()">
+                                                          <option value="LM">Lunes y miércoles</option>
+                                                          <option value="MJ">Martes y jueves</option>
+                                                          <option value="MV">Miércoles y viernes</option>
+                                                          <option value="otro">Otro</option>
+                                                      </select>
+                                                      <!-- Campo oculto para ingresar manualmente los días -->
+                                                      <input type="text" id="otroHorario" placeholder="Ingrese los días" style="display: none; width: 40%;">                                                      
+                                                      </div>
+                                                      <div class="col-3 d-flex justify-content-center">
+                                                        <p>Ingresa hora del horario</p>
+                                                        <div class="form-floating flex-fill">
+                                                          <input type="time" name="horaDisponible" id="horaDisponible">
+                                                        </div>
+                                                      </div>
+                                                      <div class="col-6 d-flex justify-content-center">
+                                                        <button type="button" class="btn btn-success" onclick="generaHorariosDisponibles('horariosDisponibleswa','availableHorarios','horaDisponible')">Agregar horario</button>
+                                                      </div>
+                                                      
+                                                    </div>
+                                                    <br>
+                                                    <p id="horariosDisponibleswa"></p>
+                                                    <button id="btn-copiar-25-wa" type="button" class="btn btn-success" onclick="copyText('horariosDisponibleswa',this)">Copia texto</button>
+                                                    <button type="button" class="btn btn-secondary" onclick="cleanElements('horariosDisponibleswa')">Limpiar</button>
+
+                                                    <p style="text-align: center; font-weight: bold;">Cuando solo hay un horario</p>
+
+                                                    <div class="mensaje-cm" id="msj26-wa">
+                                                    <div class="col-6 d-flex justify-content-around">
+                                                      <p>Ingresa la fecha de ingreso:</p>
+                                                      <input style="margin-left: 10%;" type="date" id="fechaIngreso-wa">
+                                                      <button style="margin-left: 15%; " type="button" class="btn btn-success container" onclick="generarMensajeIngreso('IngresaDia','fechaIngreso-wa')">Agregar horario</button>
+                                                    </div>
+                                                    <br>
+                                                    <p id="IngresaDia"></p>
+                                                    <button id="btn-copiar-26-wa" type="button" class="btn btn-success" onclick="copyText('IngresaDia',this)">Copia texto</button>
+
+                                                  </div>
+
+                                                  <p style="text-align: center; font-weight: bold;">Cuando hay más opciones de horario</p>
+
+                                                  <div class="mensaje-cm" id="msj27-wa">
+                                                  <p class="informativo">Mensaje 6.1</p>
+                                                  <p id="mensaje-cm-27-1-wa">¿Qué horario le quedaría mejor?</p>
+                                                  <button id="btn-copiar-27-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-cm-27-1-wa',this)">Copia texto</button>
+
+                                                </div>
+
+                                                <div class="mensaje-cm" id="msj28-wa">
+                                                  <p class="informativo">Mensaje 6.2</p>
+                                                  <p id="mensaje-cm-27-2-wa">¡Perfecto!, quedaría en ese horario.</p>
+                                                  <button id="btn-copiar-27-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-cm-27-2-wa',this)">Copia texto</button>
+
+                                                </div>
+
+                                                <div class="mensaje-cm" id="msj29-wa">
+                                                  <p class="informativo">Mensaje 6.3</p>
+                                                  <div class="col-6 d-flex justify-content-around">
+                                                    <p>Ingresa la fecha de ingreso:</p>
+                                                    <input style="margin-left: 10%;" type="date" id="fechaIngreso-wa-2">
+                                                    <button style="margin-left: 15%; " type="button" class="btn btn-success container" onclick="generarMensajeIngreso2('IngresaDia-2','fechaIngreso-wa-2')">Agregar horario</button>
+                                                  </div>
+                                                  <br>
+                                                  <p id="IngresaDia-2"></p>
+                                                  <button id="btn-copiar-28-wa" type="button" class="btn btn-success" onclick="copyText('IngresaDia-2',this)">Copia texto</button>
+
+                                                </div>
+
+                                                <div class="mensaje-cm" id="msj30-wa">
+                                                  <p class="informativo">Mensaje 7: Detalles de costos generales</p>
+                                                  <div class="d-flex flex-column mb-3">
+                                                    <label for="promo" class="p-2">Ingresa fecha de ingreso:</label>
+                                                    <input type="date" id = 'date-promo'>
+                                                    <label for="datePicker" class="p-2">Ingrese el número de días restantes de las clases de este mes</label>
+                                                    <input type="number" id="datePicker" placeholder="Ej. 2">
+                                                    <br>
+                                                    <button type="button" class="btn btn-secondary" onclick="generarMensaje('date-promo')">Ingresa costos</button>
+                                                </div>
+                                                <p id="mensaje-1-inf">
+                                                  Costos generales (clases + plataforma)
+                                                </p>
+                                                <button type="button" class="btn btn-success" onclick="copyText('mensaje-1-inf',this)">Copia texto</button>
+
+                                                </div>
+
+                                                <div class="mensaje-cm" id="msj31-wa">
+                                                  <p class="informativo">Mensaje 8: Evaluación de servicio</p>
+                                                  <p id="mensaje-cm-31-wa">En Kubix Matemáticas queremos evaluar nuestro proceso de calidad y servicio, para lo cual queremos pedirle su apoyo para contestar el 
+                                                    siguiente formulario:
+                                                    <br><br>
+                                                    https://forms.gle/HeE3CPj95N8Ls91x5
+                                                    </p>
+                                                  <button id="btn-copiar-31-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-cm-31-wa',this)">Copia texto</button>
+
+                                                </div>
+
+                                                
+                                                <div class="mensaje-cm" id="msj32-wa">
+                                                  <p class="informativo">Mensaje 9: Agradecimiento</p>
+                                                  <p id="mensaje-cm-32-wa">¡Muchas gracias!
+                                                    </p>
+                                                  <button id="btn-copiar-32-wa" type="button" class="btn btn-success" onclick="copyText('mensaje-cm-32-wa',this)">Copia texto</button>
+
+                                                </div>
+                                                    
+
+                                                  </div>
+
+
+
+                                                    
 
 
                                                     

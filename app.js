@@ -327,6 +327,24 @@ function sortTimes(times) {
         return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     }
 
+    function generaMensajeCMWA(mensajeid,nombre_alumno, nombre_profesora){
+        let nombreAlumno = document.getElementById(nombre_alumno).value;
+        let nombreProfesora = document.getElementById(nombre_profesora).value; 
+        text = ` 
+        Le enviamos la información respecto a la clase que tuvo *${nombreAlumno}* con la Profesora ${nombreProfesora}.
+        <br><br>
+        *CLASES DE MATEMÁTICAS EN LÍNEA + PLATAFORMA DIGITAL*
+        <br><br>
+        🔺 Clases grupales 2 veces por semana <br>
+        🔺 Grupos pequeños, máximo 5 a 8 estudiantes <br>  
+        🔺 Plataforma digital incluida <br>
+        🔺 Material para imprimir incluido 
+        <br><br>
+        ✨ *TODO INCLUIDO por sólo $1,200 al mes* ✨        
+        `
+        document.getElementById(mensajeid).innerHTML = text;
+    }
+
     function generarHorarioCM_WA(mensajeId, fechaId, horaId, idReunionId, profesorId) {
         // Obtener los valores de los inputs
         let horaIngresada = document.getElementById(horaId).value;
@@ -367,6 +385,55 @@ function sortTimes(times) {
     
         // Mostrar el mensaje en el elemento correspondiente
         document.getElementById(mensajeId).innerHTML = mensaje;
+    }
+    
+    function mostrarCampoOtro() {
+        let select = document.getElementById("availableHorarios");
+        let inputOtro = document.getElementById("otroHorario");
+    
+        if (select.value === "otro") {
+            inputOtro.style.display = "block"; // Mostrar input si selecciona "Otro"
+            inputOtro.focus(); // Colocar el cursor en el input automáticamente
+        } else {
+            inputOtro.style.display = "none"; // Ocultar input si selecciona otra opción
+            inputOtro.value = ""; // Limpiar el campo al ocultarlo
+        }
+    }
+
+    function generaHorariosDisponibles(mensajeId, selectId, horaId) {
+        // Obtener los elementos
+        let select = document.getElementById(selectId);
+        let inputOtro = document.getElementById("otroHorario");
+        let horaIngresada = document.getElementById(horaId).value;
+        let mensajeElemento = document.getElementById(mensajeId);
+    
+        // Validar que se haya ingresado una hora
+        if (!horaIngresada) {
+            alert("Por favor, ingrese una hora válida.");
+            return;
+        }
+    
+        // Determinar la opción seleccionada
+        let opcionSeleccionada = select.value === "otro" ? inputOtro.value.trim() : select.options[select.selectedIndex].text;
+    
+        // Validar que si la opción es "otro", el usuario haya ingresado un valor
+        if (select.value === "otro" && opcionSeleccionada === "") {
+            alert("Por favor, ingrese los días manualmente.");
+            return;
+        }
+    
+        // Convertir la hora a formato de 12 horas con AM/PM
+        let [hora, minutos] = horaIngresada.split(":");
+        hora = parseInt(hora);
+        let ampm = hora >= 12 ? "PM" : "AM";
+        hora = hora % 12 || 12; // Convierte 0 a 12 para el formato de 12 horas
+        let horaFormateada = `${hora}:${minutos} ${ampm}`;
+    
+        // Generar el mensaje
+        let nuevoMensaje = `🔹 *${opcionSeleccionada}* ${horaFormateada}, hora de la Cd. de México.`;
+    
+        // Agregar el mensaje al párrafo sin sobrescribir el contenido anterior
+        mensajeElemento.innerHTML += nuevoMensaje + "<br>";
     }
     
     
@@ -441,41 +508,111 @@ function sortTimes(times) {
         mensajeParrafo.innerText = addText;
     }
 
-    function generarMensaje() {
-        const promo = parseFloat(document.getElementById('promo').value); // Convertir a flotante
-        // const nopromo = document.getElementById('nopromo').value;
-        const selectedDates = document.getElementById('datePicker').value
-
-        
-        const today = new Date();
-        const diaHoy = today.getDate();
-        const mesActual = today.toLocaleString('default', { month: 'long' });
-        const siguienteMes = new Date(today.getFullYear(), today.getMonth() + 1, 1).toLocaleString('default', { month: 'long' });
+    function generarMensaje(fechaPromoId) {
+        // Obtener los valores de los inputs
+        const selectedDates = parseInt(document.getElementById('datePicker').value) || 0;
+        const fechaPromoValue = document.getElementById(fechaPromoId).value;
     
-        const ultimoDiaMes = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-
-        let mensajeFechaLimite = '';
-    
-        // Determinar el día límite y el mensaje basado en la condición del día actual
-        if (diaHoy <= 15) {
-            mensajeFechaLimite = `A partir del día 16 de ${mesActual} su pago sería por: $3850.00`;
-        } else {
-            mensajeFechaLimite = `A partir del día 1 de ${siguienteMes} su pago sería por: $3850.00`;
+        // Validar si se ingresó una fecha
+        if (!fechaPromoValue) {
+            alert("Por favor, ingrese una fecha de inicio.");
+            return;
         }
     
+        // Crear el objeto Date correctamente
+        const fechaPromo = new Date(fechaPromoValue + "T00:00:00");
+        const diaPromo = fechaPromo.getDate();
+        const mesPromo = fechaPromo.toLocaleString('es-MX', { month: 'long' });
+        const anioPromo = fechaPromo.getFullYear();
+    
+        // Obtener la fecha actual
+        const today = new Date();
+        const diaHoy = today.getDate();
+        const mesActual = today.toLocaleString('es-MX', { month: 'long' });
+    
+        // Obtener el siguiente mes
+        const siguienteMes = new Date(today.getFullYear(), today.getMonth() + 1, 1).toLocaleString('es-MX', { month: 'long' });
+    
+        // Último día del mes actual
+        const ultimoDiaMes = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+    
+        // Calcular el mensaje de la promoción
+        let mensajeFechaLimite = diaHoy <= 15
+            ? `_Promoción válida hasta el 16 de ${mesActual}._`
+            : `_Promoción válida hasta el ${ultimoDiaMes} de ${mesActual}._`;
+    
+        // Cálculo de costos
+        const precioPorClase = 1200 / 8; // Asumiendo que el mes tiene 8 clases
+        const costoDiferencia = precioPorClase * selectedDates;
+        const costoMensual = 1200; // Suponiendo que el pago mensual es fijo
+    
+        // Construir el mensaje final
         const mensaje = `
     Costos generales (clases + plataforma):
     
-    Le comparto el detalle de su pago para realizarlo el día de hoy ${diaHoy} de ${mesActual}:
+    Le comparto el detalle de su pago para iniciar sus clases el día ${diaPromo} de ${mesPromo} de ${anioPromo}:
     
-    Diferencia de ${mesActual}: $${((promo/8)*selectedDates).toFixed(2)}
-    Siguiente pago el 1 de ${siguienteMes}: $${promo.toFixed(2)}
+    Diferencia de ${mesActual}: $${costoDiferencia.toFixed(2)}
+    Siguiente pago el 1 de ${siguienteMes}: $${costoMensual.toFixed(2)}
     
     ${mensajeFechaLimite}
         `;
     
+        // Mostrar el mensaje en el HTML
         document.getElementById('mensaje-1-inf').innerText = mensaje;
     }
+    
+
+    function generarMensajeIngreso(mensajeId, fechaIngresoId) {
+        // Obtener el valor del input de fecha
+        let fechaIngresada = document.getElementById(fechaIngresoId).value;
+    
+        // Verificar si el usuario ingresó una fecha válida
+        if (!fechaIngresada) {
+            alert("Por favor, ingrese una fecha válida.");
+            return;
+        }
+    
+        // Crear el objeto Date correctamente
+        let fecha = new Date(fechaIngresada + "T00:00:00"); // Evita desfase de zona horaria
+    
+        // Obtener día, mes y año
+        let dia = fecha.getDate();
+        let mes = fecha.toLocaleString('es-MX', { month: 'long' }); // Nombre del mes en español
+        let año = fecha.getFullYear();
+    
+        // Generar el mensaje
+        let mensaje = `¿Le gustaría comenzar a partir de este ${dia} de ${mes} de ${año}?`;
+    
+        // Insertar el mensaje en el elemento correspondiente
+        document.getElementById(mensajeId).innerText = mensaje;
+    }
+
+    function generarMensajeIngreso2(mensajeId, fechaIngresoId) {
+        // Obtener el valor del input de fecha
+        let fechaIngresada = document.getElementById(fechaIngresoId).value;
+    
+        // Verificar si el usuario ingresó una fecha válida
+        if (!fechaIngresada) {
+            alert("Por favor, ingrese una fecha válida.");
+            return;
+        }
+    
+        // Crear el objeto Date correctamente
+        let fecha = new Date(fechaIngresada + "T00:00:00"); // Evita desfase de zona horaria
+    
+        // Obtener día, mes y año
+        let dia = fecha.getDate();
+        let mes = fecha.toLocaleString('es-MX', { month: 'long' }); // Nombre del mes en español
+        let año = fecha.getFullYear();
+    
+        // Generar el mensaje
+        let mensaje = `¿Le gustaría comenzar desde este ${dia} de ${mes} de ${año}?`;
+    
+        // Insertar el mensaje en el elemento correspondiente
+        document.getElementById(mensajeId).innerText = mensaje;
+    }
+    
 
     function generarMensajeWA4(){
         const fecha = new Date();
