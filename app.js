@@ -348,7 +348,7 @@ function sortTimes(times) {
         let horaFormateada = `${hora}:${minutos} ${ampm}`;
     
         // Obtener día, mes y año de la fecha ingresada
-        let fecha = new Date(fechaIngresada);
+        let fecha = new Date(fechaIngresada + "T00:00:00"); // Forzar hora local
         let dia = fecha.getDate();
         let mes = fecha.toLocaleString('es-MX', { month: 'long' }); // Nombre del mes en español
         let año = fecha.getFullYear();
