@@ -1,7 +1,7 @@
 .cabecero {
     height: auto;
     text-align: center;
-    background: linear-gradient(to top, #ffffff, #ffffff 50%, #7e8af1 50%, #919bf8);
+    background: linear-gradient(to top, #ffffff, #ffffff 45%, #3977f5 55%, #e94545);
     /* Ajusta los colores según los tonos de tu logo */
     display: flex;
     justify-content: center;

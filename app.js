@@ -720,6 +720,42 @@ function sortTimes(times) {
     
         document.getElementById('mensaje-7-inf').innerText = mensaje.trim();
     }
+function generarMensajeCursoVerano() {
+    const hora24 = document.getElementById('horaVerano').value;
+    const idZoom = document.getElementById('idZoom').value.replace(/\s+/g, '');
+
+    if (!hora24 || !idZoom || idZoom.length < 11) {
+        alert("Por favor, ingresa una hora válida y un ID de Zoom de al menos 11 dígitos.");
+        return;
+    }
+
+    const hora12 = convertTo12HourFormat(hora24);
+    const formattedId = `${idZoom.slice(0, 3)} ${idZoom.slice(3, 7)} ${idZoom.slice(7)}`;
+    const zoomLink = `https://us02web.zoom.us/j/${idZoom}`;
+
+    const mensaje = `
+🔹 *Curso de Verano* 🔹
+
+*DÍAS:* lunes a viernes. 
+*HORA:* ${hora12}. 
+
+*ID:* ${formattedId}
+
+${zoomLink}
+
+🔹🔺🔹🔺🔹🔺
+
+📌 *Importante:* Para lograr buenos resultados en tan poco tiempo, es fundamental que su hijo/a:
+
+✔ Asista con regularidad a sus clases  
+✔ Realice las tareas y actividades sugeridas  
+✔ Se conecte desde un espacio tranquilo, con su cámara encendida y listo para aprender
+
+Estamos aquí para ayudarles a avanzar, pero el esfuerzo conjunto entre casa y escuela ¡marca toda la diferencia! 💪📚
+    `.trim();
+
+    document.getElementById('mensaje-generado-verano').innerText = mensaje;
+}
 
     function generarMensajePlataforma(){
         const estudiante = document.getElementById('estudiante').value;
@@ -832,6 +868,27 @@ ${liga}
 
     document.getElementById('ligacm').innerText = mensaje;
 }
+
+function generarExtra5Verano() {
+    const tratamiento = document.getElementById('tratamiento').value;
+    const apellido = document.getElementById('apellido').value.trim();
+
+    if (!apellido) {
+        alert("Por favor, ingresa un apellido.");
+        return;
+    }
+
+    const mensaje = `
+👋 Buen día, ${tratamiento}. ${apellido}. Solo paso a recordarle que aún puede aprovechar la 𝐜𝐥𝐚𝐬𝐞 𝐦𝐮𝐞𝐬𝐭𝐫𝐚 𝐬𝐢𝐧 𝐜𝐨𝐬𝐭𝐨 𝐲 𝐬𝐢𝐧 𝐜𝐨𝐦𝐩𝐫𝐨𝐦𝐢𝐬𝐨 para que su hijo/a conozca nuestro sistema de matemáticas en línea.
+
+Tenemos cupo disponible esta semana y sería un gusto poder agendarle. 😊
+
+¿Le gustaría que le comparta los horarios disponibles o prefiere que la apoye personalmente por este medio?
+`.trim();
+
+    document.getElementById('msj-extra-5-ver').innerText = mensaje;
+}
+
 
 /***** Modificado 27 septiembre 2024 */
 
